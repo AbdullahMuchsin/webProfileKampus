@@ -1,51 +1,332 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Abdullah Muchsin, showcasing skills, projects, and achievements in web development."
-    />
-    <meta name="author" content="Abdullah Muchsin" />
-
-    <title>My Portfolio | Abdullah Muchsin</title>
-
+    <title>Navbar Prodi - Website Program Studi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <!-- Ganti dengan font monospaced -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Konfigurasi Tailwind
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Animasi untuk menu mobile */
+      @keyframes slideDown {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-    />
-
-    <!-- LINK TAILWIND CSS -->
-    <script src="assets/js/tailwindConfig.js"></script>
-
-    <!-- LINK CSS AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!-- LINK MY CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+      .mobile-menu-active {
+        animation: slideDown 0.3s ease-out forwards;
+        display: flex !important; /* Ensure it's displayed when active */
+      }
+    </style>
   </head>
-  <body>
-    <!-- LINK JS -->
-    <script src="assets/js/script.js"></script>
+  <body class="font-poppins bg-primary-700">
+    <nav class="bg-transparent w-full py-4">
+      <div class="max-w-8xl mx-auto px-8">
+        <div class="flex justify-between items-center relative">
+          <a href="#" class="flex items-center py-4">
+            <div class="bg-transparent rounded-lg p-2 mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 text-white"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                />
+              </svg>
+            </div>
+            <span class="text-white font-bold text-xl">Teknik Informatika</span>
+          </a>
 
-    <!-- LINK AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              class="text-white text-2xl focus:outline-none"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+
+          <div
+            id="main-menu"
+            class="hidden flex md:flex flex-col md:items-end sm:items-center space-y-4 md:space-y-0 md:space-x-4 ml-auto w-full md:w-auto absolute md:relative top-full left-0 bg-primary-700 md:bg-transparent p-8 sm:p-0 z-40"
+          >
+            <div class="flex">
+              <div
+                class="flex space-x-4 mb-4 sm:mb-0 sm:order-last md:order-first"
+              >
+                <a href="#" class="text-white hover:text-primary-400">
+                  <i class="fab fa-twitter fa-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-primary-400">
+                  <i class="fab fa-instagram fa-lg"></i>
+                </a>
+              </div>
+
+              <div class="relative w-full sm:w-auto" data-dropdown-toggle>
+                <div>
+                  <button
+                    type="button"
+                    class="inline-flex justify-center w-full rounded-md px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-primary-700 focus:outline-none"
+                  >
+                    <span class="mr-2">🇮🇩</span> Bahasa Indonesia
+                    <svg
+                      class="-mr-1 ml-2 h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50"
+                data-dropdown-menu
+              >
+                <div class="py-1">
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
+                  >
+                    <span class="mr-2 text-xl">🇮🇩</span> Bahasa Indonesia
+                  </a>
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
+                  >
+                    <span class="mr-2 text-xl">🇬🇧</span> English
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto"
+            >
+              <a
+                href="#"
+                class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+                >Beranda</a
+              >
+              <a
+                href="#"
+                class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+                >Profil</a
+              >
+              <a
+                href="#"
+                class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+                >Akademik</a
+              >
+              <a
+                href="#"
+                class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+                >Penelitian & Pengabdian</a
+              >
+
+              <div class="relative w-full md:w-auto" data-dropdown-toggle>
+                <button
+                  class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-center sm:justify-between w-full"
+                >
+                  Kemahasiswaan
+                  <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50"
+                  data-dropdown-menu
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Susunan Akademik</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Humanika</a
+                  >
+                </div>
+              </div>
+
+              <div class="relative w-full md:w-auto" data-dropdown-toggle>
+                <button
+                  class="py-2 md:py-4 px-3 text-white text-sm sm:justify-between sm:text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-center w-full"
+                >
+                  Tentang
+                  <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50"
+                  data-dropdown-menu
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Struktur Organisasi</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Staff Pengajar</a
+                  >
+                </div>
+              </div>
+              <a
+                href="#"
+                class="py-2 md:py-4 px-3 text-white text-sm sm:text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+                >Alumni</a
+              >
+              <div class="relative w-full md:w-auto" data-dropdown-toggle>
+                <button
+                  class="py-2 md:py-4 px-3 text-white text-sm sm:justify-between sm:text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-center w-full"
+                >
+                  Informasi
+                  <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    />
+                  </svg>
+                </button>
+                <div
+                  class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50"
+                  data-dropdown-menu
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Agenda</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-blackrounded"
+                    >Beasiswa</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
+                    >Berita</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <script>
-      AOS.init();
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mainMenu = document.getElementById("main-menu");
+        const dropdownToggles = document.querySelectorAll(
+          "[data-dropdown-toggle]"
+        );
+
+        // Toggle mobile menu visibility
+        mobileMenuButton.addEventListener("click", function () {
+          mainMenu.classList.toggle("hidden");
+          mainMenu.classList.toggle("mobile-menu-active");
+        });
+
+        // Close mobile menu when a link is clicked (optional, but good for UX)
+        mainMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (window.innerWidth < 768) {
+              // Only close on mobile
+              mainMenu.classList.add("hidden");
+              mainMenu.classList.remove("mobile-menu-active");
+            }
+          });
+        });
+
+        // Handle dropdowns
+        dropdownToggles.forEach((dropdownToggle) => {
+          const button = dropdownToggle.querySelector("button");
+          const menu = dropdownToggle.querySelector("[data-dropdown-menu]");
+
+          if (button && menu) {
+            button.addEventListener("click", function (event) {
+              event.stopPropagation(); // Prevent document click from closing immediately
+              // Close other open dropdowns
+              dropdownToggles.forEach((otherDropdown) => {
+                const otherMenu = otherDropdown.querySelector(
+                  "[data-dropdown-menu]"
+                );
+                if (
+                  otherMenu &&
+                  otherMenu !== menu &&
+                  !otherMenu.classList.contains("hidden")
+                ) {
+                  otherMenu.classList.add("hidden");
+                }
+              });
+              menu.classList.toggle("hidden");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+              if (!dropdownToggle.contains(event.target)) {
+                menu.classList.add("hidden");
+              }
+            });
+          }
+        });
+      });
     </script>
   </body>
 </html>

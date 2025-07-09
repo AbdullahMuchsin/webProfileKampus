@@ -108,7 +108,7 @@
           </div>
 
           <div
-            class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50 "
+            class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50"
             data-dropdown-menu
           >
             <div class="py-1">
@@ -225,7 +225,7 @@
                 </svg>
               </button>
               <div
-                class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50  border-t-[5px] border-orange-500"
+                class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50 border-t-[5px] border-orange-500"
                 data-dropdown-menu
               >
                 <a
@@ -291,7 +291,7 @@
       >
         <div class="md:w-1/3 order-2 md:order-1 md:text-left">
           <h1
-            class="hidden md:block text-4xl text-start text-gray-900 mb-6 leading-tight font-medium"
+            class="hidden md:block text-4xl text-start text-gray-900 mb-6 leading-tight font-bold"
           >
             Selamat Datang di
             <span class="text-gray-900">Teknologi Informasi</span>
@@ -302,6 +302,27 @@
             Kami mencetak lulusan inovatif dan kompeten, siap bersaing di era
             digital dengan kurikulum mutakhir, fasilitas modern, dan dosen ahli.
           </p>
+
+          <!-- Ikon animasi scroll -->
+          <div
+            class="justify-center hidden md:flex flex-col items-center mt-8 border-black border-[2px] pt-2"
+          >
+            <span class="uppercase text-sm mb-1">Baca Selengkapnya</span>
+            <svg
+              class="w-5 h-5 text-black animate-bounce"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
         </div>
 
         <div
@@ -322,11 +343,281 @@
       </div>
     </section>
 
+    <section class="pt-16 mb:py-16">
+      <div class="container mx-auto">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-medium text-gray-800 mb-3">
+            Jurusan Teknologi Informatika
+          </h2>
+          <div class="h-[5px] w-[100px] bg-orange-500 mx-auto mb-2"></div>
+
+          <p class="text-lg leading-relaxed text-gray-700">
+            Kami mencetak lulusan unggul, siap bersaing di teknologi dengan
+            kurikulum industri, fasilitas modern, dan dosen ahli.
+          </p>
+        </div>
+
+        <div class="container mx-auto py-12 px-4">
+          <div class="hidden md:flex justify-evenly">
+            <button
+              class="tab-link py-3 text-2xl font-semibold text-gray-500 w-full hover:bg-gray-200 transition"
+              data-tab="about"
+            >
+              About Me
+            </button>
+            <button
+              class="tab-link py-3 w-full text-2xl font-semibold text-gray-500 hover:bg-gray-200 transition"
+              data-tab="visimisi"
+            >
+              Visi & Misi
+            </button>
+            <button
+              class="tab-link py-3 w-full text-2xl font-semibold text-gray-500 hover:bg-gray-200 transition"
+              data-tab="ayogabung"
+            >
+              Ayo Gabung
+            </button>
+          </div>
+
+          <!-- Mobile version -->
+          <div class="md:hidden">
+            <div class="mobile-tab-item">
+              <button
+                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
+                data-tab="about"
+              >
+                About Me
+                <span
+                  class="arrow-icon transform transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div
+                id="about-mobile-content"
+                class="mobile-tab-content hidden p-4 bg-gray-50"
+              >
+                <div class="flex flex-col items-center">
+                  <div class="w-full">
+                    <iframe
+                      class="w-full aspect-[6/4]"
+                      src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
+                      title="Video Profil"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div
+                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
+                  >
+                    <h3 class="text-4xl font-bold mb-4">Teknologi Informasi</h3>
+                    <p
+                      class="text-gray-700 text-lg leading-relaxed tracking-wide"
+                    >
+                      Program Studi Teknologi Informasi berkomitmen mencetak
+                      lulusan yang unggul, adaptif, dan inovatif di bidang
+                      teknologi. Dengan kurikulum terkini, laboratorium modern,
+                      serta dosen berpengalaman, kami mempersiapkan mahasiswa
+                      untuk menghadapi tantangan global dalam transformasi
+                      digital.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mobile-tab-item mt-2">
+              <button
+                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
+                data-tab="visimisi"
+              >
+                Visi & Misi
+                <span
+                  class="arrow-icon transform transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div
+                id="visimisi-mobile-content"
+                class="mobile-tab-content hidden p-4 bg-gray-50"
+              >
+                <div class="flex flex-col items-center">
+                  <div class="w-full">
+                    <img
+                      src="assets/img/d-1.jpg"
+                      alt="About Image"
+                      class="w-full aspect-[6/4] object-cover"
+                    />
+                  </div>
+                  <div
+                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
+                  >
+                    <h3 class="text-4xl font-bold mb-4">Visi & Misi</h3>
+                    <p
+                      class="text-gray-700 text-lg leading-relaxed tracking-wide"
+                    >
+                      Menjadi program studi terdepan dalam teknologi informasi
+                      yang inovatif dan berdaya saing tinggi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mobile-tab-item mt-2">
+              <button
+                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
+                data-tab="ayogabung"
+              >
+                Ayo Gabung
+                <span
+                  class="arrow-icon transform transition-transform duration-300"
+                  >▼</span
+                >
+              </button>
+              <div
+                id="ayogabung-mobile-content"
+                class="mobile-tab-content hidden p-4 bg-gray-50"
+              >
+                <div class="flex flex-col items-center">
+                  <div class="w-full">
+                    <img
+                      src="assets/img/d-3.jpg"
+                      alt="Pendaftaran"
+                      class="w-full aspect-[6/4] object-cover"
+                    />
+                  </div>
+                  <div
+                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
+                  >
+                    <h3 class="text-4xl font-bold mb-4">Pendaftaran</h3>
+                    <p
+                      class="text-gray-700 text-lg leading-relaxed tracking-wide mb-4"
+                    >
+                      Pendaftaran mahasiswa baru dibuka setiap semester melalui
+                      portal resmi kami. Proses ini dirancang agar mudah diikuti
+                      oleh calon mahasiswa dari berbagai daerah.
+                    </p>
+                    <p>
+                      <button
+                        class="bg-transparent text-black border-[2px] border-black text-lg font-semibold px-6 py-3 hover:bg-black transition hover:text-white"
+                      >
+                        Daftar Sekarang
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Tabs Content -->
+          <div id="about" class="tab-content hidden">
+            <div
+              class="flex flex-col md:flex-row items-center md:items-stretch"
+            >
+              <div class="md:w-1/2 w-full">
+                <iframe
+                  class="w-full aspect-[6/4]"
+                  src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
+                  title="Video Profil"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div
+                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 px-20"
+              >
+                <h3 class="text-4xl font-bold mb-4">Teknologi Informasi</h3>
+                <p class="text-gray-700 text-lg leading-relaxed tracking-wide">
+                  Program Studi Teknologi Informasi berkomitmen mencetak lulusan
+                  yang unggul, adaptif, dan inovatif di bidang teknologi. Dengan
+                  kurikulum terkini, laboratorium modern, serta dosen
+                  berpengalaman, kami mempersiapkan mahasiswa untuk menghadapi
+                  tantangan global dalam transformasi digital.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="visimisi" class="tab-content hidden">
+            <div
+              class="flex flex-col md:flex-row items-center md:items-stretch"
+            >
+              <div class="md:w-1/2 w-full">
+                <img
+                  src="assets/img/d-1.jpg"
+                  alt="About Image"
+                  class="w-full aspect-[6/4] object-cover"
+                />
+              </div>
+              <div
+                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 px-20"
+              >
+                <h3 class="text-4xl font-bold mb-4">Visi & Misi</h3>
+                <p class="text-gray-700 text-lg leading-relaxed tracking-wide">
+                  Menjadi program studi terdepan dalam teknologi informasi yang
+                  inovatif dan berdaya saing tinggi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="ayogabung" class="tab-content hidden">
+            <div
+              class="flex flex-col md:flex-row items-center md:items-stretch"
+            >
+              <div class="md:w-1/2 w-full">
+                <img
+                  src="assets/img/d-3.jpg"
+                  alt="Pendaftaran"
+                  class="w-full aspect-[6/4] object-cover"
+                />
+              </div>
+              <div
+                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 md:px-20"
+              >
+                <h3 class="text-4xl font-bold mb-4">Pendaftaran</h3>
+                <p
+                  class="text-gray-700 text-lg leading-relaxed tracking-wide mb-4"
+                >
+                  Pendaftaran mahasiswa baru dibuka setiap semester melalui
+                  portal resmi kami. Proses ini dirancang agar mudah diikuti
+                  oleh calon mahasiswa dari berbagai daerah.
+                </p>
+                <p>
+                  <button
+                    class="bg-transparent text-black border-[2px] border-black text-lg font-semibold px-6 py-3 hover:bg-black transition hover:text-white"
+                  >
+                    Daftar Sekarang
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Berita & Acara Terbaru -->
     <section class="py-12">
       <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-medium text-gray-800 mb-10">
-          Berita & Acara Terbaru
-        </h2>
+        <div class="mb-10 flex justify-between items-center">
+          <div class="inline-block">
+            <h2 class="text-3xl md:text-4xl font-medium text-gray-800 mb-2">
+              Berita & Acara Terbaru
+            </h2>
+            <div class="h-[5px] w-[100px] bg-orange-500"></div>
+          </div>
+
+          <a
+            href="#"
+            class="inline-block border text-sm md:text-lg border-black uppercase text-black uppercase px-4 py-2 transition duration-300 hover:bg-black uppercase hover:text-white hover:border-black uppercase"
+          >
+            Lihat Semua
+          </a>
+        </div>
 
         <div class="columns-1 md:columns-2 gap-20">
           <div class="w-full mb-8">
@@ -527,7 +818,7 @@
 
         // Hide/show top bar on scroll
         window.addEventListener("scroll", function () {
-          if (window.scrollY > lastScrollY && window.scrollY > 50) {
+          if (window.scrollY > 50) {
             // Scrolling down and scrolled past 50px
             topBar.classList.add("top-bar-hidden");
             topBar.classList.remove("top-bar-visible");
@@ -542,7 +833,6 @@
             mainNavbar.classList.remove("py-2");
             mainNavbar.classList.add("py-4");
           }
-          lastScrollY = window.scrollY;
         });
 
         // Close mobile menu and dropdowns when resizing past mobile breakpoint
@@ -561,6 +851,107 @@
           }
         });
       });
+    </script>
+
+    <script>
+      const desktopTabs = document.querySelectorAll(".tab-link");
+      const desktopContents = document.querySelectorAll(".tab-content");
+      const mobileTabLinks = document.querySelectorAll(".mobile-tab-link");
+      const mobileTabContents = document.querySelectorAll(
+        ".mobile-tab-content"
+      );
+
+      // Helper function to hide all mobile contents
+      function hideAllMobileContents() {
+        if (window.innerWidth < 768) {
+          // tailwind md breakpoint = 768px
+          desktopContents.forEach((c) => c.classList.add("hidden"));
+        }
+      }
+
+      // Desktop Tab Logic
+      desktopTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          desktopTabs.forEach((t) => {
+            t.classList.remove("border-b-[6px]", "border-black", "text-black");
+            t.classList.add("text-gray-500");
+          });
+          desktopContents.forEach((c) => c.classList.add("hidden"));
+
+          tab.classList.add("border-b-[6px]", "border-black", "text-black");
+          tab.classList.remove("text-gray-500");
+          const target = tab.getAttribute("data-tab");
+          document.getElementById(target).classList.remove("hidden");
+        });
+      });
+
+      // Default active for desktop
+      if (desktopTabs.length > 0) {
+        const firstContentId = desktopTabs[0].getAttribute("data-tab");
+
+        if (window.innerWidth >= 768) {
+          desktopTabs[0].classList.add(
+            "border-b-[6px]",
+            "border-black",
+            "text-black"
+          );
+          desktopTabs[0].classList.remove("text-gray-500");
+          document.getElementById(firstContentId).classList.remove("hidden");
+        } else {
+          hideAllMobileContents();
+        }
+      }
+
+      // Handle resize to maintain logic
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 768) {
+          hideAllMobileContents();
+        } else {
+          // Restore default active when back to desktop
+          if (desktopTabs.length > 0) {
+            const firstContentId = desktopTabs[0].getAttribute("data-tab");
+            desktopTabs[0].classList.add(
+              "border-b-[6px]",
+              "border-black",
+              "text-black"
+            );
+            desktopTabs[0].classList.remove("text-gray-500");
+            document.getElementById(firstContentId).classList.remove("hidden");
+          }
+        }
+      });
+
+      // Mobile Tab Logic
+      mobileTabLinks.forEach((tabLink) => {
+        tabLink.addEventListener("click", () => {
+          const targetTab = tabLink.getAttribute("data-tab");
+          const targetContentId = `${targetTab}-mobile-content`;
+          const targetContent = document.getElementById(targetContentId);
+          const arrowIcon = tabLink.querySelector(".arrow-icon");
+
+          if (targetContent.classList.contains("hidden")) {
+            mobileTabContents.forEach((content) => {
+              if (content !== targetContent) {
+                content.classList.add("hidden");
+                const otherTabLink = content.previousElementSibling;
+                if (otherTabLink && otherTabLink.querySelector(".arrow-icon")) {
+                  otherTabLink
+                    .querySelector(".arrow-icon")
+                    .classList.remove("rotate-180");
+                }
+              }
+            });
+            targetContent.classList.remove("hidden");
+            arrowIcon.classList.add("rotate-180");
+          } else {
+            targetContent.classList.add("hidden");
+            arrowIcon.classList.remove("rotate-180");
+          }
+        });
+      });
+
+      // Ensure all mobile contents are hidden on load
+      mobileTabContents.forEach((content) => content.classList.add("hidden"));
     </script>
   </body>
 </html>

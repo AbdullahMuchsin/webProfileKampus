@@ -50,7 +50,7 @@
       }
 
       .mobile-menu-active {
-        animation: slideDown 0.3s ease-out forwards;
+        animation: slideDown 0.1s ease-out forwards;
         display: flex !important; /* Ensure it's displayed when active */
       }
 
@@ -58,17 +58,44 @@
       .top-bar-hidden {
         transform: translateY(-100%);
         opacity: 0;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
       }
 
       .top-bar-visible {
         transform: translateY(0);
         opacity: 1;
-        transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+        transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+      }
+
+      .tab-info {
+        background: linear-gradient(
+            rgba(75, 75, 75, 0.9),
+            rgba(75, 75, 75, 0.9)
+          ),
+          url("assets/img/bd-1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      .tab-prestasi {
+        background: linear-gradient(
+            rgba(150, 150, 150, 0.8),
+            rgba(150, 150, 150, 0.8)
+          ),
+          url("assets/img/bp-1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
     </style>
   </head>
-  <body class="font-poppins bg-white">
+  <body class="font-poppins bg-white relative">
+    <div
+      class="absolute h-[50px] top-0 left-0 right-0 bg-primary-800 z-[-10]"
+    ></div>
     <div
       id="top-bar"
       class="bg-primary-800 w-full py-2 transition-all duration-300 ease-in-out"
@@ -343,15 +370,15 @@
       </div>
     </section>
 
-    <section class="pt-16 mb:py-16">
+    <section class="tab-info pt-5 md:py-12">
       <div class="container mx-auto">
         <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-medium text-gray-800 mb-3">
-            Jurusan Teknologi Informatika
+          <h2 class="text-3xl md:text-4xl font-medium text-white mb-3">
+            Teknologi Informatika
           </h2>
-          <div class="h-[5px] w-[100px] bg-orange-500 mx-auto mb-2"></div>
+          <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
 
-          <p class="text-lg leading-relaxed text-gray-700">
+          <p class="text-lg leading-relaxed text-gray-100">
             Kami mencetak lulusan unggul, siap bersaing di teknologi dengan
             kurikulum industri, fasilitas modern, dan dosen ahli.
           </p>
@@ -360,22 +387,46 @@
         <div class="container mx-auto py-12 px-4">
           <div class="hidden md:flex justify-evenly">
             <button
-              class="tab-link py-3 text-2xl font-semibold text-gray-500 w-full hover:bg-gray-200 transition"
+              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-primary-700 w-full group transition"
               data-tab="about"
             >
-              About Me
+              <span
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
+              ></span>
+
+              <span
+                class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >
+                Tentang Kami
+              </span>
             </button>
             <button
-              class="tab-link py-3 w-full text-2xl font-semibold text-gray-500 hover:bg-gray-200 transition"
+              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-white w-full group transition"
               data-tab="visimisi"
             >
-              Visi & Misi
+              <span
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
+              ></span>
+
+              <span
+                class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >
+                Visi & Misi
+              </span>
             </button>
             <button
-              class="tab-link py-3 w-full text-2xl font-semibold text-gray-500 hover:bg-gray-200 transition"
+              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-white w-full group transition"
               data-tab="ayogabung"
             >
-              Ayo Gabung
+              <span
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
+              ></span>
+
+              <span
+                class="relative z-10 group-hover:text-white transition-colors duration-300"
+              >
+                Ayo Gabung
+              </span>
             </button>
           </div>
 
@@ -605,10 +656,11 @@
       <div class="container mx-auto px-4">
         <div class="mb-10 flex justify-between items-center">
           <div class="inline-block">
-            <h2 class="text-3xl md:text-4xl font-medium text-gray-800 mb-2">
+            <h2
+              class="border-l-[5px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-gray-800"
+            >
               Berita & Acara Terbaru
             </h2>
-            <div class="h-[5px] w-[100px] bg-orange-500"></div>
           </div>
 
           <a
@@ -621,27 +673,35 @@
 
         <div class="columns-1 md:columns-2 gap-20">
           <div class="w-full mb-8">
-            <div class="bg-white overflow-hidden">
-              <img
-                class="w-full aspect-[4/3] object-cover"
-                src="assets/img/b-1.jpg"
-                alt="Gambar Berita 1"
-              />
-              <div class="py-4">
+            <div class="relative overflow-hidden group">
+              <!-- overlay background -->
+              <div
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out z-10"
+              ></div>
+
+              <!-- seluruh konten: gambar + teks -->
+              <div
+                class="relative z-20 p-4 group-hover:text-white transition-colors duration-300"
+              >
+                <img
+                  class="w-full aspect-[4/3] object-cover mb-4"
+                  src="assets/img/b-1.jpg"
+                  alt="Gambar Berita 1"
+                />
                 <p
-                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed"
+                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed group-hover:text-gray-200"
                 >
                   05 Juli 2025
                 </p>
                 <h3
-                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-600 hover:underline transition duration-300 ease-in-out leading-snug"
+                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-white"
                 >
                   <a href="#">
                     Fakultas A Menggelar Seminar Internasional tentang AI
                   </a>
                 </h3>
                 <p
-                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4"
+                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4 group-hover:text-gray-200"
                 >
                   Seminar internasional mengenai perkembangan terbaru di bidang
                   Kecerdasan Buatan telah sukses diselenggarakan oleh Fakultas
@@ -655,29 +715,37 @@
           </div>
 
           <div class="w-full mb-8">
-            <div class="bg-white overflow-hidden">
-              <img
-                class="w-full aspect-video object-cover"
-                src="assets/img/b-2.jpg"
-                alt="Gambar Berita 2"
-              />
-              <div class="py-4">
+            <div class="relative overflow-hidden group">
+              <!-- overlay background -->
+              <div
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out z-10"
+              ></div>
+
+              <!-- seluruh konten: gambar + teks -->
+              <div
+                class="relative z-20 p-4 group-hover:text-white transition-colors duration-300"
+              >
+                <img
+                  class="w-full aspect-video object-cover mb-4"
+                  src="assets/img/b-2.jpg"
+                  alt="Gambar Berita 2"
+                />
                 <p
-                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed"
+                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed group-hover:text-gray-200"
                 >
                   01 Juli 2025
                 </p>
                 <h3
-                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-600 hover:underline transition duration-300 ease-in-out leading-snug"
+                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-white"
                 >
                   <a href="#">
-                    Dies Natalis Fakultas A Ke-XX Berlangsung Meriah
+                    Dies Natalis Fakultas A Ke-16 Berlangsung Meriah
                   </a>
                 </h3>
                 <p
-                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4"
+                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4 group-hover:text-gray-200"
                 >
-                  Perayaan Dies Natalis Fakultas A yang ke-XX sukses
+                  Perayaan Dies Natalis Fakultas A yang ke-16 sukses
                   diselenggarakan dengan berbagai acara menarik seperti lomba
                   karya inovasi mahasiswa, pentas seni, hingga kuliah umum oleh
                   alumni sukses yang memberikan motivasi luar biasa bagi
@@ -688,27 +756,35 @@
           </div>
 
           <div class="w-full mb-8">
-            <div class="bg-white overflow-hidden">
-              <img
-                class="w-full aspect-square object-cover"
-                src="assets/img/b-3.jpg"
-                alt="Gambar Berita 3"
-              />
-              <div class="py-4">
+            <div class="relative overflow-hidden group">
+              <!-- overlay background -->
+              <div
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out z-10"
+              ></div>
+
+              <!-- seluruh konten: gambar + teks -->
+              <div
+                class="relative z-20 p-4 group-hover:text-white transition-colors duration-300"
+              >
+                <img
+                  class="w-full aspect-square object-cover mb-4"
+                  src="assets/img/b-3.jpg"
+                  alt="Gambar Berita 3"
+                />
                 <p
-                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed"
+                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed group-hover:text-gray-200"
                 >
                   28 Juni 2025
                 </p>
                 <h3
-                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-600 hover:underline transition duration-300 ease-in-out leading-snug"
+                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-white"
                 >
                   <a href="#">
                     Pelatihan Soft Skill bagi Mahasiswa Baru Angkatan 2025
                   </a>
                 </h3>
                 <p
-                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4"
+                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4 group-hover:text-gray-200"
                 >
                   Fakultas A mengadakan pelatihan soft skill bagi mahasiswa baru
                   angkatan 2025 untuk mempersiapkan mereka menghadapi dunia
@@ -721,25 +797,33 @@
           </div>
 
           <div class="w-full mb-8">
-            <div class="bg-white overflow-hidden">
-              <img
-                class="w-full aspect-[4/3] object-cover"
-                src="assets/img/b-4.jpg"
-                alt="Gambar Berita 4"
-              />
-              <div class="py-4">
+            <div class="relative overflow-hidden group">
+              <!-- overlay background -->
+              <div
+                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out z-10"
+              ></div>
+
+              <!-- seluruh konten: gambar + teks -->
+              <div
+                class="relative z-20 p-4 group-hover:text-white transition-colors duration-300"
+              >
+                <img
+                  class="w-full aspect-[4/3] object-cover mb-4"
+                  src="assets/img/b-4.jpg"
+                  alt="Gambar Berita 4"
+                />
                 <p
-                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed"
+                  class="text-sm text-gray-500 mb-2 tracking-wide leading-relaxed group-hover:text-gray-200"
                 >
                   20 Juni 2025
                 </p>
                 <h3
-                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-600 hover:underline transition duration-300 ease-in-out leading-snug"
+                  class="text-3xl font-semibold text-gray-900 mb-2 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-white"
                 >
                   <a href="#">Program Pengabdian Masyarakat di Desa Binaan</a>
                 </h3>
                 <p
-                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4"
+                  class="text-lg text-gray-700 leading-relaxed tracking-wide mb-4 group-hover:text-gray-200"
                 >
                   Dosen dan mahasiswa Fakultas A terjun langsung ke desa binaan
                   untuk melakukan pelatihan teknologi tepat guna, serta
@@ -754,6 +838,384 @@
       </div>
     </section>
 
+    <!-- Prestasi Mahasiswa -->
+    <section class="py-12 tab-prestasi">
+      <div class="container mx-auto px-4">
+        <div class="mb-10 flex justify-between items-center">
+          <div class="inline-block">
+            <h2
+              class="border-l-[5px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-white"
+            >
+              Prestasi Mahasiswa
+            </h2>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-4 relative">
+          <button
+            class="absolute -left-3 md:-left-10 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition-opacity"
+            onclick="moveSlide(-1)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            class="absolute -right-3 md:-right-10 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition-opacity"
+            onclick="moveSlide(1)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <div class="overflow-hidden">
+            <div
+              id="card-slider"
+              class="flex transition-transform duration-500 ease-in-out"
+              style="transform: translateX(0%)"
+            >
+              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-white group overflow-hidden">
+                  <div class="relative overflow-hidden">
+                    <img
+                      src="assets/img/p-2.jpg"
+                      alt="Gambar"
+                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
+                    >
+                      <h3
+                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
+                      >
+                        Juara 1 Hackathon
+                      </h3>
+                      <p
+                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
+                      >
+                        Meraih
+                        <span class="font-semibold">
+                          Juara 1 Hackathon Nasional 2025
+                        </span>
+                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
+                        100 tim dari seluruh Indonesia.
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
+                  >
+                    Baca Selengkapnya
+                    <span
+                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-white group overflow-hidden">
+                  <div class="relative overflow-hidden">
+                    <img
+                      src="assets/img/p-3.jpg"
+                      alt="Gambar"
+                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
+                    >
+                      <h3
+                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
+                      >
+                        Juara 1 Hackathon
+                      </h3>
+                      <p
+                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
+                      >
+                        Meraih
+                        <span class="font-semibold">
+                          Juara 1 Hackathon Nasional 2025
+                        </span>
+                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
+                        100 tim dari seluruh Indonesia.
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
+                  >
+                    Baca Selengkapnya
+                    <span
+                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-white group overflow-hidden">
+                  <div class="relative overflow-hidden">
+                    <img
+                      src="assets/img/p-1.jpg"
+                      alt="Gambar"
+                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
+                    >
+                      <h3
+                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
+                      >
+                        Juara 1 Hackathon
+                      </h3>
+                      <p
+                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
+                      >
+                        Meraih
+                        <span class="font-semibold">
+                          Juara 1 Hackathon Nasional 2025
+                        </span>
+                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
+                        100 tim dari seluruh Indonesia.
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
+                  >
+                    Baca Selengkapnya
+                    <span
+                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-white group overflow-hidden">
+                  <div class="relative overflow-hidden">
+                    <img
+                      src="assets/img/p-4.jpg"
+                      alt="Gambar"
+                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
+                    >
+                      <h3
+                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
+                      >
+                        Innovation Award
+                      </h3>
+                      <p
+                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
+                      >
+                        Menerima penghargaan Innovation Award 2025 di ajang
+                        teknologi bergengsi, berkat ide inovatif yang diterapkan
+                        dalam proyek terbaru.
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
+                  >
+                    Baca Selengkapnya
+                    <span
+                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <div class="bg-white group overflow-hidden">
+                  <div class="relative overflow-hidden">
+                    <img
+                      src="assets/img/p-5.jpg"
+                      alt="Gambar"
+                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
+                    >
+                      <h3
+                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
+                      >
+                        Best Speaker
+                      </h3>
+                      <p
+                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
+                      >
+                        Dinobatkan sebagai Best Speaker di konferensi nasional
+                        2025 berkat presentasi yang inspiratif dan memukau
+                        tentang masa depan teknologi.
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
+                  >
+                    Baca Selengkapnya
+                    <span
+                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4"
+                        fill="none"
+                        viewbox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="container mx-auto px-4"></div>
+    </section>
+
+    <script>
+      const slider = document.getElementById("card-slider");
+      const cards = slider.children;
+      let currentIndex = 0;
+      let cardsPerPage = 3; // Default for large screens
+
+      // Function to update cardsPerPage based on screen size
+      function updateCardsPerPage() {
+        if (window.innerWidth >= 1024) {
+          cardsPerPage = 3;
+        } else if (window.innerWidth >= 768) {
+          cardsPerPage = 2;
+        } else {
+          cardsPerPage = 1;
+        }
+        // Adjust current index to prevent showing empty space if screen resized significantly
+        if (currentIndex > cards.length - cardsPerPage) {
+          currentIndex = Math.max(0, cards.length - cardsPerPage);
+        }
+        updateSliderPosition();
+      }
+
+      // Update on load and resize
+      window.addEventListener("load", updateCardsPerPage);
+      window.addEventListener("resize", updateCardsPerPage);
+
+      function updateSliderPosition() {
+        const cardWidth = cards[0].offsetWidth; // Get the width of one card (including padding/margin)
+        const offset = -currentIndex * cardWidth;
+        slider.style.transform = `translateX(${offset}px)`;
+      }
+
+      function moveSlide(direction) {
+        currentIndex += direction;
+
+        if (currentIndex < 0) {
+          currentIndex = 0; // Prevent sliding past the first card
+        } else if (currentIndex > cards.length - cardsPerPage) {
+          currentIndex = Math.max(0, cards.length - cardsPerPage); // Prevent sliding past the last visible card
+        }
+        updateSliderPosition();
+      }
+
+      // Initial position update
+      updateSliderPosition();
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -816,22 +1278,27 @@
           }
         });
 
-        // Hide/show top bar on scroll
+        let isShrunk = false;
+
         window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            // Scrolling down and scrolled past 50px
+          if (!isShrunk && window.scrollY > 50) {
+            // shrink
             topBar.classList.add("top-bar-hidden");
             topBar.classList.remove("top-bar-visible");
 
             mainNavbar.classList.remove("py-4");
             mainNavbar.classList.add("py-2");
-          } else {
-            // Scrolling up or at the top
+
+            isShrunk = true;
+          } else if (isShrunk && window.scrollY < 30) {
+            // expand
             topBar.classList.remove("top-bar-hidden");
             topBar.classList.add("top-bar-visible");
 
             mainNavbar.classList.remove("py-2");
             mainNavbar.classList.add("py-4");
+
+            isShrunk = false;
           }
         });
 
@@ -873,13 +1340,21 @@
       desktopTabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           desktopTabs.forEach((t) => {
-            t.classList.remove("border-b-[6px]", "border-black", "text-black");
-            t.classList.add("text-gray-500");
+            t.classList.remove(
+              "border-b-[6px]",
+              "border-orange-400",
+              "text-white"
+            );
+            t.classList.add("text-gray-200");
           });
           desktopContents.forEach((c) => c.classList.add("hidden"));
 
-          tab.classList.add("border-b-[6px]", "border-black", "text-black");
-          tab.classList.remove("text-gray-500");
+          tab.classList.add(
+            "border-b-[6px]",
+            "border-orange-400",
+            "text-white"
+          );
+          tab.classList.remove("text-gray-200");
           const target = tab.getAttribute("data-tab");
           document.getElementById(target).classList.remove("hidden");
         });
@@ -892,10 +1367,10 @@
         if (window.innerWidth >= 768) {
           desktopTabs[0].classList.add(
             "border-b-[6px]",
-            "border-black",
-            "text-black"
+            "border-orange-400",
+            "text-white"
           );
-          desktopTabs[0].classList.remove("text-gray-500");
+          desktopTabs[0].classList.remove("text-gray-200");
           document.getElementById(firstContentId).classList.remove("hidden");
         } else {
           hideAllMobileContents();
@@ -912,10 +1387,10 @@
             const firstContentId = desktopTabs[0].getAttribute("data-tab");
             desktopTabs[0].classList.add(
               "border-b-[6px]",
-              "border-black",
-              "text-black"
+              "border-orange-400",
+              "text-white"
             );
-            desktopTabs[0].classList.remove("text-gray-500");
+            desktopTabs[0].classList.remove("text-gray-200");
             document.getElementById(firstContentId).classList.remove("hidden");
           }
         }

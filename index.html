@@ -1271,7 +1271,6 @@
       <div
         class="container h-fit md:h-full sm:px-8 flex flex-col md:flex-row items-center"
       >
-        <!-- TEXT -->
         <div
           class="w-full md:w-1/3 md:text-left text-center mb-3 md:mb-0 order-1 md:order-1"
         >
@@ -1291,36 +1290,48 @@
           </p>
         </div>
 
-        <!-- IMAGE SLIDER FOR DESKTOP -->
         <div
           class="hidden md:block absolute top-12 right-0 h-full w-3/5 order-2"
         >
           <figure class="w-full h-[80%] relative overflow-hidden">
             <div
-              class="flex h-full overflow-x-scroll no-scrollbar whitespace-nowrap gap-3 px-6"
+              id="desktop-slider"
+              class="flex h-full overflow-x-scroll no-scrollbar whitespace-nowrap gap-3 px-6 scroll-smooth"
             >
-              <a href="#" class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0">
+              <a
+                href="#"
+                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+              >
                 <img
                   src="assets/img/b-1.jpg"
                   class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
                   alt="..."
                 />
               </a>
-              <a href="#" class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0">
+              <a
+                href="#"
+                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+              >
                 <img
                   src="assets/img/b-2.jpg"
                   class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
                   alt="..."
                 />
               </a>
-              <a href="#" class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0">
+              <a
+                href="#"
+                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+              >
                 <img
                   src="assets/img/b-3.jpg"
                   class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
                   alt="..."
                 />
               </a>
-              <a href="#" class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0">
+              <a
+                href="#"
+                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+              >
                 <img
                   src="assets/img/b-4.jpg"
                   class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
@@ -1328,10 +1339,23 @@
                 />
               </a>
             </div>
+            <button
+              id="scroll-left-btn"
+              class="absolute top-1/2 left-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
+              onclick="scrollSlider('left')"
+            >
+              &#10094;
+            </button>
+            <button
+              id="scroll-right-btn"
+              class="absolute top-1/2 right-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
+              onclick="scrollSlider('right')"
+            >
+              &#10095;
+            </button>
           </figure>
         </div>
 
-        <!-- IMAGE SWIPER FOR MOBILE -->
         <div class="block md:hidden w-full mt-6 order-2 md:order-2">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -1369,6 +1393,57 @@
         </div>
       </div>
     </section>
+
+    <script>
+      function checkScrollButtons() {
+        const slider = document.getElementById("desktop-slider");
+        const leftBtn = document.getElementById("scroll-left-btn");
+        const rightBtn = document.getElementById("scroll-right-btn");
+
+        // Check if at the very beginning of the scroll area
+        if (slider.scrollLeft === 0) {
+          leftBtn.style.display = "none";
+        } else {
+          leftBtn.style.display = "block";
+        }
+
+        // Check if at the very end of the scroll area
+        // A small tolerance is added due to potential floating point inaccuracies
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+          rightBtn.style.display = "none";
+        } else {
+          rightBtn.style.display = "block";
+        }
+      }
+
+      function scrollSlider(direction) {
+        const slider = document.getElementById("desktop-slider");
+        const scrollAmount = slider.clientWidth * 0.5; // Scroll by half the width of the slider
+
+        if (direction === "left") {
+          slider.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth",
+          });
+        } else {
+          slider.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+        }
+
+        // Call checkScrollButtons after a small delay to allow for smooth scroll to complete
+        setTimeout(checkScrollButtons, 500);
+      }
+
+      // Initial check when the page loads
+      window.onload = checkScrollButtons;
+
+      // Add event listener for scroll to continuously check button visibility
+      document
+        .getElementById("desktop-slider")
+        .addEventListener("scroll", checkScrollButtons);
+    </script>
 
     <script>
       const slider = document.getElementById("card-slider");

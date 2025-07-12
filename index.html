@@ -149,6 +149,36 @@
         display: none; /* Hides the arrows */
       }
     </style>
+
+    <style type="text/css">
+      .testimonial-card {
+        transition: all 0.4s ease;
+        perspective: 1000px;
+      }
+      .card-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .quote-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        opacity: 0.08;
+        font-size: 7rem;
+      }
+      .student-photo {
+        border: 3px solid #c99700;
+        box-shadow: 0 8px 16px rgba(12, 35, 64, 0.15);
+        transition: all 0.3s ease;
+      }
+      .pattern-bg {
+        background-image: radial-gradient(#0c2340 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      .university-logo {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+    </style>
   </head>
   <body class="font-poppins bg-white relative">
     <div
@@ -1477,6 +1507,221 @@
               </p>
             </figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="relative py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="mb-10 flex justify-center items-center">
+          <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-medium text-black mb-3">
+              Sarana & Prasarana
+            </h2>
+            <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
+            <p class="text-lg leading-relaxed text-gray-600">
+              Fasilitas lengkap dan nyaman untuk mendukung kegiatan belajar.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Testimonial Card 1 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    Michael Chen
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2022 | Computer Science
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "Prestige University transformed my career trajectory. The
+                    cutting-edge research facilities and mentorship from faculty
+                    who are leaders in their fields gave me opportunities I
+                    never imagined possible. I published my first paper as an
+                    undergrad!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    Sophia Rodriguez
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2023 | Business Administration
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "The global business immersion program was life-changing. I
+                    spent a semester in Singapore working with international
+                    startups. The alumni network helped me secure an incredible
+                    internship that turned into my dream job at a Fortune 500
+                    company."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    James Wilson
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2021 | Biomedical Engineering
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "The hands-on research opportunities in the bioengineering
+                    labs were unparalleled. I worked on developing prosthetic
+                    technology that's now being tested in clinical trials. The
+                    faculty genuinely care about student success beyond the
+                    classroom."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    Aisha Patel
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2024 | Architecture
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "The design studios at Prestige challenged me to think
+                    beyond conventional boundaries. Our Rome semester program
+                    studying classical architecture fundamentally changed my
+                    approach to sustainable design. I've won two international
+                    competitions since starting!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 5 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    Daniel Kim
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2020 | Environmental Science
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "The field research opportunities were extraordinary - from
+                    studying coral reef systems in Australia to glacier retreat
+                    in Alaska. The interdisciplinary approach prepared me
+                    perfectly for my current role at the World Wildlife Fund."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 6 -->
+          <div class="testimonial-card bg-white overflow-hidden relative">
+            <div class="card-inner">
+              <div class="absolute quote-icon text-university-blue">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <div class="p-6 pt-16">
+                <div class="flex flex-col items-center">
+                  <div
+                    class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
+                  >
+                    <img src="" class="w-full h-full object-cover" />
+                  </div>
+                  <h3 class="text-xl font-bold text-university-blue">
+                    Elena Petrova
+                  </h3>
+                  <p class="text-university-gold font-medium">
+                    Class of 2023 | International Relations
+                  </p>
+                </div>
+                <div class="mt-6 relative testimonial-text">
+                  <p class="text-gray-700 italic">
+                    "As an international student, the support system was
+                    incredible. The Model UN program took us to conferences at
+                    The Hague and Geneva. I've had coffee with ambassadors and
+                    attended lectures by Nobel Peace Prize laureates. Truly
+                    transformative!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -178,11 +178,61 @@
       .university-logo {
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
       }
+
+      .shadow-testimon {
+        box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      /* In your CSS, for the elements that transition on hover */
+      .group-hover:py-4 {
+        will-change: transform, opacity;
+      }
+      .group-hover:translate-y-0 {
+        will-change: transform;
+      }
+      .group-hover:opacity-100 {
+        will-change: opacity;
+      }
+
+      /* --- Style untuk Tautan Navigasi Umum --- */
+      #main-menu a {
+        position: relative;
+        overflow: hidden;
+        color: white;
+        padding-bottom: 5px;
+      }
+
+      /* --- Efek Hover untuk Tautan Navigasi --- */
+      #main-menu a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-out;
+      }
+
+      #main-menu a:hover::after {
+        transform: translateX(0);
+      }
+
+      /* --- Efek untuk Tautan Navigasi yang Aktif --- */
+      #main-menu a.nav-link-active::after {
+        transform: translateX(0);
+        transition: transform 0.3s ease-out; /* biar animasi saat class ditambahkan */
+      }
+
+      #main-menu a.nav-link-active {
+        font-weight: bold;
+      }
     </style>
   </head>
   <body class="font-poppins bg-white relative">
     <div
-      class="absolute h-[50px] top-0 left-0 right-0 bg-primary-800 z-[-10]"
+      class="absolute h-[80px] top-0 left-0 right-0 bg-primary-800 z-[-10]"
     ></div>
     <div
       id="top-bar"
@@ -198,47 +248,70 @@
           <a href="#" class="text-white hover:text-primary-400">
             <i class="fab fa-instagram fa-lg"></i>
           </a>
+          <a href="#" class="text-white hover:text-primary-400">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="#" class="text-white hover:text-primary-400">
+            <i class="fab fa-youtube fa-lg"></i>
+          </a>
+          <a href="#" class="text-white hover:text-primary-400">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
         </div>
 
-        <div class="relative" data-dropdown-toggle>
-          <div>
-            <button
-              type="button"
-              class="inline-flex justify-center items-center rounded-md px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-primary-700 focus:outline-none"
+        <div class="flex items-center space-x-4 mb-2 sm:mb-0">
+          <!-- Hanya tampil pada md ke atas -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a href="#" class="text-white text-sm hover:text-primary-400"
+              >Hubungi Kami</a
             >
-              <span class="mr-2">🇮🇩</span> Bahasa Indonesia
-              <svg
-                class="-mr-1 ml-2 h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </button>
+            <a href="#" class="text-white text-sm hover:text-primary-400"
+              >Pendaftaran</a
+            >
+
+            <span class="border-l border-primary-700 h-6"></span>
           </div>
 
-          <div
-            class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50"
-            data-dropdown-menu
-          >
-            <div class="py-1">
-              <a
-                href="#"
-                class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
+          <div class="relative" data-dropdown-toggle>
+            <div>
+              <button
+                type="button"
+                class="inline-flex justify-center items-center rounded-md px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-primary-700 focus:outline-none"
               >
-                <span class="mr-2 text-xl">🇮🇩</span> Bahasa Indonesia
-              </a>
-              <a
-                href="#"
-                class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
-              >
-                <span class="mr-2 text-xl">🇬🇧</span> English
-              </a>
+                <span class="mr-2">🇮🇩</span> Bahasa Indonesia
+                <svg
+                  class="-mr-1 ml-2 h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div
+              class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50"
+              data-dropdown-menu
+            >
+              <div class="py-1">
+                <a
+                  href="#"
+                  class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
+                >
+                  <span class="mr-2 text-xl">🇮🇩</span> Bahasa Indonesia
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
+                >
+                  <span class="mr-2 text-xl">🇬🇧</span> English
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -280,118 +353,35 @@
             class="hidden flex-col md:flex md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 ml-auto w-full md:w-auto absolute md:relative top-full left-0 bg-primary-700 md:bg-transparent p-8 sm:p-0 z-40"
           >
             <a
-              href="#"
-              class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
+              href="#beranda"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
               >Beranda</a
             >
             <a
-              href="#"
-              class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
-              >Profil</a
+              href="#tentangkami"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
+              >Tentang Kami</a
             >
             <a
-              href="#"
-              class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
-              >Akademik</a
+              href="#fasilitas"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
+              >Fasilitas</a
             >
             <a
-              href="#"
-              class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
-              >Penelitian & Pengabdian</a
-            >
-
-            <div class="relative w-full md:w-auto" data-dropdown-toggle>
-              <button
-                class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-between w-full"
-              >
-                Kemahasiswaan
-                <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  />
-                </svg>
-              </button>
-              <div
-                class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50 border-t-[5px] border-orange-500"
-                data-dropdown-menu
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Susunan Akademik</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Humanika</a
-                >
-              </div>
-            </div>
-
-            <div class="relative w-full md:w-auto" data-dropdown-toggle>
-              <button
-                class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-between w-full"
-              >
-                Tentang
-                <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  />
-                </svg>
-              </button>
-              <div
-                class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50 border-t-[5px] border-orange-500"
-                data-dropdown-menu
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Struktur Organisasi</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Staff Pengajar</a
-                >
-              </div>
-            </div>
+              href="#prestasi"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
+              >Prestasi
+            </a>
             <a
-              href="#"
-              class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 w-full text-center md:w-auto"
-              >Alumni</a
-            >
-            <div class="relative w-full md:w-auto" data-dropdown-toggle>
-              <button
-                class="py-2 px-3 text-white text-sm text-start hover:bg-primary-700 rounded transition duration-300 flex items-center justify-between w-full"
-              >
-                Informasi
-                <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  />
-                </svg>
-              </button>
-              <div
-                class="absolute left-0 md:left-auto md:right-0 mt-1 w-full md:w-48 bg-white rounded-sm py-3 px-2 shadow-lg hidden z-50 border-t-[5px] border-orange-500"
-                data-dropdown-menu
-              >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Agenda</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Beasiswa</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-gray-500 text-sm hover:text-black rounded"
-                  >Berita</a
-                >
-              </div>
-            </div>
+              href="#beritaacara"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
+              >Berita & Acara
+            </a>
+            <a
+              href="#testimoni"
+              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
+              >Testimoni
+            </a>
           </div>
         </div>
       </div>
@@ -399,6 +389,7 @@
 
     <!-- MAIN CONTENT -->
     <section
+      id="beranda"
       class="relative w-full h-fit md:h-[calc(100vh-140px)] flex justify-center md:py-8 py-0"
     >
       <div
@@ -486,11 +477,11 @@
       </div>
     </section>
 
-    <section class="tab-info pt-10 pb-5 md:py-20 px-3 md:px-0" id="section2">
+    <section class="tab-info pt-10 pb-5 md:py-20 px-3 md:px-0" id="tentangkami">
       <div class="container mx-auto">
         <div class="text-center">
           <h2 class="text-3xl md:text-4xl font-medium text-white mb-3">
-            Teknologi Informatika
+            Teknologi Informasi
           </h2>
           <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
 
@@ -503,7 +494,7 @@
         <div class="container mx-auto py-12 px-4">
           <div class="hidden md:flex justify-evenly">
             <button
-              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-primary-700 w-full group transition"
+              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold w-full group transition"
               data-tab="about"
             >
               <span
@@ -553,7 +544,7 @@
                 class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
                 data-tab="about"
               >
-                About Me
+                Tentang Kami
                 <span
                   class="arrow-icon transform transition-transform duration-300"
                   >▼</span
@@ -767,144 +758,267 @@
       </div>
     </section>
 
-    <section class="relative py-20">
+    <!-- Sarana & Prasarana -->
+    <section class="relative py-20 bg-gray-50" id="fasilitas">
       <div
         class="absolute md:block hidden top-0 left-0 w-[250px] h-[25px] bg-orange-400"
       ></div>
       <div
         class="absolute md:block hidden bottom-0 right-0 w-[250px] h-[25px] bg-orange-400"
       ></div>
-
       <div class="container mx-auto px-4">
-        <div class="mb-10 flex justify-between items-center">
-          <div class="inline-block">
+        <div class="mb-10 flex items-center">
+          <div class="flex items-center">
             <h2
               class="border-l-[8px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-gray-800"
             >
-              Berita & Acara Terbaru
+              Sarana & Prasarana
             </h2>
           </div>
-
-          <a
-            href="#"
-            class="inline-block border text-sm md:text-lg border-black uppercase text-black px-4 py-2 transition duration-300 hover:bg-black hover:text-white hover:border-black"
-          >
-            Lihat Semua
-          </a>
         </div>
 
-        <div class="md:flex md:space-x-8">
-          <!-- Berita utama -->
-          <div class="w-full md:w-2/3 mb-8 md:mb-0">
-            <a href="#" class="relative block overflow-hidden group">
-              <img
-                class="w-full aspect-[4/3] object-cover"
-                src="assets/img/b-1.jpg"
-                alt="Gambar Berita 1"
-              />
-              <div
-                class="absolute inset-0 z-20 flex flex-col justify-end p-4 bg-gradient-to-t from-black/60 to-transparent transition-colors duration-300 group-hover:bg-black/40"
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-4-small.jpg 480w, assets/img/r-4.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-4.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
+            >
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
               >
-                <p
-                  class="text-sm text-gray-200 mb-2 tracking-wide leading-relaxed"
-                >
-                  05 Juli 2025
-                </p>
-                <h3
-                  class="text-3xl font-semibold text-white mb-2 hover:underline transition duration-300 ease-in-out leading-snug"
-                >
-                  Fakultas A Menggelar Seminar Internasional tentang AI
-                </h3>
-              </div>
-            </a>
-          </div>
+                Perpustakaan Pusat
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Koleksi buku lengkap, ruang baca nyaman, dan akses digital.
+              </p>
+            </figcaption>
+          </figure>
 
-          <!-- Berita kecil -->
-          <div class="w-full md:w-1/3 flex flex-col gap-y-6">
-            <a
-              href="#"
-              class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+          <!-- Duplikasikan untuk item lain -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-5-small.jpg 480w, assets/img/r-5.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-5.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
             >
-              <div class="relative z-20 flex-shrink-0">
-                <img
-                  class="w-32 h-32 object-cover"
-                  src="assets/img/b-2.jpg"
-                  alt="Gambar Berita 2"
-                />
-              </div>
-              <div class="relative z-20">
-                <p class="text-sm text-gray-500 mb-1 group-hover:text-gray-900">
-                  01 Juli 2025
-                </p>
-                <h4
-                  class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                >
-                  Dies Natalis Fakultas A Ke-16 Berlangsung Meriah
-                </h4>
-              </div>
-            </a>
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Laboratorium Komputer
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Dilengkapi PC terbaru dan software pendukung pembelajaran.
+              </p>
+            </figcaption>
+          </figure>
 
-            <a
-              href="#"
-              class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+          <!-- Lanjutkan untuk item berikutnya -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-3-small.jpg 480w, assets/img/r-3.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-3.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
             >
-              <div class="relative z-20 flex-shrink-0">
-                <img
-                  class="w-32 h-32 object-cover"
-                  src="assets/img/b-3.jpg"
-                  alt="Gambar Berita 3"
-                />
-              </div>
-              <div class="relative z-20">
-                <p class="text-sm text-gray-500 mb-1 group-hover:text-gray-900">
-                  28 Juni 2025
-                </p>
-                <h4
-                  class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                >
-                  Pelatihan Soft Skill bagi Mahasiswa Baru Angkatan 2025
-                </h4>
-              </div>
-            </a>
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Gedung Olahraga
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Lapangan basket, futsal, dan area kebugaran.
+              </p>
+            </figcaption>
+          </figure>
 
-            <a
-              href="#"
-              class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+          <!-- Tambahkan untuk yang lainnya -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-7-small.jpg 480w, assets/img/r-7.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-7.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
             >
-              <div class="relative z-20 flex-shrink-0">
-                <img
-                  class="w-32 h-32 object-cover"
-                  src="assets/img/b-4.jpg"
-                  alt="Gambar Berita 4"
-                />
-              </div>
-              <div class="relative z-20">
-                <p class="text-sm text-gray-500 mb-1 group-hover:text-gray-900">
-                  20 Juni 2025
-                </p>
-                <h4
-                  class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                >
-                  Program Pengabdian Masyarakat di Desa Binaan
-                </h4>
-              </div>
-            </a>
-          </div>
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Auditorium Serbaguna
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Fasilitas modern untuk acara dan presentasi.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Kantin -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-8-small.jpg 480w, assets/img/r-8.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-8.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
+            >
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Kantin Sehat
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Menyediakan beragam pilihan makanan dan minuman sehat.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Parkir -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-6-small.jpg 480w, assets/img/r-6.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-6.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
+            >
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Area Parkir Luas
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Aman dan nyaman untuk kendaraan mahasiswa dan staf.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Tambahkan item ke-7 (versi baru) -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-2-small.jpg 480w, assets/img/r-2.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-2.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
+            >
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Smart Classroom
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Ruang kelas interaktif dengan teknologi presentasi canggih.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Tambahkan item ke-8 -->
+          <figure class="relative overflow-hidden h-52 group rounded-sm">
+            <img
+              srcset="assets/img/r-1-small.jpg 480w, assets/img/r-1.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="assets/img/r-1.jpg"
+              alt="Perpustakaan Pusat"
+              loading="lazy"
+              width="400"
+              height="224"
+              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
+            />
+            <figcaption
+              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
+            >
+              <h3
+                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
+              >
+                Taman Kampus
+              </h3>
+              <p
+                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
+              >
+                Area hijau untuk bersantai, diskusi, dan refreshing.
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- Prestasi Mahasiswa -->
-    <section class="py-12 tab-prestasi">
+    <section class="py-12 md:py-16 md:pb-20 tab-prestasi" id="prestasi">
       <div class="container mx-auto px-4">
-        <div class="mb-10 flex justify-between items-center">
-          <div class="inline-block">
-            <h2
-              class="border-l-[5px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-white"
-            >
-              Prestasi Mahasiswa
-            </h2>
-          </div>
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-medium text-white mb-3">
+            Prestasi Mahasiswa
+          </h2>
+          <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
+
+          <p class="text-lg leading-relaxed text-gray-100">
+            Mahasiswa kami berprestasi di bidang akademik, teknologi, dan
+            inovasi.
+          </p>
         </div>
 
         <div class="container mx-auto px-4 relative">
@@ -1021,17 +1135,15 @@
                       <h3
                         class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
                       >
-                        Juara 1 Hackathon
+                        Delegasi Asia
                       </h3>
                       <p
                         class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
                       >
-                        Meraih
-                        <span class="font-semibold">
-                          Juara 1 Hackathon Nasional 2025
-                        </span>
-                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
-                        100 tim dari seluruh Indonesia.
+                        Mahasiswa terpilih menjadi
+                        <span class="font-semibold">Delegasi Indonesia</span>
+                        dalam konferensi internasional di Seoul, Korea Selatan,
+                        membahas inovasi teknologi dan kolaborasi riset.
                       </p>
                     </div>
                   </div>
@@ -1065,7 +1177,7 @@
                 <div class="bg-white group overflow-hidden">
                   <div class="relative overflow-hidden">
                     <img
-                      src="assets/img/p-1.jpg"
+                      src="assets/img/p-5.jpg"
                       alt="Gambar"
                       class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
@@ -1075,17 +1187,17 @@
                       <h3
                         class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
                       >
-                        Juara 1 Hackathon
+                        Publikasi Scopus
                       </h3>
                       <p
                         class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
                       >
-                        Meraih
+                        Mahasiswa berhasil mempublikasikan
                         <span class="font-semibold">
-                          Juara 1 Hackathon Nasional 2025
+                          riset pada jurnal internasional terindeks Scopus Q2
                         </span>
-                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
-                        100 tim dari seluruh Indonesia.
+                        tentang pengembangan teknologi AI untuk sektor
+                        pendidikan.
                       </p>
                     </div>
                   </div>
@@ -1100,7 +1212,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-4 w-4"
                         fill="none"
-                        viewbox="0 0 24 24"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
                       >
@@ -1129,14 +1241,15 @@
                       <h3
                         class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
                       >
-                        Innovation Award
+                        Desa Digital
                       </h3>
                       <p
                         class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
                       >
-                        Menerima penghargaan Innovation Award 2025 di ajang
-                        teknologi bergengsi, berkat ide inovatif yang diterapkan
-                        dalam proyek terbaru.
+                        Mahasiswa menginisiasi program
+                        <span class="font-semibold">Desa Digital</span>
+                        untuk membantu UMKM lokal memanfaatkan teknologi,
+                        meningkatkan ekonomi masyarakat secara berkelanjutan.
                       </p>
                     </div>
                   </div>
@@ -1151,7 +1264,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-4 w-4"
                         fill="none"
-                        viewbox="0 0 24 24"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
                       >
@@ -1170,7 +1283,7 @@
                 <div class="bg-white group overflow-hidden">
                   <div class="relative overflow-hidden">
                     <img
-                      src="assets/img/p-5.jpg"
+                      src="assets/img/p-6.jpg"
                       alt="Gambar"
                       class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
@@ -1180,14 +1293,17 @@
                       <h3
                         class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
                       >
-                        Best Speaker
+                        Startup Pitch Winner
                       </h3>
                       <p
                         class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
                       >
-                        Dinobatkan sebagai Best Speaker di konferensi nasional
-                        2025 berkat presentasi yang inspiratif dan memukau
-                        tentang masa depan teknologi.
+                        Meraih gelar
+                        <span class="font-semibold"
+                          >Juara 1 Business Pitch 2025</span
+                        >
+                        atas ide startup inovatif di bidang teknologi agrikultur
+                        yang berpotensi meningkatkan produktivitas petani lokal.
                       </p>
                     </div>
                   </div>
@@ -1202,7 +1318,7 @@
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-4 w-4"
                         fill="none"
-                        viewbox="0 0 24 24"
+                        viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
                       >
@@ -1222,312 +1338,291 @@
       </div>
     </section>
 
-    <section
-      class="relative w-full h-fit md:h-[70vh] flex flex-col md:flex-row justify-center py-12 px-3 md:px-0"
-    >
-      <div
-        class="absolute md:block hidden top-0 left-0 w-[250px] h-[25px] bg-orange-400"
-      ></div>
-      <div
-        class="container h-fit md:h-full sm:px-8 flex flex-col md:flex-row items-center"
+    <section class="relative" id="beritaacara">
+      <section class="relative py-20 bg-gray-100">
+        <div
+          class="absolute md:block hidden top-0 left-0 w-[250px] h-[25px] bg-orange-400"
+        ></div>
+
+        <div class="container mx-auto px-4">
+          <div class="mb-10 flex justify-between items-center">
+            <div class="inline-block">
+              <h2
+                class="border-l-[8px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-gray-800"
+              >
+                Berita & Acara Terbaru
+              </h2>
+            </div>
+
+            <a
+              href="#"
+              class="inline-block border text-sm md:text-lg border-black uppercase text-black px-4 py-2 transition duration-300 hover:bg-black hover:text-white hover:border-black"
+            >
+              Lihat Semua
+            </a>
+          </div>
+
+          <div class="md:flex md:space-x-8">
+            <!-- Berita utama -->
+            <div class="w-full md:w-2/3 mb-8 md:mb-0">
+              <a href="#" class="relative block overflow-hidden group">
+                <img
+                  class="w-full aspect-[4/3] object-cover"
+                  src="assets/img/b-1.jpg"
+                  alt="Gambar Berita 1"
+                />
+                <div
+                  class="absolute inset-0 z-20 flex flex-col justify-end p-4 bg-gradient-to-t from-black/60 to-transparent transition-colors duration-300 group-hover:bg-black/40"
+                >
+                  <p
+                    class="text-sm text-gray-200 mb-2 tracking-wide leading-relaxed"
+                  >
+                    05 Juli 2025
+                  </p>
+                  <h3
+                    class="text-3xl font-semibold text-white mb-2 hover:underline transition duration-300 ease-in-out leading-snug"
+                  >
+                    Fakultas A Menggelar Seminar Internasional tentang AI
+                  </h3>
+                </div>
+              </a>
+            </div>
+
+            <!-- Berita kecil -->
+            <div class="w-full md:w-1/3 flex flex-col gap-y-6">
+              <a
+                href="#"
+                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+              >
+                <div class="relative z-20 flex-shrink-0">
+                  <img
+                    class="w-32 h-32 object-cover"
+                    src="assets/img/b-2.jpg"
+                    alt="Gambar Berita 2"
+                  />
+                </div>
+                <div class="relative z-20">
+                  <p
+                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
+                  >
+                    01 Juli 2025
+                  </p>
+                  <h4
+                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
+                  >
+                    Dies Natalis Fakultas A Ke-16 Berlangsung Meriah
+                  </h4>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+              >
+                <div class="relative z-20 flex-shrink-0">
+                  <img
+                    class="w-32 h-32 object-cover"
+                    src="assets/img/b-3.jpg"
+                    alt="Gambar Berita 3"
+                  />
+                </div>
+                <div class="relative z-20">
+                  <p
+                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
+                  >
+                    28 Juni 2025
+                  </p>
+                  <h4
+                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
+                  >
+                    Pelatihan Soft Skill bagi Mahasiswa Baru Angkatan 2025
+                  </h4>
+                </div>
+              </a>
+
+              <a
+                href="#"
+                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
+              >
+                <div class="relative z-20 flex-shrink-0">
+                  <img
+                    class="w-32 h-32 object-cover"
+                    src="assets/img/b-4.jpg"
+                    alt="Gambar Berita 4"
+                  />
+                </div>
+                <div class="relative z-20">
+                  <p
+                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
+                  >
+                    20 Juni 2025
+                  </p>
+                  <h4
+                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
+                  >
+                    Program Pengabdian Masyarakat di Desa Binaan
+                  </h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="relative w-full h-fit md:h-[70vh] flex flex-col md:flex-row justify-center py-12 px-3 md:px-0"
       >
         <div
-          class="w-full md:w-1/3 md:text-left text-center mb-3 md:mb-0 order-1 md:order-1"
-        >
-          <h1
-            class="text-3xl md:text-4xl text-gray-900 mb-3 leading-tight font-bold"
-          >
-            Instagram Post
-          </h1>
-          <div
-            class="h-[1.5px] w-[150px] mx-auto md:mx-0 bg-orange-400 mb-4"
-          ></div>
-          <p
-            class="text-gray-800 text-lg leading-relaxed tracking-wide max-w-md mx-auto md:mx-0"
-          >
-            Momen inspiratif di kampus kami! Belajar, berkarya, dan tumbuh
-            bersama. Geser untuk lihat lebih banyak.
-          </p>
-        </div>
-
+          class="absolute md:block hidden bottom-0 right-0 w-[250px] h-[25px] bg-orange-400"
+        ></div>
         <div
-          class="hidden md:block absolute top-12 right-0 h-full w-3/5 order-2"
+          class="container h-fit md:h-full sm:px-8 flex flex-col md:flex-row items-center"
         >
-          <figure class="w-full h-[80%] relative overflow-hidden">
+          <div
+            class="w-full md:w-1/3 md:text-left text-center mb-3 md:mb-0 order-1 md:order-1"
+          >
+            <h1
+              class="text-3xl md:text-4xl text-gray-900 mb-3 leading-tight font-bold"
+            >
+              Instagram Post
+            </h1>
             <div
-              id="desktop-slider"
-              class="flex h-full overflow-x-scroll no-scrollbar whitespace-nowrap gap-3 px-6 scroll-smooth"
+              class="h-[1.5px] w-[150px] mx-auto md:mx-0 bg-orange-400 mb-4"
+            ></div>
+            <p
+              class="text-gray-800 text-lg leading-relaxed tracking-wide max-w-md mx-auto md:mx-0"
             >
-              <a
-                href="#"
-                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-              >
-                <img
-                  src="assets/img/b-1.jpg"
-                  class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                  alt="..."
-                />
-              </a>
-              <a
-                href="#"
-                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-              >
-                <img
-                  src="assets/img/b-2.jpg"
-                  class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                  alt="..."
-                />
-              </a>
-              <a
-                href="#"
-                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-              >
-                <img
-                  src="assets/img/b-3.jpg"
-                  class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                  alt="..."
-                />
-              </a>
-              <a
-                href="#"
-                class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-              >
-                <img
-                  src="assets/img/b-4.jpg"
-                  class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                  alt="..."
-                />
-              </a>
-            </div>
-            <button
-              id="scroll-left-btn"
-              class="absolute top-1/2 left-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
-              onclick="scrollSlider('left')"
-            >
-              &#10094;
-            </button>
-            <button
-              id="scroll-right-btn"
-              class="absolute top-1/2 right-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
-              onclick="scrollSlider('right')"
-            >
-              &#10095;
-            </button>
-          </figure>
-        </div>
-
-        <div class="block md:hidden w-full mt-6 order-2 md:order-2">
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/b-1.jpg"
-                  class="w-full h-72 object-cover"
-                  alt="..."
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/b-2.jpg"
-                  class="w-full h-72 object-cover"
-                  alt="..."
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/b-3.jpg"
-                  class="w-full h-72 object-cover"
-                  alt="..."
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/b-4.jpg"
-                  class="w-full h-72 object-cover"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="relative py-20 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <div class="mb-10 flex justify-center items-center">
-          <div class="text-center">
-            <h2 class="text-3xl md:text-4xl font-medium text-black mb-3">
-              Sarana & Prasarana
-            </h2>
-            <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
-            <p class="text-lg leading-relaxed text-gray-600">
-              Fasilitas lengkap dan nyaman untuk mendukung kegiatan belajar.
+              Momen inspiratif di kampus kami! Belajar, berkarya, dan tumbuh
+              bersama. Geser untuk lihat lebih banyak.
             </p>
           </div>
+
+          <div
+            class="hidden md:block absolute top-12 right-0 h-full w-3/5 order-2"
+          >
+            <figure class="w-full h-[80%] relative overflow-hidden">
+              <div
+                id="desktop-slider"
+                class="flex h-full overflow-x-scroll no-scrollbar whitespace-nowrap gap-3 px-6 scroll-smooth"
+              >
+                <a
+                  href="#"
+                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+                >
+                  <img
+                    src="assets/img/i-5.jpg"
+                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+                >
+                  <img
+                    src="assets/img/i-2.jpg"
+                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+                >
+                  <img
+                    src="assets/img/i-4.jpg"
+                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
+                    alt="..."
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
+                >
+                  <img
+                    src="assets/img/i-6.jpg"
+                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
+                    alt="..."
+                  />
+                </a>
+              </div>
+              <button
+                id="scroll-left-btn"
+                class="absolute top-1/2 left-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
+                onclick="scrollSlider('left')"
+              >
+                &#10094;
+              </button>
+              <button
+                id="scroll-right-btn"
+                class="absolute top-1/2 right-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
+                onclick="scrollSlider('right')"
+              >
+                &#10095;
+              </button>
+            </figure>
+          </div>
+
+          <div class="block md:hidden w-full mt-6 order-2 md:order-2">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="assets/img/b-1.jpg"
+                    class="w-full h-72 object-cover"
+                    alt="..."
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/img/b-2.jpg"
+                    class="w-full h-72 object-cover"
+                    alt="..."
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/img/b-3.jpg"
+                    class="w-full h-72 object-cover"
+                    alt="..."
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="assets/img/b-4.jpg"
+                    class="w-full h-72 object-cover"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
         </div>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-1.jpg"
-              alt="Perpustakaan Pusat"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Perpustakaan Pusat
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Koleksi buku lengkap, ruang baca nyaman, dan akses digital.
-              </p>
-            </figcaption>
-          </figure>
-
-          <!-- Duplikasikan untuk item lain -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-2.jpg"
-              alt="Laboratorium Komputer"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Laboratorium Komputer
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Dilengkapi PC terbaru dan software pendukung pembelajaran.
-              </p>
-            </figcaption>
-          </figure>
-
-          <!-- Lanjutkan untuk item berikutnya -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-3.jpg"
-              alt="Gedung Olahraga"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Gedung Olahraga
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Lapangan basket, futsal, dan area kebugaran.
-              </p>
-            </figcaption>
-          </figure>
-
-          <!-- Tambahkan untuk yang lainnya -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-4.jpg"
-              alt="Auditorium Serbaguna"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Auditorium Serbaguna
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Fasilitas modern untuk acara dan presentasi.
-              </p>
-            </figcaption>
-          </figure>
-
-          <!-- Kantin -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-4.jpg"
-              alt="Kantin Sehat"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Kantin Sehat
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Menyediakan beragam pilihan makanan dan minuman sehat.
-              </p>
-            </figcaption>
-          </figure>
-
-          <!-- Parkir -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              src="assets/img/b-2.jpg"
-              alt="Area Parkir Luas"
-              class="w-full h-full object-cover transition duration-500 transform group-hover:scale-110"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Area Parkir Luas
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Aman dan nyaman untuk kendaraan mahasiswa dan staf.
-              </p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+      </section>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="relative py-20 bg-gray-50">
+    <section class="relative py-20 bg-gray-100" id="testimoni">
       <div class="container mx-auto px-4">
         <div class="mb-10 flex justify-center items-center">
           <div class="text-center">
             <h2 class="text-3xl md:text-4xl font-medium text-black mb-3">
-              Sarana & Prasarana
+              Testimoni Mahasiswa
             </h2>
             <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
             <p class="text-lg leading-relaxed text-gray-600">
-              Fasilitas lengkap dan nyaman untuk mendukung kegiatan belajar.
+              Pendapat mahasiswa tentang pengalaman belajar dan lingkungan
+              kampus kami.
             </p>
           </div>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <!-- Testimonial Card 1 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1537,22 +1632,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-1.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     Michael Chen
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2022 | Computer Science
+                    Angkatan 2022 | Teknik Informatika
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "Prestige University transformed my career trajectory. The
-                    cutting-edge research facilities and mentorship from faculty
-                    who are leaders in their fields gave me opportunities I
-                    never imagined possible. I published my first paper as an
-                    undergrad!"
+                    "Kurikulum yang selalu mengikuti perkembangan teknologi
+                    membuat saya siap menghadapi dunia kerja. Bimbingan dosen
+                    juga sangat luar biasa."
                   </p>
                 </div>
               </div>
@@ -1560,7 +1656,9 @@
           </div>
 
           <!-- Testimonial Card 2 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1570,22 +1668,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-2.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     Sophia Rodriguez
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2023 | Business Administration
+                    Angkatan 2023 | Sistem Informasi
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "The global business immersion program was life-changing. I
-                    spent a semester in Singapore working with international
-                    startups. The alumni network helped me secure an incredible
-                    internship that turned into my dream job at a Fortune 500
-                    company."
+                    "Saya mendapat pengalaman luar biasa melalui proyek
+                    kolaborasi dengan industri. Praktik langsung membuat saya
+                    semakin percaya diri."
                   </p>
                 </div>
               </div>
@@ -1593,7 +1692,9 @@
           </div>
 
           <!-- Testimonial Card 3 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1603,22 +1704,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-3.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     James Wilson
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2021 | Biomedical Engineering
+                    Angkatan 2021 | Teknik Informatika
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "The hands-on research opportunities in the bioengineering
-                    labs were unparalleled. I worked on developing prosthetic
-                    technology that's now being tested in clinical trials. The
-                    faculty genuinely care about student success beyond the
-                    classroom."
+                    "Laboratorium yang lengkap memudahkan saya mengembangkan
+                    aplikasi yang saat ini sudah digunakan oleh ratusan
+                    pengguna."
                   </p>
                 </div>
               </div>
@@ -1626,7 +1728,9 @@
           </div>
 
           <!-- Testimonial Card 4 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1636,22 +1740,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-4.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     Aisha Patel
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2024 | Architecture
+                    Angkatan 2024 | Sistem Informasi
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "The design studios at Prestige challenged me to think
-                    beyond conventional boundaries. Our Rome semester program
-                    studying classical architecture fundamentally changed my
-                    approach to sustainable design. I've won two international
-                    competitions since starting!"
+                    "Suasana kampus yang mendukung membuat saya lebih semangat
+                    belajar dan aktif di organisasi. Ilmu yang saya dapat juga
+                    langsung terpakai saat magang."
                   </p>
                 </div>
               </div>
@@ -1659,7 +1764,9 @@
           </div>
 
           <!-- Testimonial Card 5 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1669,21 +1776,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-5.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     Daniel Kim
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2020 | Environmental Science
+                    Angkatan 2020 | Teknik Informatika
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "The field research opportunities were extraordinary - from
-                    studying coral reef systems in Australia to glacier retreat
-                    in Alaska. The interdisciplinary approach prepared me
-                    perfectly for my current role at the World Wildlife Fund."
+                    "Belajar di sini membuka banyak kesempatan, mulai dari
+                    kompetisi tingkat nasional hingga kerja sama riset dengan
+                    dosen."
                   </p>
                 </div>
               </div>
@@ -1691,7 +1800,9 @@
           </div>
 
           <!-- Testimonial Card 6 -->
-          <div class="testimonial-card bg-white overflow-hidden relative">
+          <div
+            class="testimonial-card bg-white overflow-hidden relative shadow-testimon"
+          >
             <div class="card-inner">
               <div class="absolute quote-icon text-university-blue">
                 <i class="fas fa-quote-right"></i>
@@ -1701,22 +1812,23 @@
                   <div
                     class="student-photo w-24 h-24 rounded-full overflow-hidden border-2 mb-4"
                   >
-                    <img src="" class="w-full h-full object-cover" />
+                    <img
+                      src="assets/img/f-6.jpg"
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-xl font-bold text-university-blue">
                     Elena Petrova
                   </h3>
                   <p class="text-university-gold font-medium">
-                    Class of 2023 | International Relations
+                    Angkatan 2023 | Sistem Informasi
                   </p>
                 </div>
                 <div class="mt-6 relative testimonial-text">
                   <p class="text-gray-700 italic">
-                    "As an international student, the support system was
-                    incredible. The Model UN program took us to conferences at
-                    The Hague and Geneva. I've had coffee with ambassadors and
-                    attended lectures by Nobel Peace Prize laureates. Truly
-                    transformative!"
+                    "Saya merasa bangga menjadi bagian dari kampus ini. Kegiatan
+                    praktikum dan studi kasus membuat saya lebih siap menghadapi
+                    dunia industri."
                   </p>
                 </div>
               </div>
@@ -2202,6 +2314,65 @@
           delay: 3000, // Optional: auto-play the carousel every 3 seconds
           disableOnInteraction: false, // Optional: keep autoplaying even after user interaction
         },
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll("#main-menu a");
+        const sections = document.querySelectorAll("section");
+        const navbarHeight =
+          document.querySelector("#main-navbar").offsetHeight;
+
+        function activateNavLink() {
+          let currentActiveId = null;
+
+          // Jika di paling atas halaman, selalu aktifkan 'beranda'
+          if (window.scrollY < sections[0].offsetTop - navbarHeight + 50) {
+            // Menambahkan sedikit margin untuk 'beranda'
+            currentActiveId = sections[0].getAttribute("id"); // Asumsikan 'beranda' adalah section pertama
+          } else {
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop - navbarHeight;
+              const sectionBottom = sectionTop + section.offsetHeight;
+
+              if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom - 50
+              ) {
+                currentActiveId = section.getAttribute("id");
+              }
+            });
+          }
+
+          navLinks.forEach((link) => {
+            link.classList.remove("nav-link-active");
+            if (link.getAttribute("href").substring(1) === currentActiveId) {
+              link.classList.add("nav-link-active");
+            }
+          });
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        activateNavLink();
+
+        // Panggil fungsi saat pengguna scroll
+        window.addEventListener("scroll", activateNavLink);
+
+        // Opsional: Smooth scroll saat mengklik tautan navigasi
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop - navbarHeight,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
       });
     </script>
   </body>

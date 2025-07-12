@@ -1,0 +1,166 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Merriweather", serif;
+}
+
+.mobile-menu-active {
+  animation: slideDown 0.1s ease-out forwards;
+  display: flex !important;
+}
+
+.top-bar-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+.top-bar-visible {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
+
+.tab-info {
+  background: linear-gradient(rgba(3, 105, 161, 0.5), rgba(0, 25, 40, 0.5)),
+    url("../img/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.tab-prestasi {
+  background: linear-gradient(
+      rgba(150, 150, 150, 0.8),
+      rgba(150, 150, 150, 0.8)
+    ),
+    url("../img/bp-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+
+.swiper-button-disabled {
+  opacity: 0.3 !important;
+}
+
+.mySwiper {
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #cccccc;
+  --swiper-pagination-bullet-inactive-opacity: 0.7;
+}
+
+.no-scrollbar {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  height: 0px;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+.testimonial-card {
+  transition: all 0.4s ease;
+  perspective: 1000px;
+}
+.card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.08;
+  font-size: 7rem;
+}
+.student-photo {
+  border: 3px solid #c99700;
+  box-shadow: 0 8px 16px rgba(12, 35, 64, 0.15);
+  transition: all 0.3s ease;
+}
+.pattern-bg {
+  background-image: radial-gradient(#0c2340 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.university-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.shadow-testimon {
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.group-hover:py-4 {
+  will-change: transform, opacity;
+}
+.group-hover:translate-y-0 {
+  will-change: transform;
+}
+.group-hover:opacity-100 {
+  will-change: opacity;
+}
+
+#main-menu a {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  padding-bottom: 5px;
+}
+
+#main-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+#main-menu a:hover::after {
+  transform: translateX(0);
+}
+
+#main-menu a.nav-link-active::after {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+#main-menu a.nav-link-active {
+  font-weight: bold;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

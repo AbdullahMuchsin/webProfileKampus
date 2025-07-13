@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teknologi Informasi</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,102 +14,53 @@
       rel="stylesheet"
     />
 
-    <!-- CONFIG TAILWIND JS -->
-    <script src="assets/js/tailwinds.js"></script>
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="assets/css/clear.css" />
 
     <!-- MY CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <body class="font-poppins bg-white relative">
-    <div
-      class="absolute h-[80px] top-0 left-0 right-0 bg-primary-800 z-[-10]"
-    ></div>
+  <body class="bg-white">
+    <div class="header-background"></div>
 
     <!-- START TOP NAVBAR -->
-    <div
-      id="top-bar"
-      class="bg-primary-800 w-full py-2 transition-all duration-300 ease-in-out"
-    >
-      <div
-        class="max-w-8xl mx-auto px-4 sm:px-8 flex justify-center flex-row md:justify-between items-center"
-      >
-        <div class="flex space-x-4 mb-2 sm:mb-0">
-          <a href="#" class="text-white hover:text-primary-400">
-            <i class="fab fa-twitter fa-lg"></i>
-          </a>
-          <a href="#" class="text-white hover:text-primary-400">
-            <i class="fab fa-instagram fa-lg"></i>
-          </a>
-          <a href="#" class="text-white hover:text-primary-400">
-            <i class="fab fa-facebook fa-lg"></i>
-          </a>
-          <a href="#" class="text-white hover:text-primary-400">
-            <i class="fab fa-youtube fa-lg"></i>
-          </a>
-          <a href="#" class="text-white hover:text-primary-400">
-            <i class="fab fa-linkedin fa-lg"></i>
-          </a>
+    <div id="top-bar">
+      <div class="top-bar-container">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
         </div>
 
-        <div class="flex items-center space-x-4 mb-2 sm:mb-0">
-          <!-- Hanya tampil pada md ke atas -->
-          <div class="hidden md:flex items-center space-x-4">
-            <a href="#" class="text-white text-sm hover:text-primary-400"
-              >Hubungi Kami</a
-            >
-            <a href="#" class="text-white text-sm hover:text-primary-400"
-              >Pendaftaran</a
-            >
-
-            <span class="border-l border-primary-700 h-6"></span>
+        <div class="right-section">
+          <div class="contact-links">
+            <a href="#">Hubungi Kami</a>
+            <a href="#">Pendaftaran</a>
+            <span class="separator"></span>
           </div>
 
-          <div class="relative" data-dropdown-toggle>
-            <div>
-              <button
-                type="button"
-                class="inline-flex justify-center items-center rounded-md px-3 py-1 bg-transparent text-sm font-medium text-white hover:bg-primary-700 focus:outline-none"
+          <div class="language-selector" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-                <span class="mr-2">🇮🇩</span> Bahasa Indonesia
-                <svg
-                  class="-mr-1 ml-2 h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-            </div>
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
 
-            <div
-              class="absolute right-0 mt-2 w-48 rounded-md bg-primary-800 shadow-lg hidden z-50"
-              data-dropdown-menu
-            >
-              <div class="py-1">
-                <a
-                  href="#"
-                  class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
-                >
-                  <span class="mr-2 text-xl">🇮🇩</span> Bahasa Indonesia
-                </a>
-                <a
-                  href="#"
-                  class="flex items-center px-4 py-2 text-sm text-white hover:bg-primary-700 transition-colors focus:outline-none focus:ring-0"
-                >
-                  <span class="mr-2 text-xl">🇬🇧</span> English
-                </a>
-              </div>
+            <div class="language-menu" data-dropdown-menu>
+              <a href="#"><span class="flag">🇮🇩</span> Bahasa Indonesia</a>
+              <a href="#"><span class="flag">🇬🇧</span> English</a>
             </div>
           </div>
         </div>
@@ -119,105 +69,58 @@
     <!-- END TOP NAVBAR -->
 
     <!-- START MAIN NAVBAR -->
-    <nav id="main-navbar" class="bg-primary-700 w-full py-4 sticky top-0 z-40">
-      <div class="max-w-8xl mx-auto px-4 sm:px-8">
-        <div class="flex justify-between items-center">
-          <a href="#" class="flex items-center py-2">
-            <div class="bg-transparent rounded-lg p-2 mr-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-8 w-8 text-white"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
-                />
-              </svg>
-            </div>
-            <span class="text-white font-bold text-xl"
-              >Teknologi Informasi</span
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
             >
-          </a>
-
-          <div class="md:hidden flex items-center">
-            <button
-              id="mobile-menu-button"
-              class="text-white text-2xl focus:outline-none"
-            >
-              <i class="fas fa-bars"></i>
-            </button>
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
           </div>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
 
-          <div
-            id="main-menu"
-            class="hidden flex-col md:flex md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4 ml-auto w-full md:w-auto absolute md:relative top-full left-0 bg-primary-700 md:bg-transparent p-8 sm:p-0 z-40"
-          >
-            <a
-              href="#beranda"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Beranda</a
-            >
-            <a
-              href="#tentangkami"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Tentang Kami</a
-            >
-            <a
-              href="#fasilitas"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Fasilitas</a
-            >
-            <a
-              href="#prestasi"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Prestasi
-            </a>
-            <a
-              href="#beritaacara"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Berita & Acara
-            </a>
-            <a
-              href="#testimoni"
-              class="py-2 px-3 text-white text-sm text-start rounded transition duration-300 w-full text-center md:w-auto"
-              >Testimoni
-            </a>
-          </div>
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="#beranda">Beranda</a>
+          <a href="#tentangkami">Tentang Kami</a>
+          <a href="#fasilitas">Fasilitas</a>
+          <a href="#prestasi">Prestasi</a>
+          <a href="#beritaacara">Berita & Acara</a>
+          <a href="#testimoni">Testimoni</a>
         </div>
       </div>
     </nav>
     <!-- END MAIN NAVBAR -->
 
     <!-- START MAIN CONTENT -->
-    <section
-      id="beranda"
-      class="relative w-full h-fit md:h-[calc(100vh-140px)] flex justify-center md:py-8 py-0"
-    >
-      <div
-        class="flex flex-col md:flex-row items-center container h-fit md:h-full sm:px-8"
-      >
-        <div class="md:w-1/3 order-2 md:order-1 md:text-left">
-          <h1
-            class="hidden md:block text-4xl text-start text-gray-900 mb-6 leading-tight font-bold"
-          >
-            Selamat Datang di
-            <span class="text-gray-900">Teknologi Informasi</span>
+    <section id="beranda">
+      <div class="beranda-container">
+        <div class="beranda-text">
+          <h1 class="beranda-heading desktop-only">
+            Selamat Datang di <span class="highlight">Teknologi Informasi</span>
           </h1>
-          <p
-            class="text-gray-800 hidden md:inline text-lg text-start mb-6 leading-relaxed tracking-wide px-6 py-4 md:py-0 md:px-0"
-          >
+          <p class="beranda-description desktop-only">
             Kami mencetak lulusan inovatif dan kompeten, siap bersaing di era
             digital dengan kurikulum mutakhir, fasilitas modern, dan dosen ahli.
           </p>
 
-          <a
-            class="justify-center hidden md:flex flex-col items-center mt-8 border-black border-[2px] pt-2"
-            href="#section2"
-          >
-            <span class="uppercase text-sm mb-1">Baca Selengkapnya</span>
+          <a class="read-more desktop-only-main" href="#section2">
+            <span class="read-text">Baca Selengkapnya</span>
             <svg
-              class="w-5 h-5 text-black animate-bounce"
+              class="arrow-icon"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
@@ -233,1180 +136,461 @@
           </a>
         </div>
 
-        <div
-          class="md:block md:absolute top-0 md:top-14 right-0 md:h-full h-fit md:w-3/5 w-full order-1 md:order-2 relative"
-        >
-          <h1
-            class="text-3xl md:hidden text-white mb-6 leading-tight absolute bottom-0 py-1 px-6"
-          >
-            Selamat Datang di
-            <span class="text-white">Teknologi Informasi</span>
+        <div class="beranda-slider">
+          <h1 class="beranda-heading mobile-only overlay-heading">
+            Selamat Datang di <span class="highlight">Teknologi Informasi</span>
           </h1>
-
-          <div class="swiper mySwiper w-full md:h-[80%] object-cover relative">
-            <h1
-              class="text-3xl md:hidden text-white mb-6 leading-tight absolute bottom-0 py-1 px-6 z-20"
-            >
-              Selamat Datang di
-              <span class="text-white">Teknologi Informasi</span>
-            </h1>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/main.jpg"
-                  alt="Mahasiswa belajar di lingkungan kampus modern"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/main2.jpg"
-                  alt="Gedung kampus dengan teknologi canggih"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="assets/img/main3.jpg"
-                  alt="Siswa berkolaborasi dalam proyek IT"
-                  class="w-full h-full object-cover"
-                />
-              </div>
+          <div class="carousel">
+            <div class="carousel-inner">
+              <img
+                src="assets/img/main.jpg"
+                alt="Mahasiswa belajar di kampus"
+                class="carousel-item active"
+              />
+              <img
+                src="assets/img/main2.jpg"
+                alt="Gedung kampus dengan teknologi canggih"
+                class="carousel-item"
+              />
+              <img
+                src="assets/img/main3.jpg"
+                alt="Siswa berkolaborasi dalam proyek IT"
+                class="carousel-item"
+              />
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="carousel-dots"></div>
           </div>
         </div>
       </div>
     </section>
     <!-- END MAIN CONTENT -->
 
-    
-    <section class="tab-info pt-10 pb-5 md:py-20 px-3 md:px-0" id="tentangkami">
-      <div class="container mx-auto">
+    <!-- START TENTANG KAMI -->
+    <section id="tentangkami" class="tab-info">
+      <div class="container-tentang-kami">
         <div class="text-center">
-          <h2 class="text-3xl md:text-4xl font-medium text-white mb-3">
-            Teknologi Informasi
-          </h2>
-          <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
-
-          <p class="text-lg leading-relaxed text-gray-100">
+          <h2 class="heading">Teknologi Informasi</h2>
+          <div class="line"></div>
+          <p class="subheading">
             Kami mencetak lulusan unggul, siap bersaing di teknologi dengan
             kurikulum industri, fasilitas modern, dan dosen ahli.
           </p>
         </div>
 
-        <div class="container mx-auto py-12 px-4">
-          <div class="hidden md:flex justify-evenly">
-            <button
-              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold w-full group transition"
-              data-tab="about"
-            >
-              <span
-                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
-              ></span>
+        <!-- Desktop Tabs -->
+        <div class="tabs-desktop">
+          <button class="tab-link" data-tab="about">Tentang Kami</button>
+          <button class="tab-link" data-tab="visimisi">Visi & Misi</button>
+          <button class="tab-link" data-tab="ayogabung">Ayo Gabung</button>
+        </div>
 
-              <span
-                class="relative z-10 group-hover:text-white transition-colors duration-300"
-              >
-                Tentang Kami
-              </span>
+        <!-- Mobile Accordion -->
+        <div class="tabs-mobile">
+          <div class="mobile-tab-item">
+            <button class="mobile-tab-link" data-tab="about">
+              Tentang Kami <span class="arrow-icon">▼</span>
             </button>
-            <button
-              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-white w-full group transition"
-              data-tab="visimisi"
-            >
-              <span
-                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
-              ></span>
-
-              <span
-                class="relative z-10 group-hover:text-white transition-colors duration-300"
-              >
-                Visi & Misi
-              </span>
-            </button>
-            <button
-              class="tab-link relative overflow-hidden py-3 text-2xl font-semibold text-white w-full group transition"
-              data-tab="ayogabung"
-            >
-              <span
-                class="absolute inset-0 bg-primary-700 origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out"
-              ></span>
-
-              <span
-                class="relative z-10 group-hover:text-white transition-colors duration-300"
-              >
-                Ayo Gabung
-              </span>
-            </button>
-          </div>
-
-          <!-- Mobile version -->
-          <div class="md:hidden">
-            <div class="mobile-tab-item">
-              <button
-                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
-                data-tab="about"
-              >
-                Tentang Kami
-                <span
-                  class="arrow-icon transform transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div
-                id="about-mobile-content"
-                class="mobile-tab-content hidden p-4 bg-gray-50"
-              >
-                <div class="flex flex-col items-center">
-                  <div class="w-full">
-                    <iframe
-                      class="w-full aspect-[6/4]"
-                      src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
-                      title="Video Profil"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div
-                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
-                  >
-                    <h3 class="text-4xl font-bold mb-4">Teknologi Informasi</h3>
-                    <p
-                      class="text-gray-700 text-lg leading-relaxed tracking-wide"
-                    >
-                      Program Studi Teknologi Informasi berkomitmen mencetak
-                      lulusan yang unggul, adaptif, dan inovatif di bidang
-                      teknologi. Dengan kurikulum terkini, laboratorium modern,
-                      serta dosen berpengalaman, kami mempersiapkan mahasiswa
-                      untuk menghadapi tantangan global dalam transformasi
-                      digital.
-                    </p>
-                  </div>
+            <div id="about-mobile-content" class="mobile-tab-content">
+              <div class="content-flex">
+                <div class="content-media">
+                  <iframe
+                    src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
+                    title="Video Profil"
+                    allowfullscreen
+                  ></iframe>
                 </div>
-              </div>
-            </div>
-
-            <div class="mobile-tab-item mt-2">
-              <button
-                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
-                data-tab="visimisi"
-              >
-                Visi & Misi
-                <span
-                  class="arrow-icon transform transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div
-                id="visimisi-mobile-content"
-                class="mobile-tab-content hidden p-4 bg-gray-50"
-              >
-                <div class="flex flex-col items-center">
-                  <div class="w-full">
-                    <img
-                      src="assets/img/d-1.jpg"
-                      alt="About Image"
-                      class="w-full aspect-[6/4] object-cover"
-                    />
-                  </div>
-                  <div
-                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
-                  >
-                    <h3 class="text-4xl font-bold mb-4">Visi & Misi</h3>
-                    <p
-                      class="text-gray-700 text-lg leading-relaxed tracking-wide"
-                    >
-                      Menjadi program studi terdepan dalam teknologi informasi
-                      yang inovatif dan berdaya saing tinggi.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mobile-tab-item mt-2">
-              <button
-                class="mobile-tab-link py-3 text-2xl font-semibold text-gray-800 w-full text-left bg-gray-100 px-4 flex justify-between items-center"
-                data-tab="ayogabung"
-              >
-                Ayo Gabung
-                <span
-                  class="arrow-icon transform transition-transform duration-300"
-                  >▼</span
-                >
-              </button>
-              <div
-                id="ayogabung-mobile-content"
-                class="mobile-tab-content hidden p-4 bg-gray-50"
-              >
-                <div class="flex flex-col items-center">
-                  <div class="w-full">
-                    <img
-                      src="assets/img/d-3.jpg"
-                      alt="Pendaftaran"
-                      class="w-full aspect-[6/4] object-cover"
-                    />
-                  </div>
-                  <div
-                    class="w-full bg-gray-100 flex flex-col justify-center p-6 px-4 md:px-20 mt-4"
-                  >
-                    <h3 class="text-4xl font-bold mb-4">Pendaftaran</h3>
-                    <p
-                      class="text-gray-700 text-lg leading-relaxed tracking-wide mb-4"
-                    >
-                      Pendaftaran mahasiswa baru dibuka setiap semester melalui
-                      portal resmi kami. Proses ini dirancang agar mudah diikuti
-                      oleh calon mahasiswa dari berbagai daerah.
-                    </p>
-                    <p>
-                      <button
-                        class="bg-transparent text-black border-[2px] border-black text-lg font-semibold px-6 py-3 hover:bg-black transition hover:text-white"
-                      >
-                        Daftar Sekarang
-                      </button>
-                    </p>
-                  </div>
+                <div class="content-text">
+                  <h3>Teknologi Informasi</h3>
+                  <p>
+                    Program Studi Teknologi Informasi berkomitmen mencetak
+                    lulusan yang unggul, adaptif, dan inovatif di bidang
+                    teknologi. Dengan kurikulum terkini, laboratorium modern,
+                    serta dosen berpengalaman, kami mempersiapkan mahasiswa
+                    untuk menghadapi tantangan global dalam transformasi
+                    digital.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Desktop Tabs Content -->
-          <div id="about" class="tab-content hidden">
-            <div
-              class="flex flex-col md:flex-row items-center md:items-stretch"
-            >
-              <div class="md:w-1/2 w-full">
-                <iframe
-                  class="w-full aspect-[6/4]"
-                  src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
-                  title="Video Profil"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div
-                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 px-20"
-              >
-                <h3 class="text-4xl font-bold mb-4">Teknologi Informasi</h3>
-                <p class="text-gray-700 text-lg leading-relaxed tracking-wide">
-                  Program Studi Teknologi Informasi berkomitmen mencetak lulusan
-                  yang unggul, adaptif, dan inovatif di bidang teknologi. Dengan
-                  kurikulum terkini, laboratorium modern, serta dosen
-                  berpengalaman, kami mempersiapkan mahasiswa untuk menghadapi
-                  tantangan global dalam transformasi digital.
-                </p>
+          <div class="mobile-tab-item">
+            <button class="mobile-tab-link" data-tab="visimisi">
+              Visi & Misi <span class="arrow-icon">▼</span>
+            </button>
+            <div id="visimisi-mobile-content" class="mobile-tab-content">
+              <div class="content-flex">
+                <div class="content-media">
+                  <img src="assets/img/d-1.jpg" alt="Visi Misi" />
+                </div>
+                <div class="content-text">
+                  <h3>Visi & Misi</h3>
+                  <p>
+                    Menjadi program studi terdepan dalam teknologi informasi
+                    yang inovatif dan berdaya saing tinggi.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div id="visimisi" class="tab-content hidden">
-            <div
-              class="flex flex-col md:flex-row items-center md:items-stretch"
-            >
-              <div class="md:w-1/2 w-full">
-                <img
-                  src="assets/img/d-1.jpg"
-                  alt="About Image"
-                  class="w-full aspect-[6/4] object-cover"
-                />
-              </div>
-              <div
-                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 px-20"
-              >
-                <h3 class="text-4xl font-bold mb-4">Visi & Misi</h3>
-                <p class="text-gray-700 text-lg leading-relaxed tracking-wide">
-                  Menjadi program studi terdepan dalam teknologi informasi yang
-                  inovatif dan berdaya saing tinggi.
-                </p>
+          <div class="mobile-tab-item">
+            <button class="mobile-tab-link" data-tab="ayogabung">
+              Ayo Gabung <span class="arrow-icon">▼</span>
+            </button>
+            <div id="ayogabung-mobile-content" class="mobile-tab-content">
+              <div class="content-flex">
+                <div class="content-media">
+                  <img src="assets/img/d-3.jpg" alt="Pendaftaran" />
+                </div>
+                <div class="content-text">
+                  <h3>Pendaftaran</h3>
+                  <p>
+                    Pendaftaran mahasiswa baru dibuka setiap semester melalui
+                    portal resmi kami. Proses ini dirancang agar mudah diikuti
+                    oleh calon mahasiswa.
+                  </p>
+                  <button class="btn-primary">Daftar Sekarang</button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div id="ayogabung" class="tab-content hidden">
-            <div
-              class="flex flex-col md:flex-row items-center md:items-stretch"
-            >
-              <div class="md:w-1/2 w-full">
-                <img
-                  src="assets/img/d-3.jpg"
-                  alt="Pendaftaran"
-                  class="w-full aspect-[6/4] object-cover"
-                />
-              </div>
-              <div
-                class="md:w-2/3 w-full bg-gray-100 flex flex-col justify-center p-6 md:px-20"
-              >
-                <h3 class="text-4xl font-bold mb-4">Pendaftaran</h3>
-                <p
-                  class="text-gray-700 text-lg leading-relaxed tracking-wide mb-4"
-                >
-                  Pendaftaran mahasiswa baru dibuka setiap semester melalui
-                  portal resmi kami. Proses ini dirancang agar mudah diikuti
-                  oleh calon mahasiswa dari berbagai daerah.
-                </p>
-                <p>
-                  <button
-                    class="bg-transparent text-black border-[2px] border-black text-lg font-semibold px-6 py-3 hover:bg-black transition hover:text-white"
-                  >
-                    Daftar Sekarang
-                  </button>
-                </p>
-              </div>
+        <!-- Desktop Content -->
+        <div id="about" class="tab-content hidden">
+          <div class="content-flex">
+            <div class="content-media">
+              <iframe
+                src="https://www.youtube.com/embed/Ppolu5tgocQ?si=qdu2nrcObkCK82Rn"
+                title="Video Profil"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="content-text">
+              <h3>Teknologi Informasi</h3>
+              <p>
+                Program Studi Teknologi Informasi berkomitmen mencetak lulusan
+                yang unggul, adaptif, dan inovatif di bidang teknologi. Dengan
+                kurikulum terkini, laboratorium modern, serta dosen
+                berpengalaman, kami mempersiapkan mahasiswa untuk menghadapi
+                tantangan global dalam transformasi digital.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="visimisi" class="tab-content hidden">
+          <div class="content-flex">
+            <div class="content-media">
+              <img src="assets/img/d-1.jpg" alt="Visi Misi" />
+            </div>
+            <div class="content-text">
+              <h3>Visi & Misi</h3>
+              <p>
+                Menjadi program studi terdepan dalam teknologi informasi yang
+                inovatif dan berdaya saing tinggi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="ayogabung" class="tab-content hidden">
+          <div class="content-flex">
+            <div class="content-media">
+              <img src="assets/img/d-3.jpg" alt="Pendaftaran" />
+            </div>
+            <div class="content-text">
+              <h3>Pendaftaran</h3>
+              <p>
+                Pendaftaran mahasiswa baru dibuka setiap semester melalui portal
+                resmi kami. Proses ini dirancang agar mudah diikuti oleh calon
+                mahasiswa.
+              </p>
+              <button class="btn-primary">Daftar Sekarang</button>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- END TENTANG KAMI -->
 
-    <!-- Sarana & Prasarana -->
-    <section class="relative py-20 bg-gray-50" id="fasilitas">
-      <div
-        class="absolute md:block hidden top-0 left-0 w-[250px] h-[25px] bg-orange-400"
-      ></div>
-      <div
-        class="absolute md:block hidden bottom-0 right-0 w-[250px] h-[25px] bg-orange-400"
-      ></div>
-      <div class="container mx-auto px-4">
-        <div class="mb-10 flex items-center">
-          <div class="flex items-center">
-            <h2
-              class="border-l-[8px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-gray-800"
-            >
-              Sarana & Prasarana
-            </h2>
-          </div>
+    <!-- START SARANA DAN PRASARANA -->
+    <section class="fasilitas-section" id="fasilitas">
+      <div class="fasilitas-decoration top"></div>
+      <div class="fasilitas-decoration bottom"></div>
+      <div class="fasilitas-container">
+        <div class="fasilitas-title">
+          <h2>Sarana & Prasarana</h2>
         </div>
 
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-1-small.jpg 480w, assets/img/r-1.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-1.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Perpustakaan Pusat
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Koleksi buku lengkap, ruang baca nyaman, dan akses digital.
-              </p>
+        <div class="fasilitas-grid">
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-1.jpg" alt="Perpustakaan Pusat" />
+            <figcaption>
+              <h3>Perpustakaan Pusat</h3>
+              <p>Koleksi buku lengkap, ruang baca nyaman, dan akses digital.</p>
             </figcaption>
           </figure>
-
-          <!-- Duplikasikan untuk item lain -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-5-small.jpg 480w, assets/img/r-5.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-5.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Laboratorium Komputer
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Dilengkapi PC terbaru dan software pendukung pembelajaran.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-5.jpg" alt="Laboratorium Komputer" />
+            <figcaption>
+              <h3>Laboratorium Komputer</h3>
+              <p>Dilengkapi PC terbaru dan software pendukung pembelajaran.</p>
             </figcaption>
           </figure>
-
-          <!-- Lanjutkan untuk item berikutnya -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-3-small.jpg 480w, assets/img/r-3.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-3.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Gedung Olahraga
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Lapangan basket, futsal, dan area kebugaran.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-3.jpg" alt="Gedung Olahraga" />
+            <figcaption>
+              <h3>Gedung Olahraga</h3>
+              <p>Lapangan basket, futsal, dan area kebugaran.</p>
             </figcaption>
           </figure>
-
-          <!-- Tambahkan untuk yang lainnya -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-8-small.jpg 480w, assets/img/r-8.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-8.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Auditorium Serbaguna
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Fasilitas modern untuk acara dan presentasi.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-8.jpg" alt="Auditorium Serbaguna" />
+            <figcaption>
+              <h3>Auditorium Serbaguna</h3>
+              <p>Fasilitas modern untuk acara dan presentasi.</p>
             </figcaption>
           </figure>
-
-          <!-- Kantin -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-7-small.jpg 480w, assets/img/r-7.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-7.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Kantin Sehat
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Menyediakan beragam pilihan makanan dan minuman sehat.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-7.jpg" alt="Kantin Sehat" />
+            <figcaption>
+              <h3>Kantin Sehat</h3>
+              <p>Menyediakan beragam pilihan makanan dan minuman sehat.</p>
             </figcaption>
           </figure>
-
-          <!-- Parkir -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-6-small.jpg 480w, assets/img/r-6.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-6.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Area Parkir Luas
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Aman dan nyaman untuk kendaraan mahasiswa dan staf.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-6.jpg" alt="Area Parkir Luas" />
+            <figcaption>
+              <h3>Area Parkir Luas</h3>
+              <p>Aman dan nyaman untuk kendaraan mahasiswa dan staf.</p>
             </figcaption>
           </figure>
-
-          <!-- Tambahkan item ke-7 (versi baru) -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-4-small.jpg 480w, assets/img/r-4.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-4.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Smart Classroom
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Ruang kelas interaktif dengan teknologi presentasi canggih.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-4.jpg" alt="Smart Classroom" />
+            <figcaption>
+              <h3>Smart Classroom</h3>
+              <p>Ruang kelas interaktif dengan teknologi presentasi canggih.</p>
             </figcaption>
           </figure>
-
-          <!-- Tambahkan item ke-8 -->
-          <figure class="relative overflow-hidden h-52 group rounded-sm">
-            <img
-              srcset="assets/img/r-2-small.jpg 480w, assets/img/r-2.jpg 800w"
-              sizes="(max-width: 600px) 480px, 800px"
-              src="assets/img/r-2.jpg"
-              alt="Perpustakaan Pusat"
-              loading="lazy"
-              width="400"
-              height="224"
-              class="w-full h-full object-cover transition duration-300 ease-out transform group-hover:scale-105"
-            />
-            <figcaption
-              class="absolute inset-0 bg-black/50 flex flex-col justify-end p-3 sm:px-4 sm:py-0 transition-all duration-300 ease-in-out transform translate-y-0 group-hover:py-4 group-hover:bg-black/40"
-            >
-              <h3
-                class="text-lg font-semibold text-white mb-1 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out"
-              >
-                Taman Kampus
-              </h3>
-              <p
-                class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 ease-in-out delay-75"
-              >
-                Area hijau untuk bersantai, diskusi, dan refreshing.
-              </p>
+          <figure class="fasilitas-item">
+            <img src="assets/img/r-2.jpg" alt="Taman Kampus" />
+            <figcaption>
+              <h3>Taman Kampus</h3>
+              <p>Area hijau untuk bersantai, diskusi, dan refreshing.</p>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
+    <!-- END SARANA DAN PRASARANA -->
 
-    <!-- Prestasi Mahasiswa -->
-    <section class="py-12 md:py-16 md:pb-20 tab-prestasi" id="prestasi">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-medium text-white mb-3">
-            Prestasi Mahasiswa
-          </h2>
-          <div class="h-[1.5px] w-[150px] bg-orange-400 mx-auto mb-2"></div>
-
-          <p class="text-lg leading-relaxed text-gray-100">
+    <!-- START PRESTASI MAHASISWA -->
+    <section class="prestasi-section" id="prestasi">
+      <div class="container">
+        <div class="text-center">
+          <h2>Prestasi Mahasiswa</h2>
+          <div class="underline"></div>
+          <p>
             Mahasiswa kami berprestasi di bidang akademik, teknologi, dan
             inovasi.
           </p>
         </div>
 
-        <div class="container mx-auto px-4 relative">
-          <button
-            class="absolute -left-3 md:-left-10 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition-opacity"
-            onclick="moveSlide(-1)"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+        <div class="slider-container">
+          <button class="slider-btn left" onclick="moveSlide(-1)">
+            &#10094;
           </button>
-          <button
-            class="absolute -right-3 md:-right-10 top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition-opacity"
-            onclick="moveSlide(1)"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+          <button class="slider-btn right" onclick="moveSlide(1)">
+            &#10095;
           </button>
-
-          <div class="overflow-hidden">
-            <div
-              id="card-slider"
-              class="flex transition-transform duration-500 ease-in-out"
-              style="transform: translateX(0%)"
-            >
-              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <div class="bg-white group overflow-hidden">
-                  <div class="relative overflow-hidden">
-                    <img
-                      src="assets/img/p-2.jpg"
-                      alt="Gambar"
-                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <div
-                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
-                    >
-                      <h3
-                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
-                      >
-                        Juara 1 Hackathon
-                      </h3>
-                      <p
-                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
-                      >
-                        Meraih
-                        <span class="font-semibold">
-                          Juara 1 Hackathon Nasional 2025
-                        </span>
-                        yang diselenggarakan di Jakarta, mengalahkan lebih dari
-                        100 tim dari seluruh Indonesia.
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
-                  >
-                    Baca Selengkapnya
-                    <span
-                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
+          <div class="slider-wrapper" id="card-slider">
+            <!-- Card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/img/p-2.jpg" alt="Gambar" />
+                <div class="overlay">
+                  <h3>Juara 1 Hackathon</h3>
+                  <p>
+                    Meraih <span>Juara 1 Hackathon Nasional 2025</span> yang
+                    diselenggarakan di Jakarta, mengalahkan lebih dari 100 tim
+                    dari seluruh Indonesia.
                   </p>
                 </div>
               </div>
-
-              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <div class="bg-white group overflow-hidden">
-                  <div class="relative overflow-hidden">
-                    <img
-                      src="assets/img/p-3.jpg"
-                      alt="Gambar"
-                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <div
-                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
-                    >
-                      <h3
-                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
-                      >
-                        Delegasi Asia
-                      </h3>
-                      <p
-                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
-                      >
-                        Mahasiswa terpilih menjadi
-                        <span class="font-semibold">Delegasi Indonesia</span>
-                        dalam konferensi internasional di Seoul, Korea Selatan,
-                        membahas inovasi teknologi dan kolaborasi riset.
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
-                  >
-                    Baca Selengkapnya
-                    <span
-                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
+              <div class="read-more-prestasi">
+                Baca Selengkapnya <span>&#8594;</span>
+              </div>
+            </div>
+            <!-- Card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/img/p-3.jpg" alt="Gambar" />
+                <div class="overlay">
+                  <h3>Delegasi Asia</h3>
+                  <p>
+                    Mahasiswa terpilih menjadi
+                    <span>Delegasi Indonesia</span> dalam konferensi
+                    internasional di Seoul, Korea Selatan, membahas inovasi
+                    teknologi dan kolaborasi riset.
                   </p>
                 </div>
               </div>
-
-              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <div class="bg-white group overflow-hidden">
-                  <div class="relative overflow-hidden">
-                    <img
-                      src="assets/img/p-5.jpg"
-                      alt="Gambar"
-                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <div
-                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
-                    >
-                      <h3
-                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
-                      >
-                        Publikasi Scopus
-                      </h3>
-                      <p
-                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
-                      >
-                        Mahasiswa berhasil mempublikasikan
-                        <span class="font-semibold">
-                          riset pada jurnal internasional terindeks Scopus Q2
-                        </span>
-                        tentang pengembangan teknologi AI untuk sektor
-                        pendidikan.
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
-                  >
-                    Baca Selengkapnya
+              <div class="read-more-prestasi">
+                Baca Selengkapnya <span>&#8594;</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/img/p-5.jpg" alt="Gambar" />
+                <div class="overlay">
+                  <h3>Publikasi Scopus</h3>
+                  <p>
+                    Mahasiswa berhasil mempublikasikan
                     <span
-                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
+                      >riset pada jurnal internasional terindeks Scopus Q2</span
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
+                    tentang pengembangan teknologi AI untuk sektor pendidikan.
                   </p>
                 </div>
               </div>
-
-              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <div class="bg-white group overflow-hidden">
-                  <div class="relative overflow-hidden">
-                    <img
-                      src="assets/img/p-4.jpg"
-                      alt="Gambar"
-                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <div
-                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
-                    >
-                      <h3
-                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
-                      >
-                        Desa Digital
-                      </h3>
-                      <p
-                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
-                      >
-                        Mahasiswa menginisiasi program
-                        <span class="font-semibold">Desa Digital</span>
-                        untuk membantu UMKM lokal memanfaatkan teknologi,
-                        meningkatkan ekonomi masyarakat secara berkelanjutan.
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
-                  >
-                    Baca Selengkapnya
-                    <span
-                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
+              <div class="read-more-prestasi">
+                Baca Selengkapnya <span>&#8594;</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/img/p-4.jpg" alt="Gambar" />
+                <div class="overlay">
+                  <h3>Desa Digital</h3>
+                  <p>
+                    Mahasiswa menginisiasi program
+                    <span>Desa Digital</span> untuk membantu UMKM lokal
+                    memanfaatkan teknologi, meningkatkan ekonomi masyarakat
+                    secara berkelanjutan.
                   </p>
                 </div>
               </div>
-
-              <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <div class="bg-white group overflow-hidden">
-                  <div class="relative overflow-hidden">
-                    <img
-                      src="assets/img/p-6.jpg"
-                      alt="Gambar"
-                      class="w-full h-96 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    />
-                    <div
-                      class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 flex flex-col justify-end items-start text-white p-4 transition-all duration-500 ease-in-out"
-                    >
-                      <h3
-                        class="text-3xl font-semibold mb-2 transition-all duration-500 ease-in-out group-hover:translate-y-0"
-                      >
-                        Startup Pitch Winner
-                      </h3>
-                      <p
-                        class="text-lg font-light leading-relaxed tracking-wide opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out overflow-hidden"
-                      >
-                        Meraih gelar
-                        <span class="font-semibold"
-                          >Juara 1 Business Pitch 2025</span
-                        >
-                        atas ide startup inovatif di bidang teknologi agrikultur
-                        yang berpotensi meningkatkan produktivitas petani lokal.
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    class="font-bold text-white px-4 py-6 hover:underline cursor-pointer bg-primary-700 flex items-center transition-colors duration-300"
-                  >
-                    Baca Selengkapnya
-                    <span
-                      class="ml-3 bg-orange-600 flex items-center justify-center w-6 h-6 rounded-full text-white text-2xl"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
+              <div class="read-more-prestasi">
+                Baca Selengkapnya <span>&#8594;</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-image">
+                <img src="assets/img/p-6.jpg" alt="Gambar" />
+                <div class="overlay">
+                  <h3>Startup Pitch Winner</h3>
+                  <p>
+                    Meraih gelar <span>Juara 1 Business Pitch 2025</span> atas
+                    ide startup inovatif di bidang teknologi agrikultur yang
+                    berpotensi meningkatkan produktivitas petani lokal.
                   </p>
                 </div>
+              </div>
+              <div class="read-more-prestasi">
+                Baca Selengkapnya <span>&#8594;</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- END PRESTASI MAHASISWA -->
 
-    <section class="relative" id="beritaacara">
-      <section class="relative py-20 bg-gray-100">
-        <div
-          class="absolute md:block hidden top-0 left-0 w-[250px] h-[25px] bg-orange-400"
-        ></div>
+    <!-- START BERITA DAN ACARA -->
+    <section class="berita-section" id="beritaacara">
+      <div class="berita-top-strip"></div>
 
-        <div class="container mx-auto px-4">
-          <div class="mb-10 flex justify-between items-center">
-            <div class="inline-block">
-              <h2
-                class="border-l-[8px] border-orange-500 pl-3 text-3xl md:text-4xl font-medium text-gray-800"
-              >
-                Berita & Acara Terbaru
-              </h2>
-            </div>
+      <div class="berita-container">
+        <div class="berita-header">
+          <h2 class="berita-title">Berita & Acara Terbaru</h2>
+          <a href="#" class="berita-link">Lihat Semua</a>
+        </div>
 
-            <a
-              href="#"
-              class="inline-block border text-sm md:text-lg border-black uppercase text-black px-4 py-2 transition duration-300 hover:bg-black hover:text-white hover:border-black"
-            >
-              Lihat Semua
+        <div class="berita-content">
+          <div class="berita-main">
+            <a href="#" class="berita-main-item">
+              <img src="assets/img/b-1.jpg" alt="Gambar Berita 1" />
+              <div class="berita-main-overlay">
+                <p class="berita-date">05 Juli 2025</p>
+                <h3 class="berita-headline">
+                  Fakultas A Menggelar Seminar Internasional tentang AI
+                </h3>
+              </div>
             </a>
           </div>
 
-          <div class="md:flex md:space-x-8">
-            <!-- Berita utama -->
-            <div class="w-full md:w-2/3 mb-8 md:mb-0">
-              <a href="#" class="relative block overflow-hidden group">
-                <img
-                  class="w-full aspect-[4/3] object-cover"
-                  src="assets/img/b-1.jpg"
-                  alt="Gambar Berita 1"
-                />
-                <div
-                  class="absolute inset-0 z-20 flex flex-col justify-end p-4 bg-gradient-to-t from-black/60 to-transparent transition-colors duration-300 group-hover:bg-black/40"
-                >
-                  <p
-                    class="text-sm text-gray-200 mb-2 tracking-wide leading-relaxed"
-                  >
-                    05 Juli 2025
-                  </p>
-                  <h3
-                    class="text-3xl font-semibold text-white mb-2 hover:underline transition duration-300 ease-in-out leading-snug"
-                  >
-                    Fakultas A Menggelar Seminar Internasional tentang AI
-                  </h3>
-                </div>
-              </a>
-            </div>
+          <div class="berita-side">
+            <a href="#" class="berita-side-item">
+              <img src="assets/img/b-2.jpg" alt="Gambar Berita 2" />
+              <div>
+                <p class="berita-side-date">01 Juli 2025</p>
+                <h4 class="berita-side-title">
+                  Dies Natalis Fakultas A Ke-16 Berlangsung Meriah
+                </h4>
+              </div>
+            </a>
 
-            <!-- Berita kecil -->
-            <div class="w-full md:w-1/3 flex flex-col gap-y-6">
-              <a
-                href="#"
-                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
-              >
-                <div class="relative z-20 flex-shrink-0">
-                  <img
-                    class="w-32 h-32 object-cover"
-                    src="assets/img/b-2.jpg"
-                    alt="Gambar Berita 2"
-                  />
-                </div>
-                <div class="relative z-20">
-                  <p
-                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
-                  >
-                    01 Juli 2025
-                  </p>
-                  <h4
-                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                  >
-                    Dies Natalis Fakultas A Ke-16 Berlangsung Meriah
-                  </h4>
-                </div>
-              </a>
+            <a href="#" class="berita-side-item">
+              <img src="assets/img/b-3.jpg" alt="Gambar Berita 3" />
+              <div>
+                <p class="berita-side-date">28 Juni 2025</p>
+                <h4 class="berita-side-title">
+                  Pelatihan Soft Skill bagi Mahasiswa Baru Angkatan 2025
+                </h4>
+              </div>
+            </a>
 
-              <a
-                href="#"
-                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
-              >
-                <div class="relative z-20 flex-shrink-0">
-                  <img
-                    class="w-32 h-32 object-cover"
-                    src="assets/img/b-3.jpg"
-                    alt="Gambar Berita 3"
-                  />
-                </div>
-                <div class="relative z-20">
-                  <p
-                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
-                  >
-                    28 Juni 2025
-                  </p>
-                  <h4
-                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                  >
-                    Pelatihan Soft Skill bagi Mahasiswa Baru Angkatan 2025
-                  </h4>
-                </div>
-              </a>
-
-              <a
-                href="#"
-                class="relative flex items-start space-x-4 group overflow-hidden pb-4 border-b border-gray-300"
-              >
-                <div class="relative z-20 flex-shrink-0">
-                  <img
-                    class="w-32 h-32 object-cover"
-                    src="assets/img/b-4.jpg"
-                    alt="Gambar Berita 4"
-                  />
-                </div>
-                <div class="relative z-20">
-                  <p
-                    class="text-sm text-gray-500 mb-1 group-hover:text-gray-900"
-                  >
-                    20 Juni 2025
-                  </p>
-                  <h4
-                    class="text-lg font-semibold text-gray-900 hover:text-blue-200 hover:underline transition duration-300 ease-in-out leading-snug group-hover:text-black"
-                  >
-                    Program Pengabdian Masyarakat di Desa Binaan
-                  </h4>
-                </div>
-              </a>
-            </div>
+            <a href="#" class="berita-side-item">
+              <img src="assets/img/b-4.jpg" alt="Gambar Berita 4" />
+              <div>
+                <p class="berita-side-date">20 Juni 2025</p>
+                <h4 class="berita-side-title">
+                  Program Pengabdian Masyarakat di Desa Binaan
+                </h4>
+              </div>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section
-        class="relative w-full h-fit md:h-[70vh] flex flex-col md:flex-row justify-center py-12 px-3 md:px-0"
-      >
-        <div
-          class="absolute md:block hidden bottom-0 right-0 w-[250px] h-[25px] bg-orange-400"
-        ></div>
-        <div
-          class="container h-fit md:h-full sm:px-8 flex flex-col md:flex-row items-center"
-        >
-          <div
-            class="w-full md:w-1/3 md:text-left text-center mb-3 md:mb-0 order-1 md:order-1"
-          >
-            <h1
-              class="text-3xl md:text-4xl text-gray-900 mb-3 leading-tight font-bold"
-            >
-              Instagram Post
-            </h1>
-            <div
-              class="h-[1.5px] w-[150px] mx-auto md:mx-0 bg-orange-400 mb-4"
-            ></div>
-            <p
-              class="text-gray-800 text-lg leading-relaxed tracking-wide max-w-md mx-auto md:mx-0"
-            >
+      <div class="wraping-instagram">
+        <div class="instagram-section">
+          <div class="instagram-left">
+            <h1 class="instagram-title">Instagram Post</h1>
+            <div class="instagram-underline"></div>
+            <p class="instagram-desc">
               Momen inspiratif di kampus kami! Belajar, berkarya, dan tumbuh
               bersama. Geser untuk lihat lebih banyak.
             </p>
           </div>
 
-          <div
-            class="hidden md:block absolute top-12 right-0 h-full w-3/5 order-2"
-          >
-            <figure class="w-full h-[80%] relative overflow-hidden">
-              <div
-                id="desktop-slider"
-                class="flex h-full overflow-x-scroll no-scrollbar whitespace-nowrap gap-3 px-6 scroll-smooth"
-              >
-                <a
-                  href="#"
-                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-                >
-                  <img
-                    src="assets/img/i-5.jpg"
-                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                    alt="..."
-                  />
-                </a>
-                <a
-                  href="#"
-                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-                >
-                  <img
-                    src="assets/img/i-2.jpg"
-                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                    alt="..."
-                  />
-                </a>
-                <a
-                  href="#"
-                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-                >
-                  <img
-                    src="assets/img/i-4.jpg"
-                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                    alt="..."
-                  />
-                </a>
-                <a
-                  href="#"
-                  class="inline-block overflow-hidden h-full w-2/5 flex-shrink-0"
-                >
-                  <img
-                    src="assets/img/i-6.jpg"
-                    class="w-full h-full object-cover filter grayscale hover:grayscale-0 hover:scale-105 transition duration-500"
-                    alt="..."
-                  />
-                </a>
-              </div>
-              <button
-                id="scroll-left-btn"
-                class="absolute top-1/2 left-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
-                onclick="scrollSlider('left')"
-              >
-                &#10094;
-              </button>
-              <button
-                id="scroll-right-btn"
-                class="absolute top-1/2 right-3 -translate-y-1/2 text-3xl text-orange-400 p-2 rounded-full z-10 opacity-75 hover:opacity-100 transition"
-                onclick="scrollSlider('right')"
-              >
-                &#10095;
-              </button>
-            </figure>
-          </div>
-
-          <div class="block md:hidden w-full mt-6 order-2 md:order-2">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/b-1.jpg"
-                    class="w-full h-72 object-cover"
-                    alt="..."
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/b-2.jpg"
-                    class="w-full h-72 object-cover"
-                    alt="..."
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/b-3.jpg"
-                    class="w-full h-72 object-cover"
-                    alt="..."
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    src="assets/img/b-4.jpg"
-                    class="w-full h-72 object-cover"
-                    alt="..."
-                  />
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
+          <div class="instagram-slider-wrapper">
+            <div class="instagram-slider" id="desktop-slider">
+              <a href="#"><img src="assets/img/i-5.jpg" alt="..." /></a>
+              <a href="#"><img src="assets/img/i-2.jpg" alt="..." /></a>
+              <a href="#"><img src="assets/img/i-4.jpg" alt="..." /></a>
+              <a href="#"><img src="assets/img/i-6.jpg" alt="..." /></a>
             </div>
+
+            <button class="instagram-btn left" onclick="scrollSlider('left')">
+              &#10094;
+            </button>
+            <button class="instagram-btn right" onclick="scrollSlider('right')">
+              &#10095;
+            </button>
           </div>
         </div>
-      </section>
-    </section>
+      </div>
 
-    <!-- Testimonials Section -->
+      <div class="berita-bottom-strip"></div>
+    </section>
+    <!-- END BERITA DAN ACARA -->
+
+    
+
+    <!-- START TESTIMONI -->
     <section class="relative py-20 bg-gray-100" id="testimoni">
       <div class="container mx-auto px-4">
         <div class="mb-10 flex justify-center items-center">
@@ -1785,8 +969,6 @@
         </div>
       </div>
     </footer>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- MY JS -->
     <script src="assets/js/script.js"></script>

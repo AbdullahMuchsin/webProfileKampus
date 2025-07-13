@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prestasi Mahasiswa</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #111827;
+        color: white;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: auto;
+        padding: 0 1rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+
+      .section-line {
+        height: 1.5px;
+        width: 150px;
+        background: #f97316;
+        margin: 0 auto 0.5rem;
+      }
+
+      .section-title p {
+        font-size: 1.125rem;
+        color: #d1d5db;
+        line-height: 1.6;
+      }
+
+      /* Slider */
+      .slider-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        flex: 0 0 100%;
+        padding: 0 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .slide {
+          flex: 0 0 50%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .slide {
+          flex: 0 0 33.3333%;
+        }
+      }
+
+      .card {
+        background: white;
+        color: black;
+        overflow: hidden;
+      }
+
+      .card-image {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        color: white;
+        padding: 1rem;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .overlay h3 {
+        font-size: 1.875rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        transform: translateY(100%);
+        transition: all 0.5s ease-in-out;
+      }
+
+      .overlay p {
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.6;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .overlay span {
+        font-weight: 600;
+      }
+
+      .card:hover .card-image img {
+        transform: scale(1.05);
+      }
+
+      .card:hover .overlay {
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .card:hover .overlay h3 {
+        transform: translateY(0);
+      }
+
+      .card:hover .overlay p {
+        opacity: 1;
+        max-height: 10rem;
+      }
+
+      .read-more {
+        background: #1e40af;
+        color: white;
+        padding: 1.5rem 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s;
+      }
+
+      .read-more span {
+        background: #ea580c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-left: 0.75rem;
+      }
+
+      .read-more:hover {
+        text-decoration: underline;
+        background: #1e3a8a;
+      }
+
+      /* Buttons */
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #1f2937;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 9999px;
+        opacity: 0.75;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        z-index: 10;
+      }
+
+      .slider-btn:hover {
+        opacity: 1;
+      }
+
+      .slider-btn.prev {
+        left: -0.75rem;
+      }
+
+      .slider-btn.next {
+        right: -0.75rem;
+      }
+
+      @media (min-width: 768px) {
+        .slider-btn.prev {
+          left: -2.5rem;
+        }
+        .slider-btn.next {
+          right: -2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- START PRESTASI MAHASISWA -->
+    <section class="tab-prestasi" id="prestasi">
+      <div class="container">
+        <div class="section-title">
+          <h2>Prestasi Mahasiswa</h2>
+          <div class="section-line"></div>
+          <p>
+            Mahasiswa kami berprestasi di bidang akademik, teknologi, dan
+            inovasi.
+          </p>
+        </div>
+
+        <div class="slider-container">
+          <button class="slider-btn prev" onclick="moveSlide(-1)">
+            &#10094;
+          </button>
+          <button class="slider-btn next" onclick="moveSlide(1)">
+            &#10095;
+          </button>
+          <div class="slider-wrapper" id="card-slider">
+            <div class="slide">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/p-2.jpg" alt="Juara 1 Hackathon" />
+                  <div class="overlay">
+                    <h3>Juara 1 Hackathon</h3>
+                    <p>
+                      Meraih <span>Juara 1 Hackathon Nasional 2025</span> di
+                      Jakarta, mengalahkan lebih dari 100 tim dari seluruh
+                      Indonesia.
+                    </p>
+                  </div>
+                </div>
+                <p class="read-more">Baca Selengkapnya <span>&#10140;</span></p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/p-3.jpg" alt="Delegasi Asia" />
+                  <div class="overlay">
+                    <h3>Delegasi Asia</h3>
+                    <p>
+                      Mahasiswa terpilih menjadi
+                      <span>Delegasi Indonesia</span> dalam konferensi di Seoul,
+                      membahas inovasi teknologi.
+                    </p>
+                  </div>
+                </div>
+                <p class="read-more">Baca Selengkapnya <span>&#10140;</span></p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/p-5.jpg" alt="Publikasi Scopus" />
+                  <div class="overlay">
+                    <h3>Publikasi Scopus</h3>
+                    <p>
+                      Mahasiswa mempublikasikan
+                      <span>riset pada jurnal Scopus Q2</span> tentang teknologi
+                      AI untuk pendidikan.
+                    </p>
+                  </div>
+                </div>
+                <p class="read-more">Baca Selengkapnya <span>&#10140;</span></p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/p-4.jpg" alt="Desa Digital" />
+                  <div class="overlay">
+                    <h3>Desa Digital</h3>
+                    <p>
+                      Mahasiswa menginisiasi <span>Desa Digital</span> membantu
+                      UMKM lokal memanfaatkan teknologi.
+                    </p>
+                  </div>
+                </div>
+                <p class="read-more">Baca Selengkapnya <span>&#10140;</span></p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/img/p-6.jpg" alt="Startup Pitch Winner" />
+                  <div class="overlay">
+                    <h3>Startup Pitch Winner</h3>
+                    <p>
+                      Meraih <span>Juara 1 Business Pitch 2025</span> untuk
+                      startup agrikultur yang meningkatkan produktivitas petani.
+                    </p>
+                  </div>
+                </div>
+                <p class="read-more">Baca Selengkapnya <span>&#10140;</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END PRESTASI MAHASISWA -->
+
+    <script>
+      let currentIndex = 0;
+
+      function moveSlide(direction) {
+        const slider = document.getElementById("card-slider");
+        const slides = slider.children;
+        const slideCount = slides.length;
+        const slideWidth = slides[0].offsetWidth;
+        const visibleSlides =
+          window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+        currentIndex += direction;
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > slideCount - visibleSlides)
+          currentIndex = slideCount - visibleSlides;
+
+        const translateX = -(slideWidth + 32) * currentIndex; // +32 karena padding px-4 = 1rem = 16px
+        slider.style.transform = `translateX(${translateX}px)`;
+      }
+
+      window.addEventListener("resize", () => moveSlide(0));
+    </script>
+  </body>
+</html>

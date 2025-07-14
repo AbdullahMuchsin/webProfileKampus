@@ -18,3 +18,142 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+.fasilitas-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: #f9fafb; /* bg-gray-50 */
+}
+
+.fasilitas-decoration {
+  position: absolute;
+  width: 250px;
+  height: 25px;
+  background-color: #fb923c; /* bg-orange-400 */
+  display: none;
+}
+
+.fasilitas-decoration.top {
+  top: 0;
+  left: 0;
+}
+
+.fasilitas-decoration.bottom {
+  bottom: 0;
+  right: 0;
+}
+
+.fasilitas-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.fasilitas-title {
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.fasilitas-title h2 {
+  border-left: 8px solid #f97316; /* border-orange-500 */
+  padding-left: 0.75rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1f2937; /* text-gray-800 */
+}
+
+.fasilitas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.fasilitas-item {
+  position: relative;
+  overflow: hidden;
+  height: 13rem; /* h-52 */
+  border-radius: 0.125rem;
+}
+
+.fasilitas-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-out;
+}
+
+.fasilitas-item:hover img {
+  transform: scale(1.05);
+}
+
+.fasilitas-item figcaption {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.fasilitas-item:hover figcaption {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.fasilitas-item figcaption h3 {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.fasilitas-item:hover figcaption h3 {
+  transform: translateY(0);
+}
+
+.fasilitas-item figcaption p {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out 0.075s;
+}
+
+.fasilitas-item:hover figcaption p {
+  opacity: 1;
+  transform: translateY(0);
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .fasilitas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .fasilitas-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .fasilitas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fasilitas-decoration {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fasilitas-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

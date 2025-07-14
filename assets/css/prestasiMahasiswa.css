@@ -18,3 +18,179 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+.prestasi-section {
+  padding: 3rem 0;
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9; /* slate-100 */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text-center h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.text-center p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.underline {
+  width: 150px;
+  height: 2px;
+  background-color: #f97316; /* orange-400 */
+  margin: 0 auto 0.5rem;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1f2937;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  opacity: 0.75;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+}
+
+.slider-btn.left {
+  left: 0.5rem;
+}
+
+.slider-btn.right {
+  right: 0.5rem;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  flex: 0 0 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-image:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: white;
+  padding: 1rem;
+  padding-bottom: 2.5rem;
+  transition: background 0.5s ease;
+  overflow: hidden;
+}
+
+.overlay h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+.overlay p {
+  opacity: 0;
+  max-height: 0;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.card-image:hover .overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.card-image:hover .overlay h3 {
+  transform: translateY(0);
+}
+
+.card-image:hover .overlay p {
+  opacity: 1;
+  max-height: 10rem;
+  line-height: 1.8;
+  margin-top: 0.5rem;
+}
+
+.overlay p span {
+  font-weight: 600;
+}
+
+.read-more-prestasi {
+  background: var(--primary-700);
+  color: white;
+  font-weight: bold;
+  padding: 1.5rem 1rem;
+  margin-top: -1px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+.read-more-prestasi:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    flex: 0 0 33.333%;
+  }
+}

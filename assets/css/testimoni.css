@@ -18,3 +18,125 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+.testimoni-section {
+  position: relative;
+  padding: 5rem 1rem;
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+.testimoni-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.testimoni-header {
+  margin-bottom: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.testimoni-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0.75rem;
+}
+
+.testimoni-underline {
+  height: 1.5px;
+  width: 150px;
+  background: orange;
+  margin: 0 auto 0.5rem;
+}
+
+.testimoni-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #4b5563; /* text-gray-600 */
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.testimonial-card {
+  transition: all 0.4s ease;
+  perspective: 1000px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+  padding-top: 4rem;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  opacity: 0.08;
+  font-size: 11rem;
+  color: #003366;
+}
+
+.testimonial-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.student-photo {
+  border: 3px solid #c99700;
+  box-shadow: 0 8px 16px rgba(12, 35, 64, 0.15);
+  transition: all 0.3s ease;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  margin: 0 auto 1rem;
+}
+
+.student-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 0.25rem;
+}
+
+.student-major {
+  color: #d4af37; /* text-university-gold */
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  color: #374151; /* text-gray-700 */
+  font-style: italic;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .testimoni-title {
+    font-size: 2.25rem; /* text-4xl */
+  }
+
+  .testimoni-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimoni-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -18,3 +18,168 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+.wraping-instagram {
+  position: relative;
+}
+
+.instagram-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 0;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.instagram-left {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.instagram-title {
+  font-size: 2rem;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.instagram-underline {
+  height: 2px;
+  width: 150px;
+  background: orange;
+  margin: 0 auto 1rem;
+}
+
+.instagram-desc {
+  font-size: 1.125rem;
+  color: #374151;
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.instagram-slider-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.instagram-slider {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 0 1.5rem;
+}
+
+.instagram-slider::-webkit-scrollbar {
+  display: none; /* sembunyikan scrollbar di mobile */
+}
+
+.instagram-slider a {
+  flex: 0 0 96%;
+  scroll-snap-align: center;
+  overflow: hidden;
+}
+.instagram-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s, transform 0.5s;
+}
+
+.instagram-slider img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.instagram-btn {
+  display: none;
+}
+
+.berita-bottom-strip {
+  display: none;
+}
+
+.berita-top-strip {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .instagram-section {
+    flex-direction: row;
+    height: 70vh;
+    padding: 0;
+  }
+
+  .instagram-left {
+    width: 33.333%;
+    text-align: left;
+    order: 1;
+  }
+
+  .instagram-title {
+    font-size: 2.5rem;
+  }
+
+  .instagram-underline {
+    margin: 0 0 1rem;
+  }
+
+  .instagram-slider-wrapper {
+    width: 60%;
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    height: 100%;
+  }
+
+  .instagram-slider {
+    padding: 0;
+    height: 80%;
+  }
+
+  .instagram-slider a {
+    flex: 0 0 40%;
+  }
+
+  .instagram-btn {
+    display: block;
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: orange;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .instagram-btn.left {
+    left: 1rem;
+  }
+
+  .instagram-btn.right {
+    right: 1rem;
+  }
+
+  .instagram-btn:hover {
+    opacity: 1;
+  }
+
+  .berita-bottom-strip {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 25px;
+    background: orange;
+  }
+}

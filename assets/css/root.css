@@ -18,3 +18,24 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+/* START ROOT */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background-color: white;
+}
+
+.header-background {
+  position: absolute;
+  height: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-800);
+  z-index: -10;
+}
+/* END ROOT */

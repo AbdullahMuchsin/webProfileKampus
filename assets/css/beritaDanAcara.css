@@ -18,3 +18,177 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+.berita-section {
+  position: relative;
+  background: #f3f4f6;
+  padding-top: 5rem;
+  padding-bottom: 0;
+}
+
+.berita-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.berita-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.berita-title {
+  border-left: 8px solid orange;
+  padding-left: 0.75rem;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.berita-link {
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+
+.berita-link:hover {
+  background: black;
+  color: white;
+}
+
+.berita-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.berita-main {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.berita-main-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.berita-main-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.berita-main-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  transition: background 0.3s;
+}
+
+.berita-main-item:hover .berita-main-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.berita-date {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.berita-headline {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+}
+
+.berita-headline:hover {
+  text-decoration: underline;
+}
+
+.berita-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.berita-side-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #d1d5db;
+  padding-bottom: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.berita-side-item img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+}
+
+.berita-side-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.berita-side-item:hover .berita-side-date {
+  color: #111827;
+}
+
+.berita-side-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.berita-side-title:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+@media (min-width: 768px) {
+  .berita-top-strip {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 25px;
+    background: orange;
+  }
+  .berita-section {
+    padding: 5rem 0;
+  }
+
+  .berita-title {
+    font-size: 2.5rem;
+  }
+
+  .berita-content {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .berita-main {
+    width: 66.666%;
+    margin-bottom: 0;
+  }
+
+  .berita-side {
+    width: 33.333%;
+  }
+}

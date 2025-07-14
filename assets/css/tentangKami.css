@@ -18,3 +18,181 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 }
+
+#tentangkami {
+  padding: 4rem 0;
+}
+
+.tab-info {
+  background: linear-gradient(rgba(3, 105, 161, 0.5), rgba(0, 25, 40, 0.5)),
+    url("../img/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container-tentang-kami {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.text-center-tentang-kami {
+  text-align: center;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.line {
+  width: 150px;
+  height: 1.5px;
+  background: var(--orange);
+  margin: 0 auto 0.5rem;
+}
+
+.subheading {
+  font-size: 1.125rem;
+  color: var(--gray-100);
+  line-height: 1.6;
+}
+
+.tabs-desktop {
+  display: none;
+}
+
+.tab-link {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--gray-200);
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tab-link.active {
+  border-bottom: 6px solid var(--orange);
+  color: white;
+}
+
+.tabs-mobile {
+  margin-top: 3rem;
+}
+
+.mobile-tab-link {
+  background: var(--gray-100);
+  color: var(--gray-800);
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-tab-content {
+  background: var(--gray-200);
+  padding: 1rem;
+}
+
+.content-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-media iframe,
+.content-media img {
+  width: 100%;
+  aspect-ratio: 6/4;
+  object-fit: cover;
+  height: 100%;
+}
+
+.content-text {
+  background: var(--gray-100, #f7fafc);
+  color: var(--gray-800, #2d3748);
+  padding: 1.5rem 1rem;
+  flex: 1;
+  line-height: 1.8;
+}
+
+.content-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.3; /* agar judul tidak terlalu rapat */
+}
+
+.content-text p {
+  font-size: 1.1rem;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  background: transparent;
+  border: 2px solid var(--gray-800);
+  color: var(--gray-800);
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--gray-800);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.border-orange-tab {
+  border-bottom: 5px solid #fb923c !important;
+}
+
+@media (min-width: 768px) {
+  .tabs-desktop {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+  }
+  .container-tentang-kami {
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .content-flex {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .content-media {
+    flex: 0 0 40%;
+  }
+
+  .content-text {
+    flex: 0 0 60%;
+    padding: 4rem;
+  }
+
+  .tabs-mobile {
+    display: none;
+  }
+}

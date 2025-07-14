@@ -202,84 +202,12 @@ body {
 
 /* START TOP NAVBAR */
 /* Top bar container */
-#top-bar {
-  background-color: var(--primary-800);
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  transition: all 0.3s ease-in-out;
-}
-
-.top-bar-container {
-  max-width: 90rem; /* kira2 sama dgn max-w-8xl */
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (min-width: 640px) {
-  .top-bar-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
 
 /* Sosial link */
-.social-links {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-@media (min-width: 640px) {
-  .social-links {
-    margin-bottom: 0;
-  }
-}
-
-.social-links a {
-  color: white;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: var(--primary-400);
-}
 
 /* Right section (contact + language) */
-.right-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-@media (min-width: 640px) {
-  .right-section {
-    margin-bottom: 0;
-  }
-}
 
 /* Contact links hanya tampil di md ke atas */
-.contact-links {
-  display: none;
-  align-items: center;
-  gap: 1rem;
-}
-
-.contact-links a {
-  color: white;
-  font-size: 0.875rem;
-  transition: color 0.3s;
-}
-
-.contact-links a:hover {
-  color: var(--primary-400);
-}
 
 .separator {
   border-left: 1px solid var(--primary-700);
@@ -287,72 +215,10 @@ body {
 }
 
 /* Language selector */
-.language-selector {
-  position: relative;
-}
-
-.language-selector button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.375rem;
-  padding: 0.25rem 0.75rem;
-  background: transparent;
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.language-selector button:hover {
-  background-color: var(--primary-700);
-}
-
-.language-selector .arrow {
-  margin-left: 0.5rem;
-  width: 1.25rem;
-  height: 1.25rem;
-}
 
 /* Dropdown menu */
-.language-menu {
-  position: absolute;
-  right: 0;
-  margin-top: 0.5rem;
-  width: 12rem;
-  border-radius: 0.375rem;
-  background-color: var(--primary-800);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: none;
-  z-index: 50;
-}
-
-.language-menu a {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: white;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.language-menu a:hover {
-  background-color: var(--primary-700);
-}
-
-.flag {
-  margin-right: 0.5rem;
-  font-size: 1.25rem;
-}
 
 /* Untuk JS toggle dropdown nanti bisa pakai class 'show' */
-.language-menu.show {
-  display: block;
-}
-
 /*  */
 
 #main-navbar {
@@ -1504,11 +1370,6 @@ body {
 }
 
 /* MEDIA QUERY  768px */
-@media (min-width: 768px) {
-  .top-bar-container {
-    justify-content: space-between;
-  }
-}
 
 @media (min-width: 768px) {
   .footer-bottom {
@@ -1550,12 +1411,6 @@ body {
   .berita-main {
     width: 66.666%;
     margin-bottom: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .contact-links {
-    display: flex;
   }
 }
 

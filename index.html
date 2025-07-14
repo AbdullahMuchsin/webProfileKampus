@@ -6,18 +6,18 @@
     <title>Teknologi Informasi</title>
 
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
 
+    <!-- RESET STYLE -->
     <link rel="stylesheet" href="assets/css/clear.css" />
-
-    <!-- MY CSS -->
+    <!-- ROOT CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- TOP NAVBAR -->
+    <link rel="stylesheet" href="assets/css/topNavbar.css" />
+    <!-- MAIN NAVBAR -->
+    <link rel="stylesheet" href="assets/css/mainNavbar.css" />
   </head>
 
   <body class="bg-white">
@@ -27,20 +27,12 @@
     <div id="top-bar">
       <div class="top-bar-container">
         <div class="social-links">
-          <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-          <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
-          <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links"></div>
+          <a href="#">Pendaftaran</a>
         </div>
 
         <div class="right-section">
-          <div class="contact-links">
-            <a href="#">Hubungi Kami</a>
-            <a href="#">Pendaftaran</a>
-            <span class="separator"></span>
-          </div>
-
           <div class="language-selector" data-dropdown-toggle>
             <button type="button">
               <span class="flag">🇮🇩</span> Bahasa Indonesia
@@ -119,20 +111,7 @@
 
           <a class="read-more desktop-only-main" href="#section2">
             <span class="read-text">Baca Selengkapnya</span>
-            <svg
-              class="arrow-icon"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"
-              ></path>
-            </svg>
+            <div class="arrow-down arrow-icon"></div>
           </a>
         </div>
 
@@ -502,6 +481,7 @@
     <section class="berita-section" id="beritaacara">
       <div class="berita-top-strip"></div>
 
+      <!-- START SUB BERITA DAN ACARA  -->
       <div class="berita-container">
         <div class="berita-header">
           <h2 class="berita-title">Berita & Acara Terbaru</h2>
@@ -554,7 +534,9 @@
           </div>
         </div>
       </div>
+      <!-- END SUB BERITA DAN ACARA -->
 
+      <!-- START INSTAGRAM POST -->
       <div class="wraping-instagram">
         <div class="instagram-section">
           <div class="instagram-left">
@@ -583,6 +565,7 @@
           </div>
         </div>
       </div>
+      <!-- END INSTAGRAM POST -->
 
       <div class="berita-bottom-strip"></div>
     </section>

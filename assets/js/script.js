@@ -58,12 +58,12 @@ function hideAllMobileContents() {
 desktopTabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     desktopTabs.forEach((t) => {
-      t.classList.remove("border-b-[6px]", "border-orange-400", "text-white");
+      t.classList.remove("border-b-[6px]", "border-orange-tab", "text-white");
       t.classList.add("text-gray-200");
     });
     desktopContents.forEach((c) => c.classList.add("hidden"));
 
-    tab.classList.add("border-b-[6px]", "border-orange-400", "text-white");
+    tab.classList.add("border-b-[6px]", "border-orange-tab", "text-white");
     tab.classList.remove("text-gray-200");
     const target = tab.getAttribute("data-tab");
     document.getElementById(target).classList.remove("hidden");
@@ -76,7 +76,7 @@ if (desktopTabs.length > 0) {
   if (window.innerWidth >= 768) {
     desktopTabs[0].classList.add(
       "border-b-[6px]",
-      "border-orange-400",
+      "border-orange-tab",
       "text-white"
     );
     desktopTabs[0].classList.remove("text-gray-200");
@@ -94,7 +94,7 @@ window.addEventListener("resize", () => {
       const firstContentId = desktopTabs[0].getAttribute("data-tab");
       desktopTabs[0].classList.add(
         "border-b-[6px]",
-        "border-orange-400",
+        "border-orange-tab",
         "text-white"
       );
       desktopTabs[0].classList.remove("text-gray-200");
@@ -194,3 +194,193 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // TRASH
+
+
+// Tambahkan manual tombol
+function scrollSlider(direction) {
+  const slideWidth = slider.querySelector("a").offsetWidth + 12;
+  if (direction === "left") {
+    scrollAmount -= slideWidth;
+    if (scrollAmount < 0) scrollAmount = 0;
+  } else {
+    scrollAmount += slideWidth;
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+      scrollAmount = slider.scrollWidth - slider.clientWidth;
+    }
+  }
+  slider.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth",
+  });
+}
+
+function checkScrollButtons() {
+  const slider = document.getElementById("desktop-slider");
+  const leftBtn = document.getElementById("scroll-left-btn");
+  const rightBtn = document.getElementById("scroll-right-btn");
+
+  if (slider.scrollLeft === 0) {
+    leftBtn.style.display = "none";
+  } else {
+    leftBtn.style.display = "block";
+  }
+
+  if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+    rightBtn.style.display = "none";
+  } else {
+    rightBtn.style.display = "block";
+  }
+}
+
+function scrollSlider(direction) {
+  const slider = document.getElementById("desktop-slider");
+  const scrollAmount = slider.clientWidth * 0.5;
+
+  if (direction === "left") {
+    slider.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth",
+    });
+  } else {
+    slider.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }
+
+  setTimeout(checkScrollButtons, 500);
+}
+
+window.onload = checkScrollButtons;
+
+document
+  .getElementById("desktop-slider")
+  .addEventListener("scroll", checkScrollButtons);
+
+const slider = document.getElementById("card-slider");
+const cards = slider.children;
+let currentIndex = 0;
+let cardsPerPage = 3;
+
+function updateCardsPerPage() {
+  if (window.innerWidth >= 1024) {
+    cardsPerPage = 3;
+  } else if (window.innerWidth >= 768) {
+    cardsPerPage = 2;
+  } else {
+    cardsPerPage = 1;
+  }
+  if (currentIndex > cards.length - cardsPerPage) {
+    currentIndex = Math.max(0, cards.length - cardsPerPage);
+  }
+  updateSliderPosition();
+}
+
+window.addEventListener("load", updateCardsPerPage);
+window.addEventListener("resize", updateCardsPerPage);
+
+function updateSliderPosition() {
+  const cardWidth = cards[0].offsetWidth;
+  const offset = -currentIndex * cardWidth;
+  slider.style.transform = `translateX(${offset}px)`;
+}
+
+function moveSlide(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = 0;
+  } else if (currentIndex > cards.length - cardsPerPage) {
+    currentIndex = Math.max(0, cards.length - cardsPerPage);
+  }
+  updateSliderPosition();
+}
+
+updateSliderPosition();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mainMenu = document.getElementById("main-menu");
+  const dropdownToggles = document.querySelectorAll("[data-dropdown-toggle]");
+  const topBar = document.getElementById("top-bar");
+  const mainNavbar = document.getElementById("main-navbar");
+
+  let lastScrollY = window.scrollY;
+
+  mobileMenuButton.addEventListener("click", function () {
+    mainMenu.classList.toggle("hidden");
+    mainMenu.classList.toggle("mobile-menu-active");
+  });
+
+  mainMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth < 768) {
+        mainMenu.classList.add("hidden");
+        mainMenu.classList.remove("mobile-menu-active");
+      }
+    });
+  });
+
+  dropdownToggles.forEach((dropdownToggle) => {
+    const button = dropdownToggle.querySelector("button");
+    const menu = dropdownToggle.querySelector("[data-dropdown-menu]");
+
+    if (button && menu) {
+      button.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownToggles.forEach((otherDropdown) => {
+          const otherMenu = otherDropdown.querySelector("[data-dropdown-menu]");
+          if (
+            otherMenu &&
+            otherMenu !== menu &&
+            !otherMenu.classList.contains("hidden")
+          ) {
+            otherMenu.classList.add("hidden");
+          }
+        });
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!dropdownToggle.contains(event.target)) {
+          menu.classList.add("hidden");
+        }
+      });
+    }
+  });
+
+  let isShrunk = false;
+
+  window.addEventListener("scroll", function () {
+    if (!isShrunk && window.scrollY > 50) {
+      topBar.classList.add("top-bar-hidden");
+      topBar.classList.remove("top-bar-visible");
+
+      mainNavbar.classList.remove("py-4");
+      mainNavbar.classList.add("py-2");
+
+      isShrunk = true;
+    } else if (isShrunk && window.scrollY < 30) {
+      topBar.classList.remove("top-bar-hidden");
+      topBar.classList.add("top-bar-visible");
+
+      mainNavbar.classList.remove("py-2");
+      mainNavbar.classList.add("py-4");
+
+      isShrunk = false;
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      mainMenu.classList.add("hidden");
+      mainMenu.classList.remove("mobile-menu-active");
+      dropdownToggles.forEach((dropdownToggle) => {
+        const menu = dropdownToggle.querySelector("[data-dropdown-menu]");
+        if (menu) {
+          menu.classList.add("hidden");
+        }
+      });
+    }
+  });
+});

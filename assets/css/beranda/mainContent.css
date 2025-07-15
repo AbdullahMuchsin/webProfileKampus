@@ -27,6 +27,7 @@
   justify-content: center;
   padding: 0;
   align-items: center;
+  margin-top: 70px;
 }
 
 .beranda-container {
@@ -171,6 +172,7 @@
   #beranda {
     min-height: calc(100vh - 126.4px);
     padding: 2rem 0;
+    margin-top: 82.4px;
   }
 
   .beranda-container {

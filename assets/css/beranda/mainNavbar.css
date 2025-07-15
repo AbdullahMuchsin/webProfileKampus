@@ -23,9 +23,10 @@
   background-color: var(--primary-700);
   width: 100%;
   padding: 1rem 0;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 40;
+  margin-top: 44px;
 }
 
 .navbar-container {
@@ -123,10 +124,6 @@
   transition: background-color 0.3s, color 0.3s;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
-}
-
-.menu a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (min-width: 640px) {

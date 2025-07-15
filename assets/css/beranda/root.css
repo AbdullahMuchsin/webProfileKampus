@@ -38,4 +38,8 @@ body {
   background-color: var(--primary-800);
   z-index: -10;
 }
+
+.menu.show {
+  display: flex;
+}
 /* END ROOT */

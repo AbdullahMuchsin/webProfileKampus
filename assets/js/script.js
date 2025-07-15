@@ -1,49 +1,67 @@
-// VALID
-let currentIndex2 = 0;
+// START TOP NAVBAR
+document.addEventListener("click", function (e) {
+  const dropdownBtn = e.target.closest("[data-dropdown-toggle]");
+  const openMenu = document.querySelector(".language-menu.show");
 
-function moveSlide(step) {
-  const slider = document.getElementById("card-slider");
-  const totalCards = slider.children.length;
-  const maxIndex = totalCards - 1;
+  if (dropdownBtn) {
+    const menu = dropdownBtn.querySelector(".language-menu");
+    menu.classList.toggle("show");
+  } else if (openMenu) {
+    openMenu.classList.remove("show");
+  }
+});
+// TOP NAVBAR
 
-  const cardWidth = slider.children[0].offsetWidth + 32; // card + padding
+// START MAIN NAVBAR
+document
+  .getElementById("mobile-menu-button")
+  .addEventListener("click", function () {
+    var menu = document.getElementById("main-menu");
+    menu.classList.toggle("show");
+  });
+// END MAIN NAVBAR
 
-  currentIndex2 += step;
+// START MAIN CONTENT
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".carousel-item");
+  const dotsContainer = document.querySelector(".carousel-dots");
+  let currentIndex = 0;
 
-  if (currentIndex2 < 0) currentIndex2 = 0;
-  if (currentIndex2 > maxIndex) currentIndex2 = maxIndex;
+  // Create dots
+  slides.forEach((_, idx) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => goToSlide(idx));
+    dotsContainer.appendChild(dot);
+  });
 
-  slider.style.transform = `translateX(-${currentIndex2 * cardWidth}px)`;
-}
+  const dots = dotsContainer.querySelectorAll("span");
 
-// VALID
-const slider2 = document.getElementById("desktop-slider");
-let scrollAmount = 0;
-
-function autoSlide() {
-  if (!slider2) return;
-
-  const slideWidth = slider2.querySelector("a").offsetWidth + 12;
-  scrollAmount += slideWidth;
-
-  if (scrollAmount >= slider2.scrollWidth - slider2.clientWidth) {
-    scrollAmount = 0;
+  function updateCarousel() {
+    document.querySelector(".carousel-inner").style.transform = `translateX(-${
+      currentIndex * 100
+    }%)`;
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
   }
 
-  slider2.scrollTo({
-    left: scrollAmount,
-    behavior: "smooth",
-  });
-}
+  function goToSlide(idx) {
+    currentIndex = idx;
+    updateCarousel();
+  }
 
-let autoSlideInterval = setInterval(autoSlide, 3000);
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  }
 
-// VALID
-slider2.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
-slider2.addEventListener("mouseleave", () => {
-  autoSlideInterval = setInterval(autoSlide, 3000);
+  // Start auto slide
+  let interval = setInterval(nextSlide, 4000);
+
+  updateCarousel();
 });
+// END MAIN CONTENT
 
+// START TENTANG KAMI
 const desktopTabs = document.querySelectorAll(".tab-link");
 const desktopContents = document.querySelectorAll(".tab-content");
 const mobileTabLinks = document.querySelectorAll(".mobile-tab-link");
@@ -132,88 +150,9 @@ mobileTabLinks.forEach((tabLink) => {
 });
 
 mobileTabContents.forEach((content) => content.classList.add("hidden"));
+// END TENTANG KAMI
 
-// START TOP NAVBAR
-document.addEventListener("click", function (e) {
-  const dropdownBtn = e.target.closest("[data-dropdown-toggle]");
-  const openMenu = document.querySelector(".language-menu.show");
-
-  if (dropdownBtn) {
-    const menu = dropdownBtn.querySelector(".language-menu");
-    menu.classList.toggle("show");
-  } else if (openMenu) {
-    openMenu.classList.remove("show");
-  }
-});
-
-//
-document
-  .getElementById("mobile-menu-button")
-  .addEventListener("click", function () {
-    var menu = document.getElementById("main-menu");
-    menu.classList.toggle("show");
-  });
-
-//
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".carousel-item");
-  const dotsContainer = document.querySelector(".carousel-dots");
-  let currentIndex = 0;
-
-  // Create dots
-  slides.forEach((_, idx) => {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => goToSlide(idx));
-    dotsContainer.appendChild(dot);
-  });
-
-  const dots = dotsContainer.querySelectorAll("span");
-
-  function updateCarousel() {
-    document.querySelector(".carousel-inner").style.transform = `translateX(-${
-      currentIndex * 100
-    }%)`;
-    dots.forEach((dot) => dot.classList.remove("active"));
-    dots[currentIndex].classList.add("active");
-  }
-
-  function goToSlide(idx) {
-    currentIndex = idx;
-    updateCarousel();
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
-  }
-
-  // Start auto slide
-  let interval = setInterval(nextSlide, 4000);
-
-  updateCarousel();
-});
-
-// TRASH
-
-
-// Tambahkan manual tombol
-function scrollSlider(direction) {
-  const slideWidth = slider.querySelector("a").offsetWidth + 12;
-  if (direction === "left") {
-    scrollAmount -= slideWidth;
-    if (scrollAmount < 0) scrollAmount = 0;
-  } else {
-    scrollAmount += slideWidth;
-    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-      scrollAmount = slider.scrollWidth - slider.clientWidth;
-    }
-  }
-  slider.scrollTo({
-    left: scrollAmount,
-    behavior: "smooth",
-  });
-}
-
+// START - FOR PRESTASI MAHASISWA SLIDE
 function checkScrollButtons() {
   const slider = document.getElementById("desktop-slider");
   const leftBtn = document.getElementById("scroll-left-btn");
@@ -230,25 +169,6 @@ function checkScrollButtons() {
   } else {
     rightBtn.style.display = "block";
   }
-}
-
-function scrollSlider(direction) {
-  const slider = document.getElementById("desktop-slider");
-  const scrollAmount = slider.clientWidth * 0.5;
-
-  if (direction === "left") {
-    slider.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth",
-    });
-  } else {
-    slider.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  }
-
-  setTimeout(checkScrollButtons, 500);
 }
 
 window.onload = checkScrollButtons;
@@ -297,90 +217,52 @@ function moveSlide(direction) {
 }
 
 updateSliderPosition();
+// END - FOR PRESTASI MAHASISWA SLIDE
+// START INSTAGRAM POST - MOBILE
+const slider2 = document.getElementById("desktop-slider");
+let scrollAmount = 0;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const mainMenu = document.getElementById("main-menu");
-  const dropdownToggles = document.querySelectorAll("[data-dropdown-toggle]");
-  const topBar = document.getElementById("top-bar");
-  const mainNavbar = document.getElementById("main-navbar");
+function autoSlide() {
+  if (!slider2) return;
 
-  let lastScrollY = window.scrollY;
+  const slideWidth = slider2.querySelector("a").offsetWidth + 12;
+  scrollAmount += slideWidth;
 
-  mobileMenuButton.addEventListener("click", function () {
-    mainMenu.classList.toggle("hidden");
-    mainMenu.classList.toggle("mobile-menu-active");
+  if (scrollAmount >= slider2.scrollWidth - slider2.clientWidth) {
+    scrollAmount = 0;
+  }
+
+  slider2.scrollTo({
+    left: scrollAmount,
+    behavior: "smooth",
   });
+}
 
-  mainMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth < 768) {
-        mainMenu.classList.add("hidden");
-        mainMenu.classList.remove("mobile-menu-active");
-      }
-    });
-  });
+let autoSlideInterval = setInterval(autoSlide, 3000);
 
-  dropdownToggles.forEach((dropdownToggle) => {
-    const button = dropdownToggle.querySelector("button");
-    const menu = dropdownToggle.querySelector("[data-dropdown-menu]");
-
-    if (button && menu) {
-      button.addEventListener("click", function (event) {
-        event.stopPropagation();
-        dropdownToggles.forEach((otherDropdown) => {
-          const otherMenu = otherDropdown.querySelector("[data-dropdown-menu]");
-          if (
-            otherMenu &&
-            otherMenu !== menu &&
-            !otherMenu.classList.contains("hidden")
-          ) {
-            otherMenu.classList.add("hidden");
-          }
-        });
-        menu.classList.toggle("hidden");
-      });
-
-      document.addEventListener("click", function (event) {
-        if (!dropdownToggle.contains(event.target)) {
-          menu.classList.add("hidden");
-        }
-      });
-    }
-  });
-
-  let isShrunk = false;
-
-  window.addEventListener("scroll", function () {
-    if (!isShrunk && window.scrollY > 50) {
-      topBar.classList.add("top-bar-hidden");
-      topBar.classList.remove("top-bar-visible");
-
-      mainNavbar.classList.remove("py-4");
-      mainNavbar.classList.add("py-2");
-
-      isShrunk = true;
-    } else if (isShrunk && window.scrollY < 30) {
-      topBar.classList.remove("top-bar-hidden");
-      topBar.classList.add("top-bar-visible");
-
-      mainNavbar.classList.remove("py-2");
-      mainNavbar.classList.add("py-4");
-
-      isShrunk = false;
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 768) {
-      mainMenu.classList.add("hidden");
-      mainMenu.classList.remove("mobile-menu-active");
-      dropdownToggles.forEach((dropdownToggle) => {
-        const menu = dropdownToggle.querySelector("[data-dropdown-menu]");
-        if (menu) {
-          menu.classList.add("hidden");
-        }
-      });
-    }
-  });
+slider2.addEventListener("mouseenter", () => clearInterval(autoSlideInterval));
+slider2.addEventListener("mouseleave", () => {
+  autoSlideInterval = setInterval(autoSlide, 3000);
 });
+// END INSTAGRAM POST - MOBILE
+
+// START - FOR INSTAGRAM SLIDE - DESKTOP
+function scrollSlider(direction) {
+  const slider = document.getElementById("desktop-slider");
+  const scrollAmount = slider.clientWidth * 0.5;
+
+  if (direction === "left") {
+    slider.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth",
+    });
+  } else {
+    slider.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }
+
+  setTimeout(checkScrollButtons, 500);
+}
+// END - FOR INSTAGRAM SLIDE - DESKTOP

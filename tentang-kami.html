@@ -14,29 +14,104 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="assets/css/tentangKami/clear.css" />
+    <link rel="stylesheet" href="assets/css/tentangKami/root.css" />
+    <link rel="stylesheet" href="assets/css/tentangKami/topNavbar.css" />
+    <link rel="stylesheet" href="assets/css/tentangKami/mainNavbar.css" />
     <link rel="stylesheet" href="assets/css/tentangKami/style.css" />
   </head>
-  <body>
-    <!-- Header & Navigation -->
-    <header>
-      <div class="container">
-        <nav class="navbar">
-          <div class="logo">
-            <div class="logo-icon">
-              <i class="fas fa-laptop-code"></i>
+  <body class="bg-white">
+    <div class="header-background"></div>
+    <!-- START TOP NAVBAR CLEAR__ -->
+    <div id="top-navbar">
+      <div class="top-navbar-container">
+        <div class="social-links-top-navbar">
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links-top-navbar"></div>
+          <a href="#">Pendaftaran</a>
+        </div>
+
+        <div class="right-section-top-navbar">
+          <div class="language-selector-top-navbar" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow-top-navbar"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="language-menu-top-navbar" data-dropdown-menu>
+              <a href="#"
+                ><span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia</a
+              >
+              <a href="#"><span class="flag-top-navbar">🇬🇧</span> English</a>
             </div>
-            <div class="logo-text">Informatics</div>
           </div>
-          <div class="nav-links">
-            <a href="#">Beranda</a>
-            <a href="#" class="active">Tentang Kami</a>
-            <a href="#">Program Studi</a>
-            <a href="#">Akademik</a>
-            <a href="#">Kontak</a>
-          </div>
-        </nav>
+        </div>
       </div>
-    </header>
+    </div>
+    <!-- END TOP NAVBAR CLEAR__ -->
+
+    <!-- START MAIN NAVBAR NOCLEAR__ -->
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
+            >
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
+
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="index.html">Beranda</a>
+          <a href="tentang-kami.html" class="nav-link-active">Tentang Kami</a>
+          <a href="tentang-kami.html">Kurikulum</a>
+          <a href="#timdosen">Tim Dosen</a>
+          <a href="#kehidupamahasiswa">Kehidupan Mahasiswa</a>
+          <a href="#pendaftaran">Pendaftaran</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END MAIN NAVBAR NOCLEAR__ -->
 
     <!-- Hero Section -->
     <section class="hero">
@@ -126,7 +201,7 @@
         <div class="tab-content" id="si-content">
           <div class="vision-mission">
             <div class="vm-item">
-              <h3> Visi</h3>
+              <h3>Visi</h3>
               <p>
                 Menjadi program studi Sistem Informasi terdepan dalam
                 menghasilkan lulusan yang mampu mengintegrasikan teknologi
@@ -135,7 +210,7 @@
               </p>
             </div>
             <div class="vm-item">
-              <h3> Misi</h3>
+              <h3>Misi</h3>
               <ul>
                 <li>
                   Menyelenggarakan pendidikan Sistem Informasi berbasis
@@ -156,7 +231,7 @@
               </ul>
             </div>
             <div class="vm-item">
-              <h3> Tujuan</h3>
+              <h3>Tujuan</h3>
               <ul>
                 <li>
                   Menghasilkan lulusan yang menguasai konsep bisnis dan
@@ -178,91 +253,60 @@
             </div>
           </div>
         </div>
-
-        <!-- Features Section -->
-        <div class="section-title">
-          <h2>Apa yang Membuat Kami Unik?</h2>
-          <p>
-            Keunggulan program studi Teknik Informatika dan Sistem Informasi
-            kami didukung oleh berbagai keunikan yang menjadi pembeda.
-          </p>
-        </div>
-
-        <div class="features">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-graduation-cap"></i>
-            </div>
-            <h3>Kurikulum Berbasis Industri</h3>
-            <p>
-              Kurikulum kami dirancang bersama pakar industri untuk memastikan
-              relevansi dengan kebutuhan pasar kerja terkini dan masa depan.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-flask"></i>
-            </div>
-            <h3>Lab Teknologi Mutakhir</h3>
-            <p>
-              Fasilitas laboratorium dengan perangkat terkini di bidang AI, IoT,
-              Cloud Computing, dan Cybersecurity.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <h3>Kemitraan Global</h3>
-            <p>
-              Kerjasama dengan universitas terkemuka dunia dan perusahaan
-              teknologi global untuk program pertukaran dan magang.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-user-tie"></i>
-            </div>
-            <h3>Pengajar Berpengalaman</h3>
-            <p>
-              Dosen dengan kualifikasi doktor dan pengalaman industri yang luas
-              di bidang teknologi informasi.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
+
+    <style>
+      .accreditation {
+        position: relative; /* Penting untuk positioning tombol navigasi */
+        width: 100%; /* Atur lebar sesuai kebutuhan */
+        overflow: hidden; /* Sembunyikan gambar di luar tampilan */
+      }
+
+      .accreditation-content {
+        display: flex; /* Untuk menempatkan gambar secara berdampingan */
+        transition: transform 0.5s ease-in-out; /* Animasi geser */
+      }
+
+      .accreditation-content img {
+        width: 100%; /* Setiap gambar mengambil 100% lebar container */
+        flex-shrink: 0; /* Mencegah gambar menyusut */
+        display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+      }
+
+      /* Styling opsional untuk tombol navigasi */
+      .prev-slide,
+      .next-slide {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .prev-slide {
+        left: 10px;
+      }
+
+      .next-slide {
+        right: 10px;
+      }
+    </style>
 
     <!-- Accreditation Section -->
     <section class="section">
       <div class="container">
         <div class="accreditation">
           <div class="accreditation-content">
-            <h2>Akreditasi Internasional</h2>
-            <p>
-              Program studi kami telah mendapatkan pengakuan dari berbagai
-              lembaga akreditasi internasional, menjamin kualitas pendidikan
-              yang setara dengan standar global.
-            </p>
-
-            <div class="badges">
-              <div class="badge">
-                <i class="fas fa-award"></i>
-                <h3>ABET</h3>
-                <p>Akreditasi Teknik dan Komputasi</p>
-              </div>
-              <div class="badge">
-                <i class="fas fa-globe-asia"></i>
-                <h3>ASIIN</h3>
-                <p>Akreditasi Program Studi</p>
-              </div>
-              <div class="badge">
-                <i class="fas fa-star"></i>
-                <h3>AUN-QA</h3>
-                <p>Jaringan Universitas ASEAN</p>
-              </div>
-            </div>
+            <img src="assets/img/tentangKami/a-1.png" alt="Akreditasi 1" />
+            <img src="assets/img/tentangKami/a-2.png" alt="Akreditasi 2" />
           </div>
+          <button class="prev-slide">❮</button>
+          <button class="next-slide">❯</button>
         </div>
 
         <!-- Statistics -->
@@ -299,22 +343,70 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Siap Memulai Perjalanan Teknologi Anda?</h2>
-          <p>
-            Bergabunglah dengan ribuan inovator teknologi masa depan di program
-            studi Teknik Informatika dan Sistem Informasi kami. Daftarkan diri
-            Anda sekarang dan raih karir gemilang di dunia digital.
-          </p>
-          <button class="btn btn-primary">
-            Daftar Sekarang <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const accreditationContent = document.querySelector(
+          ".accreditation-content"
+        );
+        const images = accreditationContent.querySelectorAll("img");
+        const prevButton = document.querySelector(".prev-slide");
+        const nextButton = document.querySelector(".next-slide");
+
+        let currentIndex = 0;
+        const totalImages = images.length;
+
+        // Fungsi untuk menampilkan slide yang sesuai
+        function showSlide(index) {
+          if (index >= totalImages) {
+            currentIndex = 0; // Kembali ke awal jika mencapai akhir
+          } else if (index < 0) {
+            currentIndex = totalImages - 1; // Kembali ke akhir jika mundur dari awal
+          } else {
+            currentIndex = index;
+          }
+          const offset = -currentIndex * 100; // Hitung offset untuk menggeser gambar
+          accreditationContent.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Event listener untuk tombol 'Next'
+        if (nextButton) {
+          nextButton.addEventListener("click", () => {
+            showSlide(currentIndex + 1);
+          });
+        }
+
+        // Event listener untuk tombol 'Previous'
+        if (prevButton) {
+          prevButton.addEventListener("click", () => {
+            showSlide(currentIndex - 1);
+          });
+        }
+
+        // Opsional: Auto-slide
+        const autoSlideInterval = 3000; // Ganti dengan interval yang Anda inginkan (dalam milidetik)
+        let slideInterval;
+
+        function startAutoSlide() {
+          slideInterval = setInterval(() => {
+            showSlide(currentIndex + 1);
+          }, autoSlideInterval);
+        }
+
+        function stopAutoSlide() {
+          clearInterval(slideInterval);
+        }
+
+        // Mulai auto-slide saat halaman dimuat
+        startAutoSlide();
+
+        // Hentikan auto-slide saat mouse hover (opsional)
+        accreditationContent.addEventListener("mouseenter", stopAutoSlide);
+        accreditationContent.addEventListener("mouseleave", startAutoSlide);
+
+        // Inisialisasi tampilan slide pertama
+        showSlide(currentIndex);
+      });
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -444,5 +536,6 @@
         ".copyright p"
       ).innerHTML = `&copy; ${new Date().getFullYear()} Program Studi Teknik Informatika dan Sistem Informasi. Hak Cipta Dilindungi.`;
     </script>
+    <script src="assets/js/tentang-kami.js"></script>
   </body>
 </html>

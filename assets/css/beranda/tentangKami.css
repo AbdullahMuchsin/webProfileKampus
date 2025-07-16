@@ -131,7 +131,7 @@
 .content-text h3 {
   font-size: 2rem;
   margin-bottom: 1.2rem;
-  line-height: 1.3; /* agar judul tidak terlalu rapat */
+  line-height: 1.3; 
 }
 
 .content-text p {

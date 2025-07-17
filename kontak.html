@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak & FAQ | Program Perusahaan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* VARIABEL DAN RESET */
+      :root {
+        --primary: #0d47a1;
+        --primary-dark: #002171;
+        --secondary: #263238;
+        --light: #f5f7fa;
+        --gray: #e0e0e0;
+        --dark-gray: #757575;
+        --white: #ffffff;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--secondary);
+        line-height: 1.6;
+      }
+
+      /* TYPOGRAPHY */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      h1:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary);
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* LAYOUT */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 30px;
+      }
+
+      .two-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .three-columns {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* HEADER */
+      header {
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--secondary);
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* KONTAK SECTION */
+      .contact-form {
+        background-color: var(--white);
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--secondary);
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid var(--gray);
+        background-color: var(--white);
+        font-size: 1rem;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: var(--white);
+        padding: 0.8rem 1.8rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .contact-info {
+        background-color: var(--white);
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+        height: 100%;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--gray);
+      }
+
+      .contact-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .contact-icon {
+        background-color: var(--light);
+        color: var(--primary);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1.2rem;
+        font-size: 1.2rem;
+      }
+
+      .contact-details h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-details p {
+        margin-bottom: 0;
+      }
+
+      /* FAQ SECTION */
+      .faq-container {
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--gray);
+      }
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+        cursor: pointer;
+        background-color: var(--white);
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: var(--light);
+      }
+
+      .faq-question h3 {
+        margin-bottom: 0;
+      }
+
+      .faq-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        background-color: var(--light);
+      }
+
+      .faq-answer.active {
+        padding: 1.5rem;
+        max-height: 500px;
+      }
+
+      .faq-answer p {
+        margin-bottom: 0.5rem;
+      }
+
+      .faq-answer ul {
+        margin: 1rem 0 1rem 2rem;
+      }
+
+      .faq-answer li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* MAP */
+      .map-container {
+        height: 300px;
+        background-color: var(--gray);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .map-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          #e0e0e0 25%,
+          #f5f5f5 25%,
+          #f5f5f5 50%,
+          #e0e0e0 50%,
+          #e0e0e0 75%,
+          #f5f5f5 75%
+        );
+        background-size: 40px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark-gray);
+        font-weight: 500;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: var(--secondary);
+        color: var(--white);
+        padding: 3rem 0 2rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .footer-column {
+        flex: 1;
+        padding-right: 2rem;
+      }
+
+      .footer-column h3 {
+        color: var(--white);
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-column h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #b0bec5;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #b0bec5;
+        font-size: 0.9rem;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 992px) {
+        .two-columns {
+          grid-template-columns: 1fr;
+        }
+
+        .three-columns {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-content {
+          flex-direction: column;
+        }
+
+        .footer-column {
+          margin-bottom: 2rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.6rem;
+        }
+
+        .navbar {
+          flex-direction: column;
+          padding: 1rem 0;
+        }
+
+        .nav-links {
+          margin-top: 1rem;
+        }
+
+        .nav-links li {
+          margin: 0 0.8rem;
+        }
+
+        .contact-form,
+        .contact-info {
+          padding: 1.8rem;
+        }
+
+        .three-columns {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo"
+            >CORPORATE<span style="color: var(--primary-dark)">PROGRAM</span></a
+          >
+          <ul class="nav-links">
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Program</a></li>
+            <li><a href="#" class="active">Kontak & FAQ</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Kontak Section -->
+    <section id="kontak">
+      <div class="container">
+        <div class="section-header">
+          <h1>Hubungi Kami</h1>
+          <p>
+            Kami siap membantu Anda dengan segala pertanyaan terkait program
+            perusahaan kami
+          </p>
+        </div>
+
+        <div class="grid two-columns">
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <h2>Kirim Pesan</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subjek</label>
+                <select id="subject" required>
+                  <option value="">Pilih subjek</option>
+                  <option value="program">Informasi Program</option>
+                  <option value="pendaftaran">Pendaftaran</option>
+                  <option value="dukungan">Dukungan Teknis</option>
+                  <option value="lainnya">Lainnya</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Kirim Pesan</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <h2>Informasi Kontak</h2>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Alamat Kantor</h4>
+                <p>
+                  Gedung Perkantoran Sentra Bisnis Artha Gading<br />
+                  Lantai 15, Jl. Boulevard Artha Gading<br />
+                  Jakarta Utara 14240
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Telepon</h4>
+                <p>
+                  +62 21 2457 8890 (Hunting)<br />
+                  +62 812 3456 7890 (WhatsApp)
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>
+                  info@corporateprogram.co.id<br />
+                  support@corporateprogram.co.id
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Jam Operasional</h4>
+                <p>
+                  Senin - Jumat: 08.00 - 17.00 WIB<br />
+                  Sabtu: 08.00 - 14.00 WIB<br />
+                  Minggu & Hari Libur: Tutup
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="map-container">
+      <div class="map-placeholder">
+        <i
+          class="fas fa-map-marked-alt"
+          style="font-size: 2rem; margin-right: 10px"
+        ></i>
+        Peta Lokasi Kantor CorporateProgram
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="background-color: #f0f4f8">
+      <div class="container">
+        <div class="section-header">
+          <h1>Pertanyaan yang Sering Diajukan</h1>
+          <p>
+            Temukan jawaban atas pertanyaan umum seputar program perusahaan kami
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(1)">
+              <h3>Apa saja program unggulan yang ditawarkan perusahaan?</h3>
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-1">
+              <p>
+                Kami menawarkan beberapa program unggulan untuk pengembangan
+                bisnis:
+              </p>
+              <ul>
+                <li>
+                  <strong>Program Strategi Bisnis:</strong> Konsultasi
+                  pengembangan strategi jangka panjang
+                </li>
+                <li>
+                  <strong>Transformasi Digital:</strong> Solusi untuk
+                  digitalisasi operasional bisnis
+                </li>
+                <li>
+                  <strong>Pengembangan SDM:</strong> Pelatihan kepemimpinan dan
+                  pengembangan kompetensi
+                </li>
+                <li>
+                  <strong>Efisiensi Operasional:</strong> Program peningkatan
+                  produktivitas dan efisiensi
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(2)">
+              <h3>Bagaimana proses pendaftaran untuk mengikuti program?</h3>
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-2">
+              <p>
+                Proses pendaftaran dapat dilakukan melalui beberapa langkah
+                berikut:
+              </p>
+              <ol>
+                <li>Kunjungi halaman pendaftaran program di website kami</li>
+                <li>
+                  Isi formulir pendaftaran dengan data perusahaan yang valid
+                </li>
+                <li>Pilih program yang diinginkan dan jadwal pelaksanaan</li>
+                <li>
+                  Tim kami akan menghubungi Anda dalam 2 hari kerja untuk
+                  verifikasi
+                </li>
+                <li>
+                  Setelah verifikasi, Anda akan menerima email konfirmasi dan
+                  instruksi pembayaran
+                </li>
+                <li>Program akan diaktifkan setelah pembayaran diverifikasi</li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(3)">
+              <h3>Apakah ada persyaratan khusus untuk mengikuti program?</h3>
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-3">
+              <p>
+                Persyaratan untuk mengikuti program bervariasi tergantung jenis
+                programnya:
+              </p>
+              <p><strong>Untuk semua program:</strong></p>
+              <ul>
+                <li>Perusahaan terdaftar secara legal</li>
+                <li>Memiliki minimal 10 karyawan</li>
+                <li>Bersedia berkomitmen untuk implementasi program</li>
+              </ul>
+              <p><strong>Program khusus:</strong></p>
+              <ul>
+                <li>
+                  Program Transformasi Digital: memiliki infrastruktur IT dasar
+                </li>
+                <li>
+                  Program Pengembangan SDM: menyediakan fasilitas pelatihan
+                </li>
+                <li>
+                  Program Efisiensi Operasional: memiliki data operasional 6
+                  bulan terakhir
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(4)">
+              <h3>
+                Berapa lama durasi program dan bagaimana jadwal pelaksanaannya?
+              </h3>
+              <div class="fas-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-4">
+              <p>Durasi program bervariasi:</p>
+              <ul>
+                <li>
+                  <strong>Program Intensif:</strong> 2-4 minggu (full-time,
+                  Senin-Jumat)
+                </li>
+                <li>
+                  <strong>Program Reguler:</strong> 3-6 bulan (2-3 sesi per
+                  minggu)
+                </li>
+                <li>
+                  <strong>Program Eksekutif:</strong> 1 tahun (1 sesi per minggu
+                  + konsultasi bulanan)
+                </li>
+              </ul>
+              <p>
+                Jadwal pelaksanaan dapat disesuaikan dengan kebutuhan perusahaan
+                peserta. Umumnya sesi dilaksanakan pada:
+              </p>
+              <ul>
+                <li>Hari kerja: 09.00-12.00 atau 13.00-16.00 WIB</li>
+                <li>Sabtu: 09.00-15.00 WIB (untuk program tertentu)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(5)">
+              <h3>Apakah program ini menyediakan sertifikat kelulusan?</h3>
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-5">
+              <p>
+                Ya, semua program kami menyediakan sertifikat kelulusan dengan
+                ketentuan:
+              </p>
+              <ul>
+                <li>Peserta menyelesaikan minimal 80% sesi program</li>
+                <li>Menyelesaikan semua tugas dan proyek yang diberikan</li>
+                <li>Mencapai nilai minimal kelulusan pada asesmen akhir</li>
+              </ul>
+              <p>Sertifikat yang diberikan berupa:</p>
+              <ul>
+                <li>
+                  Sertifikat Penyelesaian Program (untuk semua peserta yang
+                  memenuhi syarat)
+                </li>
+                <li>
+                  Sertifikat Prestasi (untuk peserta dengan nilai tertinggi)
+                </li>
+                <li>
+                  Sertifikat Implementasi (setelah pelaksanaan proyek di
+                  perusahaan)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ Item 6 -->
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(6)">
+              <h3>Bagaimana metode pembayaran untuk program ini?</h3>
+              <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="faq-answer" id="faq-answer-6">
+              <p>Kami menyediakan beberapa opsi pembayaran yang fleksibel:</p>
+              <ul>
+                <li>
+                  <strong>Pembayaran Penuh:</strong> Diskon 10% untuk pembayaran
+                  lunas sebelum program dimulai
+                </li>
+                <li>
+                  <strong>Cicilan:</strong> 50% di awal, 50% di tengah program
+                </li>
+                <li>
+                  <strong>Termin:</strong> 30% saat pendaftaran, 40% di
+                  pertengahan, 30% di akhir program
+                </li>
+              </ul>
+              <p>Metode pembayaran yang diterima:</p>
+              <ul>
+                <li>Transfer Bank (BCA, Mandiri, BNI, BRI)</li>
+                <li>Kartu Kredit (Visa, MasterCard)</li>
+                <li>Virtual Account</li>
+                <li>E-Wallet (OVO, GoPay, DANA)</li>
+              </ul>
+              <p>
+                Untuk perusahaan dengan peserta lebih dari 5 orang, tersedia
+                paket khusus dengan diskon tambahan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Tentang Kami</h3>
+            <p>
+              CorporateProgram adalah penyedia solusi pengembangan bisnis
+              profesional yang telah membantu lebih dari 500 perusahaan
+              meningkatkan kinerja dan mencapai tujuan strategis mereka.
+            </p>
+            <p>
+              Dengan tim ahli bersertifikasi dan metodologi teruji, kami
+              berkomitmen memberikan hasil yang terukur bagi klien kami.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Program Kami</h3>
+            <ul class="footer-links">
+              <li><a href="#">Strategi Bisnis</a></li>
+              <li><a href="#">Transformasi Digital</a></li>
+              <li><a href="#">Pengembangan SDM</a></li>
+              <li><a href="#">Efisiensi Operasional</a></li>
+              <li><a href="#">Manajemen Proyek</a></li>
+              <li><a href="#">Kepemimpinan Eksekutif</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Kontak</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Gedung Perkantoran Sentra
+              Bisnis Artha Gading, Jakarta
+            </p>
+            <p><i class="fas fa-phone-alt"></i> +62 21 2457 8890</p>
+            <p><i class="fas fa-envelope"></i> info@corporateprogram.co.id</p>
+            <p><i class="fas fa-clock"></i> Senin-Jumat: 08.00-17.00 WIB</p>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 CorporateProgram. Hak Cipta Dilindungi. | Kebijakan
+            Privasi | Syarat dan Ketentuan
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle FAQ Answer
+      function toggleFAQ(id) {
+        const answer = document.getElementById(`faq-answer-${id}`);
+        const icon = document
+          .querySelector(`#faq-answer-${id}`)
+          .previousElementSibling.querySelector(".faq-icon i");
+
+        answer.classList.toggle("active");
+
+        if (answer.classList.contains("active")) {
+          icon.classList.remove("fa-chevron-down");
+          icon.classList.add("fa-chevron-up");
+        } else {
+          icon.classList.remove("fa-chevron-up");
+          icon.classList.add("fa-chevron-down");
+        }
+      }
+
+      // Form Submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+
+          // Show success message
+          alert(
+            `Terima kasih ${name}! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda di ${email} segera.`
+          );
+
+          // Reset form
+          this.reset();
+        });
+
+      // Auto-open first FAQ
+      document.addEventListener("DOMContentLoaded", function () {
+        toggleFAQ(1);
+      });
+    </script>
+  </body>
+</html>

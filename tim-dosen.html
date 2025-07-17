@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staf Pengajar - Prodi Teknik Informatika & Sistem Informasi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, #0f2d5f 0%, #1a3f8f 100%);
+        color: white;
+        padding: 1.5rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        width: 60px;
+        height: 60px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0f2d5f;
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
+
+      .logo-text h1 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .logo-text p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 0.8rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover {
+        color: #ffd700;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #ffd700;
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* Page Title */
+      .page-title {
+        background: #fff;
+        padding: 4rem 2rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .page-title h2 {
+        font-size: 2.5rem;
+        color: #0f2d5f;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-title p {
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Position Filter */
+      .position-filter {
+        max-width: 1200px;
+        margin: 0 auto 2rem;
+        padding: 0 2rem;
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .position-filter::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 0.6rem 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: #0f2d5f;
+        color: white;
+        border-color: #0f2d5f;
+      }
+
+      /* Dosen Section */
+      .dosen-container {
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+      }
+
+      .position-section {
+        margin-bottom: 3rem;
+      }
+
+      .position-title {
+        font-size: 1.8rem;
+        color: #0f2d5f;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #0f2d5f;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .position-title i {
+        color: #ff6b00;
+      }
+
+      .dosen-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      /* Dosen Card */
+      .dosen-card {
+        background: white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #eee;
+        overflow: hidden;
+      }
+
+      .dosen-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .dosen-img {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .dosen-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .dosen-card:hover .dosen-img img {
+        transform: scale(1.05);
+      }
+
+      .dosen-position {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: rgba(15, 45, 95, 0.85);
+        color: white;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .dosen-info {
+        padding: 1.5rem;
+      }
+
+      .dosen-name {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        color: #0f2d5f;
+      }
+
+      .dosen-title {
+        color: #ff6b00;
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+      }
+
+      .dosen-details {
+        margin-top: 1.2rem;
+      }
+
+      .detail-item {
+        margin-bottom: 1rem;
+      }
+
+      .detail-item h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: #0f2d5f;
+        font-size: 1rem;
+      }
+
+      .detail-item h4 i {
+        color: #ff6b00;
+      }
+
+      .detail-item p,
+      .detail-item ul {
+        font-size: 0.9rem;
+        color: #555;
+        padding-left: 1.8rem;
+      }
+
+      .detail-item ul {
+        list-style-type: none;
+      }
+
+      .detail-item li {
+        position: relative;
+        padding-left: 1.2rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .detail-item li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #ff6b00;
+      }
+
+      /* Footer */
+      footer {
+        background: #0f2d5f;
+        color: white;
+        padding: 3rem 2rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-section h3::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ffd700;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer-links a:hover {
+        color: #ffd700;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .contact-item i {
+        color: #ffd700;
+        margin-top: 0.2rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        background: #ffd700;
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        nav ul {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .dosen-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .position-filter {
+          flex-wrap: wrap;
+        }
+
+        .page-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header-container,
+        .dosen-container,
+        .page-title {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+
+        .logo-text h1 {
+          font-size: 1.4rem;
+        }
+
+        .page-title h2 {
+          font-size: 1.8rem;
+        }
+
+        .position-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="logo-container">
+          <div class="logo">IT</div>
+          <div class="logo-text">
+            <h1>Teknik Informatika & Sistem Informasi</h1>
+            <p>Universitas Teknologi Maju</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-home"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user-graduate"></i> Program Studi</a>
+            </li>
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-chalkboard-teacher"></i> Staf Pengajar</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-book"></i> Kurikulum</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-envelope"></i> Kontak</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="page-title">
+      <h2>Staf Pengajar</h2>
+      <p>
+        Tim akademik berkualitas tinggi yang berdedikasi dalam pendidikan dan
+        penelitian di bidang Teknik Informatika dan Sistem Informasi
+      </p>
+    </section>
+
+    <!-- Position Filter -->
+    <div class="position-filter">
+      <button class="filter-btn active" data-position="all">Semua</button>
+      <button class="filter-btn" data-position="kajur">Ketua Jurusan</button>
+      <button class="filter-btn" data-position="sekprodi">
+        Sekretaris Prodi
+      </button>
+      <button class="filter-btn" data-position="dosen">Dosen Tetap</button>
+      <button class="filter-btn" data-position="prak">Dosen Praktisi</button>
+    </div>
+
+    <!-- Dosen Container -->
+    <div class="dosen-container">
+      <!-- Kajur Section -->
+      <section class="position-section" id="kajur-section">
+        <h2 class="position-title">
+          <i class="fas fa-crown"></i> Pimpinan Prodi
+        </h2>
+        <div class="dosen-grid">
+          <!-- Dosen 1 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Prof. Dr. Amelia Sari"
+              />
+              <div class="dosen-position">Ketua Jurusan</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Prof. Dr. Amelia Sari</h3>
+              <p class="dosen-title">Guru Besar Kecerdasan Buatan</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>Ph.D. Computer Science, Stanford University</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Machine Learning</li>
+                    <li>Computer Vision</li>
+                    <li>Natural Language Processing</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Deep Learning untuk Pengolahan Citra Medis</li>
+                    <li>AI untuk Pendidikan</li>
+                    <li>Ethical AI</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosen 2 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Dr. Ahmad Fauzi"
+              />
+              <div class="dosen-position">Sekretaris Prodi</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Dr. Ahmad Fauzi, S.Kom., M.Kom.</h3>
+              <p class="dosen-title">Ketua Program Studi Sistem Informasi</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>Doktor Sistem Informasi, Universitas Indonesia</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Enterprise Architecture</li>
+                    <li>IT Governance</li>
+                    <li>Business Intelligence</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Digital Transformation</li>
+                    <li>IT-Business Alignment</li>
+                    <li>Big Data Analytics</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dosen Tetap Section -->
+      <section class="position-section" id="dosen-section">
+        <h2 class="position-title">
+          <i class="fas fa-user-tie"></i> Dosen Tetap
+        </h2>
+        <div class="dosen-grid">
+          <!-- Dosen 3 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Dr. Budi Santoso"
+              />
+              <div class="dosen-position">Dosen Tetap</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Dr. Budi Santoso, S.T., M.Sc.</h3>
+              <p class="dosen-title">Koordinator Bidang Penelitian</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>
+                    Ph.D. Computer Engineering, Nanyang Technological University
+                  </p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Computer Networks</li>
+                    <li>Cloud Computing</li>
+                    <li>Internet of Things</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Edge Computing</li>
+                    <li>Network Security</li>
+                    <li>Smart City Applications</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosen 4 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Dr. Citra Dewi"
+              />
+              <div class="dosen-position">Dosen Tetap</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Dr. Citra Dewi, S.Kom., M.Kom.</h3>
+              <p class="dosen-title">
+                Koordinator Bidang Pengabdian Masyarakat
+              </p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>Doktor Ilmu Komputer, Institut Teknologi Bandung</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Human-Computer Interaction</li>
+                    <li>User Experience Design</li>
+                    <li>Frontend Development</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Accessibility in Digital Products</li>
+                    <li>UX for Social Impact</li>
+                    <li>Gamification in Education</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosen 5 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Dr. Dian Pratama"
+              />
+              <div class="dosen-position">Dosen Tetap</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Dr. Dian Pratama, S.Kom., M.T.</h3>
+              <p class="dosen-title">Koordinator Laboratorium</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>Ph.D. Information Security, University of Melbourne</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Cybersecurity</li>
+                    <li>Cryptography</li>
+                    <li>Secure Software Development</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Blockchain Security</li>
+                    <li>Privacy-Preserving Technologies</li>
+                    <li>Cyber Threat Intelligence</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dosen Praktisi Section -->
+      <section class="position-section" id="prak-section">
+        <h2 class="position-title">
+          <i class="fas fa-briefcase"></i> Dosen Praktisi
+        </h2>
+        <div class="dosen-grid">
+          <!-- Dosen 6 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Rina Wijaya"
+              />
+              <div class="dosen-position">Dosen Praktisi</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Rina Wijaya, S.Kom., M.Sc.</h3>
+              <p class="dosen-title">Senior Data Scientist</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>M.Sc. Data Science, University of Edinburgh</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Data Mining</li>
+                    <li>Predictive Analytics</li>
+                    <li>Big Data Technologies</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Data Science in Healthcare</li>
+                    <li>Real-time Analytics</li>
+                    <li>Data Visualization</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dosen 7 -->
+          <div class="dosen-card">
+            <div class="dosen-img">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Eko Prasetyo"
+              />
+              <div class="dosen-position">Dosen Praktisi</div>
+            </div>
+            <div class="dosen-info">
+              <h3 class="dosen-name">Eko Prasetyo, S.Kom., M.T.I.</h3>
+              <p class="dosen-title">CTO Fintech Startup</p>
+
+              <div class="dosen-details">
+                <div class="detail-item">
+                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                  <p>M.T.I. Software Engineering, Universitas Gadjah Mada</p>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
+                  <ul>
+                    <li>Software Architecture</li>
+                    <li>DevOps</li>
+                    <li>Cloud Native Applications</li>
+                  </ul>
+                </div>
+
+                <div class="detail-item">
+                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
+                  <ul>
+                    <li>Microservices Architecture</li>
+                    <li>CI/CD Automation</li>
+                    <li>Serverless Computing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Prodi Teknik Informatika & SI</h3>
+          <p>
+            Fakultas Teknik dan Ilmu Komputer<br />
+            Universitas Teknologi Maju<br />
+            Jl. Pendidikan No. 123, Bandung
+          </p>
+
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Program Studi</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Teknik Informatika (S1)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Sistem Informasi (S1)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Magister Ilmu Komputer
+                (S2)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-chevron-right"></i> Doktor Ilmu Komputer
+                (S3)</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontak Kami</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>(022) 1234-5678</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>informatika@utm.ac.id</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <span>Senin-Jumat: 08.00 - 16.00 WIB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>
+          &copy; 2023 Prodi Teknik Informatika & Sistem Informasi - Universitas
+          Teknologi Maju. Hak Cipta Dilindungi.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Filter functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const sections = document.querySelectorAll(".position-section");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const position = this.getAttribute("data-position");
+
+            // Update active button
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+
+            // Show/hide sections based on filter
+            if (position === "all") {
+              sections.forEach((section) => (section.style.display = "block"));
+            } else {
+              sections.forEach((section) => {
+                if (section.id === `${position}-section`) {
+                  section.style.display = "block";
+                } else {
+                  section.style.display = "none";
+                }
+              });
+            }
+          });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll("nav a").forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            document.querySelector(targetId).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

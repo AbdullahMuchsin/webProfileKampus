@@ -4,55 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staf Pengajar - Prodi Teknik Informatika & Sistem Informasi</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- MY CSS RESET STYLE -->
+    <link rel="stylesheet" href="assets/css/timDosen/clear.css" />
+    <!-- MY CSS ROOT CSS -->
+    <link rel="stylesheet" href="assets/css/timDosen/root.css" />
+    <!-- MY CSS TOP NAVBAR -->
+    <link rel="stylesheet" href="assets/css/timDosen/topNavbar.css" />
+    <!-- MY CSS MAIN NAVBAR -->
+    <link rel="stylesheet" href="assets/css/timDosen/mainNavbar.css" />
+    <!-- MY CSS MAIN HERO -->
+    <link rel="stylesheet" href="assets/css/timDosen/hero.css" />
+    <!-- MY CSS STYLE -->
     <link rel="stylesheet" href="assets/css/timDosen/style.css" />
+    <!-- MY CSS TOP FOOTER -->
+    <link rel="stylesheet" href="assets/css/timDosen/footer.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="header-container">
-        <div class="logo-container">
-          <div class="logo">IT</div>
-          <div class="logo-text">
-            <h1>Teknik Informatika & Sistem Informasi</h1>
-            <p>Universitas Teknologi Maju</p>
+    <div class="header-background"></div>
+
+    <!-- START TOP NAVBAR CLEAR__ -->
+    <div id="top-navbar">
+      <div class="top-navbar-container">
+        <div class="social-links-top-navbar">
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links-top-navbar"></div>
+          <a href="#">Pendaftaran</a>
+        </div>
+
+        <div class="right-section-top-navbar">
+          <div class="language-selector-top-navbar" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow-top-navbar"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="language-menu-top-navbar" data-dropdown-menu>
+              <a href="#"
+                ><span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia</a
+              >
+              <a href="#"><span class="flag-top-navbar">🇬🇧</span> English</a>
+            </div>
           </div>
         </div>
-        <nav>
-          <ul>
-            <li>
-              <a href="#"><i class="fas fa-home"></i> Beranda</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-user-graduate"></i> Program Studi</a>
-            </li>
-            <li>
-              <a href="#" class="active"
-                ><i class="fas fa-chalkboard-teacher"></i> Staf Pengajar</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-book"></i> Kurikulum</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-envelope"></i> Kontak</a>
-            </li>
-          </ul>
-        </nav>
       </div>
-    </header>
+    </div>
+    <!-- END TOP NAVBAR CLEAR__ -->
 
-    <!-- Page Title -->
-    <section class="page-title">
-      <h2>Staf Pengajar</h2>
-      <p>
-        Tim akademik berkualitas tinggi yang berdedikasi dalam pendidikan dan
-        penelitian di bidang Teknik Informatika dan Sistem Informasi
-      </p>
+    <!-- START MAIN NAVBAR NOCLEAR__ -->
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
+            >
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
+
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="index.html">Beranda</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="kurikulum.html">Kurikulum</a>
+          <a href="tim-dosen.html" class="nav-link-active">Tim Dosen</a>
+          <a href="kehidupan-mahasiswa.html">Kehidupan Mahasiswa</a>
+          <a href="pendaftaran.html">Pendaftaran</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END MAIN NAVBAR NOCLEAR__ -->
+
+    <!-- START HERO SECTION -->
+    <section class="hero">
+      <div class="container-hero">
+        <h1>Staf Pengajar</h1>
+      </div>
     </section>
+    <!-- END HERO SECTION -->
 
     <!-- Position Filter -->
     <div class="position-filter">
@@ -69,15 +146,13 @@
     <div class="dosen-container">
       <!-- Kajur Section -->
       <section class="position-section" id="kajur-section">
-        <h2 class="position-title">
-          <i class="fas fa-crown"></i> Pimpinan Prodi
-        </h2>
+        <h2 class="position-title">Pimpinan Prodi</h2>
         <div class="dosen-grid">
           <!-- Dosen 1 -->
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-6.jpg"
                 alt="Prof. Dr. Amelia Sari"
               />
               <div class="dosen-position">Ketua Jurusan</div>
@@ -85,31 +160,6 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Prof. Dr. Amelia Sari</h3>
               <p class="dosen-title">Guru Besar Kecerdasan Buatan</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>Ph.D. Computer Science, Stanford University</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Machine Learning</li>
-                    <li>Computer Vision</li>
-                    <li>Natural Language Processing</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Deep Learning untuk Pengolahan Citra Medis</li>
-                    <li>AI untuk Pendidikan</li>
-                    <li>Ethical AI</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -117,7 +167,7 @@
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-4.jpg"
                 alt="Dr. Ahmad Fauzi"
               />
               <div class="dosen-position">Sekretaris Prodi</div>
@@ -125,31 +175,6 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Dr. Ahmad Fauzi, S.Kom., M.Kom.</h3>
               <p class="dosen-title">Ketua Program Studi Sistem Informasi</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>Doktor Sistem Informasi, Universitas Indonesia</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Enterprise Architecture</li>
-                    <li>IT Governance</li>
-                    <li>Business Intelligence</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Digital Transformation</li>
-                    <li>IT-Business Alignment</li>
-                    <li>Big Data Analytics</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -157,15 +182,13 @@
 
       <!-- Dosen Tetap Section -->
       <section class="position-section" id="dosen-section">
-        <h2 class="position-title">
-          <i class="fas fa-user-tie"></i> Dosen Tetap
-        </h2>
+        <h2 class="position-title">Dosen Tetap</h2>
         <div class="dosen-grid">
           <!-- Dosen 3 -->
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-1.jpg"
                 alt="Dr. Budi Santoso"
               />
               <div class="dosen-position">Dosen Tetap</div>
@@ -173,33 +196,6 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Dr. Budi Santoso, S.T., M.Sc.</h3>
               <p class="dosen-title">Koordinator Bidang Penelitian</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>
-                    Ph.D. Computer Engineering, Nanyang Technological University
-                  </p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Computer Networks</li>
-                    <li>Cloud Computing</li>
-                    <li>Internet of Things</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Edge Computing</li>
-                    <li>Network Security</li>
-                    <li>Smart City Applications</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -207,7 +203,7 @@
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-2.jpg"
                 alt="Dr. Citra Dewi"
               />
               <div class="dosen-position">Dosen Tetap</div>
@@ -217,31 +213,6 @@
               <p class="dosen-title">
                 Koordinator Bidang Pengabdian Masyarakat
               </p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>Doktor Ilmu Komputer, Institut Teknologi Bandung</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Human-Computer Interaction</li>
-                    <li>User Experience Design</li>
-                    <li>Frontend Development</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Accessibility in Digital Products</li>
-                    <li>UX for Social Impact</li>
-                    <li>Gamification in Education</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -249,7 +220,7 @@
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-3.jpg"
                 alt="Dr. Dian Pratama"
               />
               <div class="dosen-position">Dosen Tetap</div>
@@ -257,31 +228,6 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Dr. Dian Pratama, S.Kom., M.T.</h3>
               <p class="dosen-title">Koordinator Laboratorium</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>Ph.D. Information Security, University of Melbourne</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Cybersecurity</li>
-                    <li>Cryptography</li>
-                    <li>Secure Software Development</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Blockchain Security</li>
-                    <li>Privacy-Preserving Technologies</li>
-                    <li>Cyber Threat Intelligence</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -289,15 +235,13 @@
 
       <!-- Dosen Praktisi Section -->
       <section class="position-section" id="prak-section">
-        <h2 class="position-title">
-          <i class="fas fa-briefcase"></i> Dosen Praktisi
-        </h2>
+        <h2 class="position-title">Dosen Praktisi</h2>
         <div class="dosen-grid">
           <!-- Dosen 6 -->
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-5.jpg"
                 alt="Rina Wijaya"
               />
               <div class="dosen-position">Dosen Praktisi</div>
@@ -305,31 +249,6 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Rina Wijaya, S.Kom., M.Sc.</h3>
               <p class="dosen-title">Senior Data Scientist</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>M.Sc. Data Science, University of Edinburgh</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Data Mining</li>
-                    <li>Predictive Analytics</li>
-                    <li>Big Data Technologies</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Data Science in Healthcare</li>
-                    <li>Real-time Analytics</li>
-                    <li>Data Visualization</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -337,7 +256,7 @@
           <div class="dosen-card">
             <div class="dosen-img">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                src="assets/img/timDosen/p-7.jpg"
                 alt="Eko Prasetyo"
               />
               <div class="dosen-position">Dosen Praktisi</div>
@@ -345,111 +264,150 @@
             <div class="dosen-info">
               <h3 class="dosen-name">Eko Prasetyo, S.Kom., M.T.I.</h3>
               <p class="dosen-title">CTO Fintech Startup</p>
-
-              <div class="dosen-details">
-                <div class="detail-item">
-                  <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
-                  <p>M.T.I. Software Engineering, Universitas Gadjah Mada</p>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-lightbulb"></i> Keahlian</h4>
-                  <ul>
-                    <li>Software Architecture</li>
-                    <li>DevOps</li>
-                    <li>Cloud Native Applications</li>
-                  </ul>
-                </div>
-
-                <div class="detail-item">
-                  <h4><i class="fas fa-search"></i> Minat Penelitian</h4>
-                  <ul>
-                    <li>Microservices Architecture</li>
-                    <li>CI/CD Automation</li>
-                    <li>Serverless Computing</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- Footer -->
-    <footer>
+    <!-- START FOOTER -->
+    <footer class="footer">
       <div class="footer-container">
-        <div class="footer-section">
-          <h3>Prodi Teknik Informatika & SI</h3>
-          <p>
-            Fakultas Teknik dan Ilmu Komputer<br />
-            Universitas Teknologi Maju<br />
-            Jl. Pendidikan No. 123, Bandung
-          </p>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-title">Tentang Kami</h3>
+            <p class="footer-text">
+              Universitas Muchsin berkomitmen pada pendidikan bermutu, riset
+              inovatif, dan mencetak lulusan siap bersaing global. Kami hadir
+              sebagai pilihan tepat untuk masa depan akademik Anda.
+            </p>
+            <div class="footer-link-wrap">
+              <a href="#" class="footer-link-blue"
+                >Pelajari Lebih Lanjut &rarr;</a
+              >
+            </div>
+          </div>
 
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+          <div class="footer-col">
+            <h3 class="footer-title">Tautan Cepat</h3>
+            <ul class="footer-list">
+              <li><a href="#beranda" class="footer-link">Beranda</a></li>
+              <li>
+                <a href="#tentangkami" class="footer-link">Tentang Kami</a>
+              </li>
+              <li><a href="#fasilitas" class="footer-link">Fasilitas</a></li>
+              <li><a href="#prestasi" class="footer-link">Prestasi</a></li>
+              <li>
+                <a href="#beritaacara" class="footer-link">Berita & Acara</a>
+              </li>
+              <li><a href="#testimoni" class="footer-link">Testimoni</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Hubungi Kami</h3>
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt"></i> Jl. Contoh Raya No. 123,
+              Kota Jember, Jawa Timur, 12345
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-phone"></i> (021) 1234-5678
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-envelope"></i> info@univmuchsin123.ac.id
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00 WIB
+            </p>
+            <div class="footer-social-wrap">
+              <h4 class="footer-social-title">Temukan Kami:</h4>
+              <div class="footer-social">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.819c-3.246 0-3.981 2.459-3.981 4.723v2.277z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.85-1.48 3.252-1.691 4.772-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.85-.07-3.251-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.07-4.85 1.48-3.251 1.691-4.772 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l9 4-9 4z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Lokasi Kampus</h3>
+            <div class="footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126488.7061794697!2d113.57007705!3d-8.16911635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695f6208c9033%3A0x86812845c43d2e2a!2sJember%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
 
-        <div class="footer-section">
-          <h3>Program Studi</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Teknik Informatika (S1)</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Sistem Informasi (S1)</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Magister Ilmu Komputer
-                (S2)</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Doktor Ilmu Komputer
-                (S3)</a
-              >
-            </li>
-          </ul>
-        </div>
+        <hr class="footer-divider" />
 
-        <div class="footer-section">
-          <h3>Kontak Kami</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>(022) 1234-5678</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>informatika@utm.ac.id</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-clock"></i>
-              <span>Senin-Jumat: 08.00 - 16.00 WIB</span>
-            </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            &copy; 2025 Universitas Muchsin. Hak Cipta Dilindungi.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+            <a href="#">Peta Situs</a>
           </div>
         </div>
-      </div>
-
-      <div class="copyright">
-        <p>
-          &copy; 2023 Prodi Teknik Informatika & Sistem Informasi - Universitas
-          Teknologi Maju. Hak Cipta Dilindungi.
-        </p>
       </div>
     </footer>
+    <!-- END FOOTER -->
     <script src="assets/js/tim-dosen.js"></script>
   </body>
 </html>

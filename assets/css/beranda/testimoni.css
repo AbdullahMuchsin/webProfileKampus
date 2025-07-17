@@ -22,7 +22,7 @@
 .testimoni-section {
   position: relative;
   padding: 5rem 1rem;
-  background-color: #f3f4f6; /* bg-gray-100 */
+  background-color: rgb(252, 252, 252);
 }
 
 .testimoni-container {
@@ -70,6 +70,7 @@
   background: #fff;
   position: relative;
   overflow: hidden;
+  border: 1px solid #cdcfd1;
   box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
   padding-top: 4rem;
 }

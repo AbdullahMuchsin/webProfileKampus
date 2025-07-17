@@ -5,6 +5,7 @@
   overflow: hidden;
   background-image: url(../../img/tentangKami/1.jpg);
   background-size: cover;
+  margin-top: 20px;
 }
 .hero::after {
   content: "";

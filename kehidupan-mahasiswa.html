@@ -3,1160 +3,386 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kehidupan Mahasiswa - Teknik Informatika & Sistem Informasi</title>
+    <title>Kehidupan Mahasiswa | Teknik Informatika & Sistem Informasi</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- MY CSS RESET STYLE -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/clear.css" />
+    <!-- MY CSS ROOT CSS -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/root.css" />
+    <!-- MY CSS TOP NAVBAR -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/topNavbar.css" />
+    <!-- MY CSS MAIN NAVBAR -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="assets/css/kehidupanMahasiswa/mainNavbar.css"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      :root {
-        --primary: #1a3a63;
-        --secondary: #2c5282;
-        --accent: #e74c3c;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --gray: #6c757d;
-        --light-gray: #e9ecef;
-        --white: #ffffff;
-        --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      body {
-        background-color: var(--light);
-        color: var(--dark);
-        line-height: 1.6;
-      }
-
-      /* Header */
-      header {
-        background-color: var(--primary);
-        color: var(--white);
-        padding: 1rem 0;
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .header-container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-      }
-
-      .logo-icon {
-        font-size: 2rem;
-        color: var(--accent);
-      }
-
-      .logo-text {
-        font-size: 1.8rem;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-      }
-
-      nav ul {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-      }
-
-      nav a {
-        color: var(--white);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.1rem;
-        position: relative;
-        padding: 5px 0;
-      }
-
-      nav a:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--accent);
-        transition: width 0.3s ease;
-      }
-
-      nav a:hover:after {
-        width: 100%;
-      }
-
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        color: var(--white);
-        padding: 80px 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
-        background-size: 20px 20px;
-        opacity: 0.5;
-      }
-
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero h1 {
-        font-size: 3.2rem;
-        margin-bottom: 20px;
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.9;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background-color: var(--accent);
-        color: var(--white);
-        padding: 12px 30px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .cta-button:hover {
-        background-color: #c0392b;
-        transform: translateY(-3px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Section Styling */
-      section {
-        padding: 80px 0;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-        color: var(--primary);
-        margin-bottom: 15px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background-color: var(--accent);
-      }
-
-      .section-subtitle {
-        font-size: 1.2rem;
-        color: var(--gray);
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      /* Categories */
-      .categories {
-        background-color: var(--light-gray);
-        padding: 40px 0;
-      }
-
-      .category-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .category-btn {
-        background-color: var(--white);
-        color: var(--primary);
-        border: 2px solid var(--primary);
-        padding: 12px 25px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .category-btn.active,
-      .category-btn:hover {
-        background-color: var(--primary);
-        color: var(--white);
-      }
-
-      /* Cards Container */
-      .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Card Styling */
-      .card {
-        background-color: var(--white);
-        box-shadow: var(--shadow);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      .card-img {
-        height: 200px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .card:hover .card-img img {
-        transform: scale(1.05);
-      }
-
-      .card-category {
-        position: absolute;
-        top: 15px;
-        right: 0;
-        background-color: var(--accent);
-        color: var(--white);
-        padding: 5px 15px;
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .card-content {
-        padding: 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .card-date {
-        color: var(--accent);
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .card-title {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--primary);
-      }
-
-      .card-description {
-        margin-bottom: 20px;
-        color: var(--gray);
-        flex-grow: 1;
-      }
-
-      .card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 15px;
-        border-top: 1px solid var(--light-gray);
-      }
-
-      .card-organization {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .org-logo {
-        width: 30px;
-        height: 30px;
-        background-color: var(--light-gray);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: var(--primary);
-      }
-
-      .card-link {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.3s ease;
-      }
-
-      .card-link:hover {
-        color: var(--accent);
-      }
-
-      /* Stats Section */
-      .stats {
-        background-color: var(--primary);
-        color: var(--white);
-        padding: 60px 0;
-      }
-
-      .stats-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .stat-item {
-        text-align: center;
-        padding: 30px;
-      }
-
-      .stat-number {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-        color: var(--accent);
-      }
-
-      .stat-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
-
-      /* Timeline Section */
-      .timeline {
-        background-color: var(--light-gray);
-      }
-
-      .timeline-container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-      }
-
-      .timeline-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 4px;
-        background-color: var(--primary);
-        transform: translateX(-50%);
-      }
-
-      .timeline-item {
-        margin-bottom: 50px;
-        position: relative;
-        width: 45%;
-      }
-
-      .timeline-item:nth-child(odd) {
-        left: 0;
-      }
-
-      .timeline-item:nth-child(even) {
-        left: 55%;
-      }
-
-      .timeline-content {
-        background-color: var(--white);
-        padding: 25px;
-        box-shadow: var(--shadow);
-        position: relative;
-      }
-
-      .timeline-content::before {
-        content: "";
-        position: absolute;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content::before {
-        right: -15px;
-        border-width: 15px 0 15px 15px;
-        border-color: transparent transparent transparent var(--white);
-      }
-
-      .timeline-item:nth-child(even) .timeline-content::before {
-        left: -15px;
-        border-width: 15px 15px 15px 0;
-        border-color: transparent var(--white) transparent transparent;
-      }
-
-      .timeline-date {
-        position: absolute;
-        top: 0;
-        background-color: var(--accent);
-        color: var(--white);
-        padding: 5px 15px;
-        font-weight: 600;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-date {
-        right: -70px;
-      }
-
-      .timeline-item:nth-child(even) .timeline-date {
-        left: -70px;
-      }
-
-      .timeline-title {
-        font-size: 1.3rem;
-        color: var(--primary);
-        margin-bottom: 15px;
-      }
-
-      /* Footer */
-      footer {
-        background-color: var(--dark);
-        color: var(--light-gray);
-        padding: 60px 0 30px;
-      }
-
-      .footer-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      .footer-column h3 {
-        font-size: 1.5rem;
-        margin-bottom: 25px;
-        color: var(--white);
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-column h3::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background-color: var(--accent);
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 12px;
-      }
-
-      .footer-links a {
-        color: var(--light-gray);
-        text-decoration: none;
-        transition: color 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .footer-links a:hover {
-        color: var(--accent);
-      }
-
-      .social-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 20px;
-      }
-
-      .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: var(--white);
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .social-links a:hover {
-        background-color: var(--accent);
-        transform: translateY(-3px);
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 30px;
-        margin-top: 50px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 0.9rem;
-        color: var(--gray);
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .hero h1 {
-          font-size: 2.8rem;
-        }
-
-        .section-title {
-          font-size: 2.2rem;
-        }
-
-        .timeline-container::before {
-          left: 30px;
-        }
-
-        .timeline-item {
-          width: 100%;
-          padding-left: 70px;
-          left: 0 !important;
-        }
-
-        .timeline-item:nth-child(even) .timeline-date {
-          left: 0;
-        }
-
-        .timeline-content::before {
-          left: 55px !important;
-          right: auto !important;
-          border-width: 15px 15px 15px 0 !important;
-          border-color: transparent var(--white) transparent transparent !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-container {
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        nav ul {
-          gap: 15px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .hero h1 {
-          font-size: 2.3rem;
-        }
-
-        .hero p {
-          font-size: 1.1rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .cards-container {
-          grid-template-columns: 1fr;
-        }
-
-        .stats-container {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .logo-text {
-          font-size: 1.5rem;
-        }
-
-        nav ul {
-          gap: 10px;
-        }
-
-        nav a {
-          font-size: 1rem;
-        }
-
-        .hero h1 {
-          font-size: 2rem;
-        }
-
-        .section-title {
-          font-size: 1.8rem;
-        }
-
-        .category-btn {
-          padding: 10px 15px;
-          font-size: 0.9rem;
-        }
-      }
-    </style>
+    <!-- MY CSS HERO -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/hero.css" />
+    <!-- MY CSS MAIN CONTENT -->
+    <link
+      rel="stylesheet"
+      href="assets/css/kehidupanMahasiswa/mainContent.css"
+    />
+    <!-- MY CSS STYLE -->
+    <link
+      rel="stylesheet"
+      href="assets/css/kehidupanMahasiswa/organisasi.css"
+    />
+    <!-- MY CSS STYLE -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/style.css" />
+    <!-- MY CSS FOOTER -->
+    <link rel="stylesheet" href="assets/css/kehidupanMahasiswa/footer.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="header-container">
-        <div class="logo">
+    <div class="header-background"></div>
+
+    <!-- START TOP NAVBAR CLEAR__ -->
+    <div id="top-navbar">
+      <div class="top-navbar-container">
+        <div class="social-links-top-navbar">
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links-top-navbar"></div>
+          <a href="#">Pendaftaran</a>
+        </div>
+
+        <div class="right-section-top-navbar">
+          <div class="language-selector-top-navbar" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow-top-navbar"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="language-menu-top-navbar" data-dropdown-menu>
+              <a href="#"
+                ><span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia</a
+              >
+              <a href="#"><span class="flag-top-navbar">🇬🇧</span> English</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END TOP NAVBAR CLEAR__ -->
+
+    <!-- START MAIN NAVBAR NOCLEAR__ -->
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
           <div class="logo-icon">
-            <i class="fas fa-laptop-code"></i>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
+            >
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
           </div>
-          <div class="logo-text">
-            Informatika<span style="color: #e74c3c">Hub</span>
-          </div>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#" class="active">Kehidupan Mahasiswa</a></li>
-            <li><a href="#">Program Studi</a></li>
-            <li><a href="#">Fasilitas</a></li>
-            <li><a href="#">Kontak</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
 
-    <!-- Hero Section -->
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="index.html">Beranda</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="kurikulum.html">Kurikulum</a>
+          <a href="tim-dosen.html">Tim Dosen</a>
+          <a href="kehidupan-mahasiswa.html" class="nav-link-active"
+            >Kehidupan Mahasiswa</a
+          >
+          <a href="pendaftaran.html">Pendaftaran</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END MAIN NAVBAR NOCLEAR__ -->
+
+    <!-- START HERO SECTION -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>Kehidupan Mahasiswa Informatika</h1>
-        <p>
-          Jelajahi organisasi, proyek, pencapaian, dan kehidupan kampus yang
-          membentuk pengalaman mahasiswa Teknik Informatika dan Sistem
-          Informasi.
-        </p>
-        <a href="#kegiatan" class="cta-button">Jelajahi Kegiatan</a>
-      </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories">
-      <div class="category-container">
-        <button class="category-btn active" data-category="all">Semua</button>
-        <button class="category-btn" data-category="organisasi">
-          Organisasi
-        </button>
-        <button class="category-btn" data-category="proyek">Proyek</button>
-        <button class="category-btn" data-category="pencapaian">
-          Pencapaian
-        </button>
-        <button class="category-btn" data-category="kampus">
-          Kehidupan Kampus
-        </button>
-      </div>
-    </section>
-
-    <!-- Activities Section -->
-    <section id="kegiatan">
-      <div class="section-header">
-        <h2 class="section-title">Kegiatan Mahasiswa</h2>
-        <p class="section-subtitle">
-          Temukan berbagai aktivitas yang memperkaya pengalaman akademik dan
-          personal mahasiswa Informatika
+      <div class="container-hero">
+        <h1>Kampus & Komunitas</h1>
+        <p class="subtitle">
+          Temukan beragam aktivitas dan pengalaman yang membentuk kehidupan
+          mahasiswa di kampus.
         </p>
       </div>
+    </section>
+    <!-- END HERO SECTION -->
 
-      <div class="cards-container">
-        <!-- Card 1 -->
-        <div class="card" data-category="organisasi">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Himpunan Mahasiswa Informatika"
-            />
-            <div class="card-category">Organisasi</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">15 Maret 2023</div>
-            <h3 class="card-title">Himpunan Mahasiswa Informatika</h3>
-            <p class="card-description">
-              Himpunan Mahasiswa Informatika menyelenggarakan seminar nasional
-              tentang perkembangan teknologi terkini dengan pembicara dari
-              industri ternama.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">HMI</div>
-                <span>Himpunan Mahasiswa Informatika</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
+    <!-- START SARANA DAN PRASARANA NOCLEAR__ -->
+    <section class="fasilitas-section" id="organisasi">
+      <div class="fasilitas-container">
+        <div class="fasilitas-title">
+          <h2>Komunitas Mahasiswa</h2>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card" data-category="proyek">
-          <div class="card-img">
+        <div class="fasilitas-grid">
+          <figure class="fasilitas-item">
+            <img src="assets/img/kehidupanMahasiswa/k-1.jpg" alt="HMTI" />
+            <figcaption>
+              <h3>Himpunan Mahasiswa Teknik Informatika (HMTI)</h3>
+              <p>
+                Mewadahi aspirasi dan kegiatan akademik maupun non-akademik
+                mahasiswa TI.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
+            <img src="assets/img/kehidupanMahasiswa/k-3.jpg" alt="HMSI" />
+            <figcaption>
+              <h3>Himpunan Mahasiswa Sistem Informasi (HMSI)</h3>
+              <p>
+                Fokus pada pengembangan kompetensi dan kolaborasi mahasiswa SI.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
+            <img src="assets/img/kehidupanMahasiswa/k-4.jpg" alt="Robotic Club" />
+            <figcaption>
+              <h3>ROBIT - Robotics & IoT Club</h3>
+              <p>
+                Komunitas pengembangan teknologi robotika dan Internet of
+                Things.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
+            <img src="assets/img/kehidupanMahasiswa/k-8.jpg" alt="DevCom" />
+            <figcaption>
+              <h3>DevCom - Developer Community</h3>
+              <p>
+                Komunitas mahasiswa yang fokus pada pemrograman dan pengembangan
+                aplikasi.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
             <img
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Proyek Aplikasi Desa Digital"
+              src="assets/img/kehidupanMahasiswa/k-7.jpg"
+              alt="Cyber Security Club"
             />
-            <div class="card-category">Proyek</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">28 April 2023</div>
-            <h3 class="card-title">Pengembangan Aplikasi Desa Digital</h3>
-            <p class="card-description">
-              Mahasiswa Informatika berhasil mengembangkan aplikasi untuk
-              digitalisasi administrasi desa yang telah diimplementasikan di 5
-              desa di Jawa Barat.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">PD</div>
-                <span>Proyek Desa</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card" data-category="pencapaian">
-          <div class="card-img">
+            <figcaption>
+              <h3>Cyber Security Club</h3>
+              <p>Organisasi yang mendalami keamanan siber dan etika digital.</p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
+            <img src="assets/img/kehidupanMahasiswa/k-5.jpg" alt="UI/UX Design Club" />
+            <figcaption>
+              <h3>UI/UX Design Club</h3>
+              <p>
+                Mengasah kreativitas dalam desain antarmuka dan pengalaman
+                pengguna.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
             <img
-              src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
-              alt="Juara Hackathon Nasional"
+              src="assets/img/kehidupanMahasiswa/k-6.jpg"
+              alt="Forum Diskusi Ilmiah"
             />
-            <div class="card-category">Pencapaian</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">10 Juni 2023</div>
-            <h3 class="card-title">Juara 1 Hackathon Nasional 2023</h3>
-            <p class="card-description">
-              Tim mahasiswa Informatika meraih juara pertama dalam kompetisi
-              Hackathon Nasional dengan solusi AI untuk deteksi dini penyakit
-              tanaman.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">HN</div>
-                <span>Hackathon Nasional</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="card" data-category="kampus">
-          <div class="card-img">
+            <figcaption>
+              <h3>Forum Diskusi Ilmiah</h3>
+              <p>
+                Wadah untuk diskusi kritis dan kajian ilmiah antar mahasiswa
+                jurusan.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="fasilitas-item">
             <img
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Kegiatan Kampus"
+              src="assets/img/kehidupanMahasiswa/k-2.jpg"
+              alt="Tim Media Jurusan"
             />
-            <div class="card-category">Kehidupan Kampus</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">5 Juli 2023</div>
-            <h3 class="card-title">Tech Expo 2023: Inovasi Mahasiswa</h3>
-            <p class="card-description">
-              Pameran tahunan karya inovatif mahasiswa menampilkan lebih dari 30
-              proyek teknologi dari berbagai angkatan program studi Informatika.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">TE</div>
-                <span>Tech Expo</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card" data-category="organisasi">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Studi Banding"
-            />
-            <div class="card-category">Organisasi</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">22 Agustus 2023</div>
-            <h3 class="card-title">Studi Banding ke Perusahaan Teknologi</h3>
-            <p class="card-description">
-              Himpunan Mahasiswa mengadakan studi banding ke perusahaan
-              teknologi ternama untuk memperluas wawasan industri mahasiswa.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">HMI</div>
-                <span>Himpunan Mahasiswa</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card" data-category="proyek">
-          <div class="card-img">
-            <img
-              src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-              alt="Proyek Robotik"
-            />
-            <div class="card-category">Proyek</div>
-          </div>
-          <div class="card-content">
-            <div class="card-date">14 September 2023</div>
-            <h3 class="card-title">Pengembangan Robot Layanan Kesehatan</h3>
-            <p class="card-description">
-              Kelompok riset mahasiswa berhasil mengembangkan prototipe robot
-              layanan kesehatan untuk membantu tenaga medis di rumah sakit.
-            </p>
-            <div class="card-footer">
-              <div class="card-organization">
-                <div class="org-logo">KR</div>
-                <span>Kelompok Riset</span>
-              </div>
-              <a href="#" class="card-link"
-                >Selengkapnya <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </div>
+            <figcaption>
+              <h3>Tim Media Jurusan</h3>
+              <p>
+                Menangani publikasi, dokumentasi, dan konten visual kegiatan
+                jurusan.
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
+    <!-- END SARANA DAN PRASARANA NOCLEAR__ -->
 
-    <!-- Stats Section -->
-    <section class="stats">
-      <div class="stats-container">
-        <div class="stat-item">
-          <div class="stat-number">25+</div>
-          <div class="stat-title">Organisasi Mahasiswa</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">150+</div>
-          <div class="stat-title">Proyek Tahunan</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">42</div>
-          <div class="stat-title">Prestasi Nasional</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">98%</div>
-          <div class="stat-title">Kepuasan Mahasiswa</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="timeline">
-      <div class="section-header">
-        <h2 class="section-title">Jalur Pencapaian</h2>
-        <p class="section-subtitle">
-          Perjalanan prestasi dan kegiatan penting mahasiswa Informatika
-        </p>
-      </div>
-
-      <div class="timeline-container">
-        <!-- Item 1 -->
-        <div class="timeline-item">
-          <div class="timeline-date">Jan 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Pembukaan Program Mentorship</h3>
-            <p>
-              Program mentorship mahasiswa baru dengan pendekatan peer-to-peer
-              learning dimulai dengan 50 mentor terpilih.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="timeline-item">
-          <div class="timeline-date">Mar 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Kerjasama dengan Industri</h3>
-            <p>
-              Penandatanganan MoU dengan 5 perusahaan teknologi untuk program
-              magang dan penelitian bersama.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="timeline-item">
-          <div class="timeline-date">Jun 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Konferensi Internasional</h3>
-            <p>
-              3 makalah penelitian mahasiswa diterima di konferensi
-              internasional bidang ilmu komputer di Singapura.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2023</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Inkubasi Startup</h3>
-            <p>
-              5 tim startup mahasiswa terpilih mendapatkan pendanaan dan
-              bimbingan dari inkubator teknologi kampus.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+    <!-- START FOOTER -->
+    <footer class="footer">
       <div class="footer-container">
-        <div class="footer-column">
-          <h3>Tentang Kami</h3>
-          <p>
-            Program studi Teknik Informatika dan Sistem Informasi berkomitmen
-            untuk menghasilkan lulusan yang kompeten di bidang teknologi
-            informasi dengan pengalaman kampus yang holistik.
-          </p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-title">Tentang Kami</h3>
+            <p class="footer-text">
+              Universitas Muchsin berkomitmen pada pendidikan bermutu, riset
+              inovatif, dan mencetak lulusan siap bersaing global. Kami hadir
+              sebagai pilihan tepat untuk masa depan akademik Anda.
+            </p>
+            <div class="footer-link-wrap">
+              <a href="#" class="footer-link-blue"
+                >Pelajari Lebih Lanjut &rarr;</a
+              >
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Tautan Cepat</h3>
+            <ul class="footer-list">
+              <li><a href="#beranda" class="footer-link">Beranda</a></li>
+              <li>
+                <a href="#tentangkami" class="footer-link">Tentang Kami</a>
+              </li>
+              <li><a href="#fasilitas" class="footer-link">Fasilitas</a></li>
+              <li><a href="#prestasi" class="footer-link">Prestasi</a></li>
+              <li>
+                <a href="#beritaacara" class="footer-link">Berita & Acara</a>
+              </li>
+              <li><a href="#testimoni" class="footer-link">Testimoni</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Hubungi Kami</h3>
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt"></i> Jl. Contoh Raya No. 123,
+              Kota Jember, Jawa Timur, 12345
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-phone"></i> (021) 1234-5678
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-envelope"></i> info@univmuchsin123.ac.id
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00 WIB
+            </p>
+            <div class="footer-social-wrap">
+              <h4 class="footer-social-title">Temukan Kami:</h4>
+              <div class="footer-social">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.819c-3.246 0-3.981 2.459-3.981 4.723v2.277z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.85-1.48 3.252-1.691 4.772-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.85-.07-3.251-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.07-4.85 1.48-3.251 1.691-4.772 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l9 4-9 4z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Lokasi Kampus</h3>
+            <div class="footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126488.7061794697!2d113.57007705!3d-8.16911635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695f6208c9033%3A0x86812845c43d2e2a!2sJember%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
 
-        <div class="footer-column">
-          <h3>Program Studi</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Teknik Informatika</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Sistem Informasi</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Magister Teknologi
-                Informasi</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Doktor Ilmu Komputer</a
-              >
-            </li>
-          </ul>
-        </div>
+        <hr class="footer-divider" />
 
-        <div class="footer-column">
-          <h3>Link Cepat</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Kalender Akademik</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Penerimaan Mahasiswa
-                Baru</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-chevron-right"></i> Beasiswa</a>
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-chevron-right"></i> Fasilitas Kampus</a
-              >
-            </li>
-          </ul>
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            &copy; 2025 Universitas Muchsin. Hak Cipta Dilindungi.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+            <a href="#">Peta Situs</a>
+          </div>
         </div>
-
-        <div class="footer-column">
-          <h3>Kontak</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#"
-                ><i class="fas fa-map-marker-alt"></i> Jl. Teknologi No. 123,
-                Bandung</a
-              >
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-phone"></i> (022) 1234-5678</a>
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-envelope"></i> informatika@univ.ac.id</a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><i class="fas fa-clock"></i> Senin-Jumat: 08:00 - 16:00</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>
-          &copy; 2023 Program Studi Teknik Informatika & Sistem Informasi. Hak
-          Cipta Dilindungi.
-        </p>
       </div>
     </footer>
+    <!-- END FOOTER -->
 
-    <script>
-      // Category Filter
-      document.addEventListener("DOMContentLoaded", function () {
-        const categoryButtons = document.querySelectorAll(".category-btn");
-        const cards = document.querySelectorAll(".card");
-
-        categoryButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            // Remove active class from all buttons
-            categoryButtons.forEach((btn) => btn.classList.remove("active"));
-
-            // Add active class to clicked button
-            button.classList.add("active");
-
-            const category = button.getAttribute("data-category");
-
-            // Filter cards
-            cards.forEach((card) => {
-              if (
-                category === "all" ||
-                card.getAttribute("data-category") === category
-              ) {
-                card.style.display = "flex";
-              } else {
-                card.style.display = "none";
-              }
-            });
-          });
-        });
-
-        // Simple animation on scroll
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = "translateY(0)";
-              }
-            });
-          },
-          {
-            threshold: 0.1,
-          }
-        );
-
-        // Animate cards
-        cards.forEach((card) => {
-          card.style.opacity = 0;
-          card.style.transform = "translateY(50px)";
-          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          observer.observe(card);
-        });
-
-        // Animate stats
-        const stats = document.querySelectorAll(".stat-item");
-        stats.forEach((stat) => {
-          stat.style.opacity = 0;
-          stat.style.transform = "translateY(50px)";
-          stat.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          observer.observe(stat);
-        });
-
-        // Animate timeline
-        const timelineItems = document.querySelectorAll(".timeline-item");
-        timelineItems.forEach((item) => {
-          item.style.opacity = 0;
-          item.style.transform = "translateX(-50px)";
-          item.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          observer.observe(item);
-        });
-      });
-    </script>
+    <script src="assets/js/kehidupan-mahasiswa.js"></script>
   </body>
 </html>

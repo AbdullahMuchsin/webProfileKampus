@@ -8,479 +8,134 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      /* VARIABEL DAN RESET */
-      :root {
-        --primary: #0d47a1;
-        --primary-dark: #002171;
-        --secondary: #263238;
-        --light: #f5f7fa;
-        --gray: #e0e0e0;
-        --dark-gray: #757575;
-        --white: #ffffff;
-        --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: var(--light);
-        color: var(--secondary);
-        line-height: 1.6;
-      }
-
-      /* TYPOGRAPHY */
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-weight: 600;
-        color: var(--primary-dark);
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        padding-bottom: 1rem;
-      }
-
-      h1:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 4px;
-        background-color: var(--primary);
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        margin-top: 2.5rem;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        margin-bottom: 1rem;
-      }
-
-      /* LAYOUT */
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      section {
-        padding: 4rem 0;
-      }
-
-      .section-header {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .grid {
-        display: grid;
-        gap: 30px;
-      }
-
-      .two-columns {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .three-columns {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      /* HEADER */
-      header {
-        background-color: var(--white);
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.2rem 0;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-      }
-
-      .nav-links li {
-        margin-left: 2rem;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--secondary);
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-
-      /* KONTAK SECTION */
-      .contact-form {
-        background-color: var(--white);
-        padding: 2.5rem;
-        box-shadow: var(--shadow);
-      }
-
-      .form-group {
-        margin-bottom: 1.5rem;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: var(--secondary);
-      }
-
-      input,
-      textarea,
-      select {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid var(--gray);
-        background-color: var(--white);
-        font-size: 1rem;
-      }
-
-      input:focus,
-      textarea:focus,
-      select:focus {
-        outline: none;
-        border-color: var(--primary);
-      }
-
-      textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: var(--primary);
-        color: var(--white);
-        padding: 0.8rem 1.8rem;
-        border: none;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .btn:hover {
-        background-color: var(--primary-dark);
-      }
-
-      .contact-info {
-        background-color: var(--white);
-        padding: 2.5rem;
-        box-shadow: var(--shadow);
-        height: 100%;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid var(--gray);
-      }
-
-      .contact-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-
-      .contact-icon {
-        background-color: var(--light);
-        color: var(--primary);
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1.2rem;
-        font-size: 1.2rem;
-      }
-
-      .contact-details h4 {
-        margin-bottom: 0.5rem;
-      }
-
-      .contact-details p {
-        margin-bottom: 0;
-      }
-
-      /* FAQ SECTION */
-      .faq-container {
-        background-color: var(--white);
-        box-shadow: var(--shadow);
-      }
-
-      .faq-item {
-        border-bottom: 1px solid var(--gray);
-      }
-
-      .faq-question {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem;
-        cursor: pointer;
-        background-color: var(--white);
-        transition: background-color 0.3s;
-      }
-
-      .faq-question:hover {
-        background-color: var(--light);
-      }
-
-      .faq-question h3 {
-        margin-bottom: 0;
-      }
-
-      .faq-icon {
-        font-size: 1.2rem;
-        transition: transform 0.3s;
-      }
-
-      .faq-answer {
-        padding: 0 1.5rem;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-        background-color: var(--light);
-      }
-
-      .faq-answer.active {
-        padding: 1.5rem;
-        max-height: 500px;
-      }
-
-      .faq-answer p {
-        margin-bottom: 0.5rem;
-      }
-
-      .faq-answer ul {
-        margin: 1rem 0 1rem 2rem;
-      }
-
-      .faq-answer li {
-        margin-bottom: 0.5rem;
-      }
-
-      /* MAP */
-      .map-container {
-        height: 300px;
-        background-color: var(--gray);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .map-placeholder {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          #e0e0e0 25%,
-          #f5f5f5 25%,
-          #f5f5f5 50%,
-          #e0e0e0 50%,
-          #e0e0e0 75%,
-          #f5f5f5 75%
-        );
-        background-size: 40px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--dark-gray);
-        font-weight: 500;
-      }
-
-      /* FOOTER */
-      footer {
-        background-color: var(--secondary);
-        color: var(--white);
-        padding: 3rem 0 2rem;
-      }
-
-      .footer-content {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 2rem;
-      }
-
-      .footer-column {
-        flex: 1;
-        padding-right: 2rem;
-      }
-
-      .footer-column h3 {
-        color: var(--white);
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-      }
-
-      .footer-column h3:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        background-color: var(--primary);
-      }
-
-      .footer-links {
-        list-style: none;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.8rem;
-      }
-
-      .footer-links a {
-        color: #b0bec5;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .footer-links a:hover {
-        color: var(--white);
-      }
-
-      .copyright {
-        text-align: center;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        color: #b0bec5;
-        font-size: 0.9rem;
-      }
-
-      /* RESPONSIVE */
-      @media (max-width: 992px) {
-        .two-columns {
-          grid-template-columns: 1fr;
-        }
-
-        .three-columns {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .footer-content {
-          flex-direction: column;
-        }
-
-        .footer-column {
-          margin-bottom: 2rem;
-          padding-right: 0;
-        }
-      }
-
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2rem;
-        }
-
-        h2 {
-          font-size: 1.6rem;
-        }
-
-        .navbar {
-          flex-direction: column;
-          padding: 1rem 0;
-        }
-
-        .nav-links {
-          margin-top: 1rem;
-        }
-
-        .nav-links li {
-          margin: 0 0.8rem;
-        }
-
-        .contact-form,
-        .contact-info {
-          padding: 1.8rem;
-        }
-
-        .three-columns {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- MY CSS CLEAR -->
+    <link rel="stylesheet" href="assets/css/kontak/clear.css" />
+    <!-- MY CSS ROOT -->
+    <link rel="stylesheet" href="assets/css/kontak/root.css" />
+    <!-- MY CSS TOP NAVBAR -->
+    <link rel="stylesheet" href="assets/css/kontak/topNavbar.css" />
+    <!-- MY CSS MAIN NAVBAR -->
+    <link rel="stylesheet" href="assets/css/kontak/mainNavbar.css" />
+    <!-- MY CSS HERO SECTION -->
+    <link rel="stylesheet" href="assets/css/kontak/hero.css" />
+    <!-- MY CSS STYLE -->
+    <link rel="stylesheet" href="assets/css/kontak/style.css" />
+    <!-- MY CSS FOOTER -->
+    <link rel="stylesheet" href="assets/css/kontak/footer.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <nav class="navbar">
-          <a href="#" class="logo"
-            >CORPORATE<span style="color: var(--primary-dark)">PROGRAM</span></a
-          >
-          <ul class="nav-links">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Tentang</a></li>
-            <li><a href="#">Program</a></li>
-            <li><a href="#" class="active">Kontak & FAQ</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
-        </nav>
+    <div class="header-background"></div>
+    <!-- START TOP NAVBAR CLEAR__ -->
+    <div id="top-navbar">
+      <div class="top-navbar-container">
+        <div class="social-links-top-navbar">
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links-top-navbar"></div>
+          <a href="#">Pendaftaran</a>
+        </div>
+
+        <div class="right-section-top-navbar">
+          <div class="language-selector-top-navbar" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow-top-navbar"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="language-menu-top-navbar" data-dropdown-menu>
+              <a href="#"
+                ><span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia</a
+              >
+              <a href="#"><span class="flag-top-navbar">🇬🇧</span> English</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
+    <!-- END TOP NAVBAR CLEAR__ -->
+
+    <!-- START MAIN NAVBAR NOCLEAR__ -->
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
+            >
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
+
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="index.html">Beranda</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="kurikulum.html">Kurikulum</a>
+          <a href="tim-dosen.html">Tim Dosen</a>
+          <a href="kehidupan-mahasiswa.html">Kehidupan Mahasiswa</a>
+          <a href="pendaftaran.html">Pendaftaran</a>
+          <a href="kontak.html" class="nav-link-active">Kontak</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END MAIN NAVBAR NOCLEAR__ -->
+
+    <!-- START HERO SECTION -->
+    <section class="hero">
+      <div class="container-hero">
+        <h1>Hubungi Kami</h1>
+        <p>
+          Kami siap membantu Anda dengan segala pertanyaan terkait program
+          perusahaan kami
+        </p>
+      </div>
+    </section>
 
     <!-- Kontak Section -->
     <section id="kontak">
       <div class="container">
-        <div class="section-header">
-          <h1>Hubungi Kami</h1>
-          <p>
-            Kami siap membantu Anda dengan segala pertanyaan terkait program
-            perusahaan kami
-          </p>
-        </div>
-
         <div class="grid two-columns">
           <!-- Contact Form -->
           <div class="contact-form">
@@ -577,17 +232,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Map Section -->
-    <div class="map-container">
-      <div class="map-placeholder">
-        <i
-          class="fas fa-map-marked-alt"
-          style="font-size: 2rem; margin-right: 10px"
-        ></i>
-        Peta Lokasi Kantor CorporateProgram
-      </div>
-    </div>
 
     <!-- FAQ Section -->
     <section id="faq" style="background-color: #f0f4f8">
@@ -801,98 +445,145 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-column">
-            <h3>Tentang Kami</h3>
-            <p>
-              CorporateProgram adalah penyedia solusi pengembangan bisnis
-              profesional yang telah membantu lebih dari 500 perusahaan
-              meningkatkan kinerja dan mencapai tujuan strategis mereka.
+    <!-- START FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-title">Tentang Kami</h3>
+            <p class="footer-text">
+              Universitas Muchsin berkomitmen pada pendidikan bermutu, riset
+              inovatif, dan mencetak lulusan siap bersaing global. Kami hadir
+              sebagai pilihan tepat untuk masa depan akademik Anda.
             </p>
-            <p>
-              Dengan tim ahli bersertifikasi dan metodologi teruji, kami
-              berkomitmen memberikan hasil yang terukur bagi klien kami.
-            </p>
+            <div class="footer-link-wrap">
+              <a href="#" class="footer-link-blue"
+                >Pelajari Lebih Lanjut &rarr;</a
+              >
+            </div>
           </div>
 
-          <div class="footer-column">
-            <h3>Program Kami</h3>
-            <ul class="footer-links">
-              <li><a href="#">Strategi Bisnis</a></li>
-              <li><a href="#">Transformasi Digital</a></li>
-              <li><a href="#">Pengembangan SDM</a></li>
-              <li><a href="#">Efisiensi Operasional</a></li>
-              <li><a href="#">Manajemen Proyek</a></li>
-              <li><a href="#">Kepemimpinan Eksekutif</a></li>
+          <div class="footer-col">
+            <h3 class="footer-title">Tautan Cepat</h3>
+            <ul class="footer-list">
+              <li><a href="#beranda" class="footer-link">Beranda</a></li>
+              <li>
+                <a href="#tentangkami" class="footer-link">Tentang Kami</a>
+              </li>
+              <li><a href="#fasilitas" class="footer-link">Fasilitas</a></li>
+              <li><a href="#prestasi" class="footer-link">Prestasi</a></li>
+              <li>
+                <a href="#beritaacara" class="footer-link">Berita & Acara</a>
+              </li>
+              <li><a href="#testimoni" class="footer-link">Testimoni</a></li>
             </ul>
           </div>
 
-          <div class="footer-column">
-            <h3>Kontak</h3>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> Gedung Perkantoran Sentra
-              Bisnis Artha Gading, Jakarta
+          <div class="footer-col">
+            <h3 class="footer-title">Hubungi Kami</h3>
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt"></i> Jl. Contoh Raya No. 123,
+              Kota Jember, Jawa Timur, 12345
             </p>
-            <p><i class="fas fa-phone-alt"></i> +62 21 2457 8890</p>
-            <p><i class="fas fa-envelope"></i> info@corporateprogram.co.id</p>
-            <p><i class="fas fa-clock"></i> Senin-Jumat: 08.00-17.00 WIB</p>
+            <p class="footer-text">
+              <i class="fas fa-phone"></i> (021) 1234-5678
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-envelope"></i> info@univmuchsin123.ac.id
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00 WIB
+            </p>
+            <div class="footer-social-wrap">
+              <h4 class="footer-social-title">Temukan Kami:</h4>
+              <div class="footer-social">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.819c-3.246 0-3.981 2.459-3.981 4.723v2.277z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.85-1.48 3.252-1.691 4.772-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.85-.07-3.251-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.07-4.85 1.48-3.251 1.691-4.772 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l9 4-9 4z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Lokasi Kampus</h3>
+            <div class="footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126488.7061794697!2d113.57007705!3d-8.16911635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695f6208c9033%3A0x86812845c43d2e2a!2sJember%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
 
-        <div class="copyright">
-          <p>
-            &copy; 2023 CorporateProgram. Hak Cipta Dilindungi. | Kebijakan
-            Privasi | Syarat dan Ketentuan
-          </p>
+        <hr class="footer-divider" />
+
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            &copy; 2025 Universitas Muchsin. Hak Cipta Dilindungi.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+            <a href="#">Peta Situs</a>
+          </div>
         </div>
       </div>
     </footer>
+    <!-- END FOOTER -->
 
-    <script>
-      // Toggle FAQ Answer
-      function toggleFAQ(id) {
-        const answer = document.getElementById(`faq-answer-${id}`);
-        const icon = document
-          .querySelector(`#faq-answer-${id}`)
-          .previousElementSibling.querySelector(".faq-icon i");
-
-        answer.classList.toggle("active");
-
-        if (answer.classList.contains("active")) {
-          icon.classList.remove("fa-chevron-down");
-          icon.classList.add("fa-chevron-up");
-        } else {
-          icon.classList.remove("fa-chevron-up");
-          icon.classList.add("fa-chevron-down");
-        }
-      }
-
-      // Form Submission
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Get form values
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-
-          // Show success message
-          alert(
-            `Terima kasih ${name}! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda di ${email} segera.`
-          );
-
-          // Reset form
-          this.reset();
-        });
-
-      // Auto-open first FAQ
-      document.addEventListener("DOMContentLoaded", function () {
-        toggleFAQ(1);
-      });
-    </script>
+    <script src="assets/js/kontak.js"></script>
   </body>
 </html>

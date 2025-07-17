@@ -4,276 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informasi Pendaftaran - Universitas Prestisius</title>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #f5f7fa;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      header {
-        background: linear-gradient(135deg, #1a3a5f 0%, #2c3e50 100%);
-        color: white;
-        padding: 40px 0;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        margin-bottom: 40px;
-        border-bottom: 5px solid #e74c3c;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-      }
-
-      .subtitle {
-        font-size: 1.2rem;
-        font-weight: 300;
-        opacity: 0.9;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .info-box {
-        background-color: white;
-        padding: 30px;
-        margin-bottom: 30px;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0e6ed;
-      }
-
-      .info-box h2 {
-        color: #2c3e50;
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #e74c3c;
-      }
-
-      .program-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .program-box {
-        flex: 1;
-        min-width: 300px;
-        background: white;
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0e6ed;
-        transition: transform 0.3s ease;
-      }
-
-      .program-box:hover {
-        transform: translateY(-5px);
-      }
-
-      .program-header {
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-        color: white;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .program-header h3 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-bottom: 5px;
-      }
-
-      .program-body {
-        padding: 25px;
-      }
-
-      .section-title {
-        color: #2c3e50;
-        font-size: 1.3rem;
-        margin: 25px 0 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #e0e6ed;
-      }
-
-      ul {
-        padding-left: 20px;
-        margin-bottom: 20px;
-      }
-
-      ul li {
-        margin-bottom: 12px;
-        position: relative;
-        padding-left: 15px;
-      }
-
-      ul li:before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: #e74c3c;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 25px 0;
-      }
-
-      th,
-      td {
-        padding: 15px;
-        text-align: left;
-        border: 1px solid #e0e6ed;
-      }
-
-      th {
-        background-color: #f8f9fa;
-        color: #2c3e50;
-        font-weight: 600;
-      }
-
-      tr:nth-child(even) {
-        background-color: #f8f9fa;
-      }
-
-      .highlight {
-        background-color: #fff8e1;
-        padding: 20px;
-        border-left: 4px solid #ffc107;
-        margin: 20px 0;
-      }
-
-      .contact-info {
-        background: linear-gradient(135deg, #1a3a5f 0%, #2c3e50 100%);
-        color: white;
-        padding: 30px;
-        text-align: center;
-        margin-top: 40px;
-        border-top: 5px solid #e74c3c;
-      }
-
-      .contact-info h2 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-      }
-
-      .contact-details {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 20px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      footer {
-        background-color: #1a252f;
-        color: #95a5a6;
-        text-align: center;
-        padding: 20px 0;
-        margin-top: 40px;
-        font-size: 0.9rem;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: #e74c3c;
-        color: white;
-        padding: 12px 30px;
-        text-decoration: none;
-        font-weight: 500;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-top: 15px;
-      }
-
-      .btn:hover {
-        background-color: #c0392b;
-      }
-
-      .counter {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 30px 0;
-      }
-
-      .counter-item {
-        text-align: center;
-        padding: 20px;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0e6ed;
-        min-width: 150px;
-      }
-
-      .counter-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #e74c3c;
-        margin-bottom: 10px;
-      }
-
-      .counter-label {
-        font-size: 1rem;
-        color: #7f8c8d;
-      }
-
-      @media (max-width: 768px) {
-        .program-container {
-          flex-direction: column;
-        }
-
-        .counter {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .counter-item {
-          width: 100%;
-          max-width: 250px;
-        }
-      }
-    </style>
+    <!-- MY CSS CLEAR -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/clear.css" />
+    <!-- MY CSS ROOT -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/root.css" />
+    <!-- MY CSS TOP NAVBAR -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/topNavbar.css" />
+    <!-- MY CSS MAIN NAVBAR -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/mainNavbar.css" />
+    <!-- MY CSS HERO SECTION -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/hero.css" />
+    <!-- MY CSS STYLE -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/style.css" />
+    <!-- MY CSS FOOTER -->
+    <link rel="stylesheet" href="assets/css/pendaftaran/footer.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
+    <div class="header-background"></div>
+    <!-- START TOP NAVBAR CLEAR__ -->
+    <div id="top-navbar">
+      <div class="top-navbar-container">
+        <div class="social-links-top-navbar">
+          <a href="#">Hubungi Kami</a>
+          <div class="contact-links-top-navbar"></div>
+          <a href="#">Pendaftaran</a>
+        </div>
+
+        <div class="right-section-top-navbar">
+          <div class="language-selector-top-navbar" data-dropdown-toggle>
+            <button type="button">
+              <span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia
+              <svg
+                class="arrow-top-navbar"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="language-menu-top-navbar" data-dropdown-menu>
+              <a href="#"
+                ><span class="flag-top-navbar">🇮🇩</span> Bahasa Indonesia</a
+              >
+              <a href="#"><span class="flag-top-navbar">🇬🇧</span> English</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END TOP NAVBAR CLEAR__ -->
+
+    <!-- START MAIN NAVBAR NOCLEAR__ -->
+    <nav id="main-navbar">
+      <div class="navbar-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="logo-svg"
+            >
+              <path
+                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">Teknologi Informasi</span>
+        </a>
+
+        <div class="mobile-menu-button">
+          <button id="mobile-menu-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              width="24"
+              height="24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div id="main-menu" class="menu">
+          <a href="index.html">Beranda</a>
+          <a href="tentang-kami.html">Tentang Kami</a>
+          <a href="kurikulum.html">Kurikulum</a>
+          <a href="tim-dosen.html">Tim Dosen</a>
+          <a href="kehidupan-mahasiswa.html">Kehidupan Mahasiswa</a>
+          <a href="pendaftaran.html" class="nav-link-active">Pendaftaran</a>
+          <a href="kontak.html">Kontak</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END MAIN NAVBAR NOCLEAR__ -->
+
+    <!-- START HERO SECTION -->
+    <section class="hero">
+      <div class="container-hero">
         <h1>Informasi Pendaftaran</h1>
         <p class="subtitle">
           Proses pendaftaran yang jelas dan terstruktur untuk calon mahasiswa
           Program Sarjana dan Magister
         </p>
       </div>
-    </header>
+    </section>
 
     <div class="container">
       <div class="info-box">
@@ -282,7 +136,7 @@
           Berikut adalah persyaratan umum yang harus dipenuhi oleh semua calon
           mahasiswa:
         </p>
-        <ul>
+        <ul class="ul-pendaftaran">
           <li>Mengisi formulir pendaftaran secara lengkap dan benar</li>
           <li>
             Melampirkan fotokopi ijazah dan transkrip nilai yang telah
@@ -298,21 +152,6 @@
         </ul>
       </div>
 
-      <div class="counter">
-        <div class="counter-item">
-          <div class="counter-number" id="days-counter">14</div>
-          <div class="counter-label">Hari Tersisa</div>
-        </div>
-        <div class="counter-item">
-          <div class="counter-number" id="applicants-counter">1,247</div>
-          <div class="counter-label">Pendaftar</div>
-        </div>
-        <div class="counter-item">
-          <div class="counter-number">120</div>
-          <div class="counter-label">Kuota Tersedia</div>
-        </div>
-      </div>
-
       <div class="program-container">
         <div class="program-box">
           <div class="program-header">
@@ -321,7 +160,7 @@
           </div>
           <div class="program-body">
             <div class="section-title">Persyaratan Khusus</div>
-            <ul>
+            <ul class="ul-pendaftaran">
               <li>Lulusan SMA/SMK/MA atau sederajat</li>
               <li>Nilai rata-rata rapor minimal 7,5</li>
               <li>Usia maksimal 21 tahun saat pendaftaran</li>
@@ -329,7 +168,7 @@
             </ul>
 
             <div class="section-title">Prosedur Pendaftaran</div>
-            <ol>
+            <ol class="ol-pendaftaran">
               <li>Registrasi akun di portal pendaftaran online</li>
               <li>Melengkapi formulir pendaftaran</li>
               <li>Mengunggah dokumen persyaratan</li>
@@ -381,7 +220,7 @@
           </div>
           <div class="program-body">
             <div class="section-title">Persyaratan Khusus</div>
-            <ul>
+            <ul class="ul-pendaftaran">
               <li>Lulusan S1 dari perguruan tinggi terakreditasi</li>
               <li>IPK minimal 3.00 pada skala 4.00</li>
               <li>Melampirkan proposal penelitian</li>
@@ -390,7 +229,7 @@
             </ul>
 
             <div class="section-title">Prosedur Pendaftaran</div>
-            <ol>
+            <ol class="ol-pendaftaran">
               <li>Registrasi akun di portal pendaftaran online</li>
               <li>Melengkapi formulir pendaftaran</li>
               <li>Mengunggah dokumen persyaratan</li>
@@ -453,66 +292,145 @@
       </div>
     </div>
 
-    <div class="contact-info">
-      <div class="container">
-        <h2>Kontak Panitia Pendaftaran</h2>
-        <p>Untuk informasi lebih lanjut, silakan hubungi kami melalui:</p>
+    <!-- START FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3 class="footer-title">Tentang Kami</h3>
+            <p class="footer-text">
+              Universitas Muchsin berkomitmen pada pendidikan bermutu, riset
+              inovatif, dan mencetak lulusan siap bersaing global. Kami hadir
+              sebagai pilihan tepat untuk masa depan akademik Anda.
+            </p>
+            <div class="footer-link-wrap">
+              <a href="#" class="footer-link-blue"
+                >Pelajari Lebih Lanjut &rarr;</a
+              >
+            </div>
+          </div>
 
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>(021) 1234-5678</span>
+          <div class="footer-col">
+            <h3 class="footer-title">Tautan Cepat</h3>
+            <ul class="footer-list">
+              <li><a href="#beranda" class="footer-link">Beranda</a></li>
+              <li>
+                <a href="#tentangkami" class="footer-link">Tentang Kami</a>
+              </li>
+              <li><a href="#fasilitas" class="footer-link">Fasilitas</a></li>
+              <li><a href="#prestasi" class="footer-link">Prestasi</a></li>
+              <li>
+                <a href="#beritaacara" class="footer-link">Berita & Acara</a>
+              </li>
+              <li><a href="#testimoni" class="footer-link">Testimoni</a></li>
+            </ul>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <span>pendaftaran@universitasprestisius.ac.id</span>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Hubungi Kami</h3>
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt"></i> Jl. Contoh Raya No. 123,
+              Kota Jember, Jawa Timur, 12345
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-phone"></i> (021) 1234-5678
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-envelope"></i> info@univmuchsin123.ac.id
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00 WIB
+            </p>
+            <div class="footer-social-wrap">
+              <h4 class="footer-social-title">Temukan Kami:</h4>
+              <div class="footer-social">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.819c-3.246 0-3.981 2.459-3.981 4.723v2.277z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.85-1.48 3.252-1.691 4.772-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.85-.07-3.251-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.849 0-3.204.012-3.584.07-4.85 1.48-3.251 1.691-4.772 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#B8C8D4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l9 4-9 4z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Gedung Administrasi Lt. 3, Jl. Pendidikan No. 123</span>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Lokasi Kampus</h3>
+            <div class="footer-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126488.7061794697!2d113.57007705!3d-8.16911635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd695f6208c9033%3A0x86812845c43d2e2a!2sJember%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            &copy; 2025 Universitas Muchsin. Hak Cipta Dilindungi.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Syarat & Ketentuan</a>
+            <a href="#">Peta Situs</a>
           </div>
         </div>
       </div>
-    </div>
-
-    <footer>
-      <div class="container">
-        <p>© 2023 Universitas Prestisius. Hak Cipta Dilindungi.</p>
-        <p>Informasi Pendaftaran Mahasiswa Baru Tahun Akademik 2023/2024</p>
-      </div>
     </footer>
+    <!-- END FOOTER -->
 
-    <script>
-      // Counter animation
-      function animateCounter(element, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-          if (!startTimestamp) startTimestamp = timestamp;
-          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-          const value = Math.floor(progress * (end - start) + start);
-          element.textContent = value.toLocaleString();
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          }
-        };
-        window.requestAnimationFrame(step);
-      }
-
-      // Initialize counters
-      document.addEventListener("DOMContentLoaded", function () {
-        // Days counter
-        const targetDate = new Date("August 31, 2023 23:59:59");
-        const today = new Date();
-        const diffTime = targetDate - today;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        const daysCounter = document.getElementById("days-counter");
-        daysCounter.textContent = diffDays > 0 ? diffDays : 0;
-
-        // Applicants counter
-        const applicantsCounter = document.getElementById("applicants-counter");
-        animateCounter(applicantsCounter, 0, 1247, 2000);
-      });
-    </script>
+    <script src="assets/js/pendaftaran.js"></script>
   </body>
 </html>

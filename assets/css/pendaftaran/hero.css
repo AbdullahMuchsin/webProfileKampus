@@ -1,0 +1,60 @@
+.hero {
+  padding: 105px 0 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-image: url(../../img/tentangKami/1.jpg);
+  background-size: cover;
+  margin-top: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.3;
+}
+
+.container-hero {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 90px 0 40px;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}

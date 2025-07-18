@@ -42,6 +42,10 @@ p {
   margin-bottom: 1rem;
 }
 
+#faq {
+  padding-bottom: 100px;
+}
+
 /* LAYOUT */
 .container {
   width: 100%;
@@ -76,7 +80,8 @@ section {
 .contact-form {
   background-color: var(--white);
   padding: 2.5rem;
-  box-shadow: var(--shadow);
+  border: 1px solid #cdcfd1;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -114,8 +119,8 @@ textarea {
 
 .btn {
   display: inline-block;
-  background-color: var(--primary);
-  color: var(--white);
+  background-color: transparent;
+  color: black;
   padding: 0.8rem 1.8rem;
   border: none;
   font-size: 1rem;
@@ -123,18 +128,21 @@ textarea {
   cursor: pointer;
   transition: background-color 0.3s;
   text-transform: uppercase;
+  border: 1px solid black;
   letter-spacing: 1px;
 }
 
 .btn:hover {
-  background-color: var(--primary-dark);
+  background-color: black;
+  color: white;
 }
 
 .contact-info {
   background-color: var(--white);
   padding: 2.5rem;
-  box-shadow: var(--shadow);
   height: 100%;
+  border: 1px solid #cdcfd1;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .contact-item {
@@ -165,10 +173,12 @@ textarea {
 
 .contact-details h4 {
   margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .contact-details p {
   margin-bottom: 0;
+  line-height: 1.8;
 }
 
 /* FAQ SECTION */
@@ -210,6 +220,7 @@ textarea {
   overflow: hidden;
   transition: max-height 0.3s ease-out, padding 0.3s ease-out;
   background-color: var(--light);
+  line-height: 1.7;
 }
 
 .faq-answer.active {
@@ -223,10 +234,16 @@ textarea {
 
 .faq-answer ul {
   margin: 1rem 0 1rem 2rem;
+  list-style: disc;
 }
 
 .faq-answer li {
   margin-bottom: 0.5rem;
+}
+
+.faq-answer ol {
+  margin: 1rem 0 1rem 2rem;
+  list-style: decimal;
 }
 
 /* MAP */

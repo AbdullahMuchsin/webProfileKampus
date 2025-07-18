@@ -22,7 +22,6 @@
 .fasilitas-section {
   position: relative;
   padding: 5rem 0;
-  background-color: #f9fafb; /* bg-gray-50 */
 }
 
 .fasilitas-decoration {
@@ -50,15 +49,17 @@
 }
 
 .fasilitas-title {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .fasilitas-title h2 {
-  border-left: 8px solid #f97316; /* border-orange-500 */
+  border-left: 8px solid var(--primary-700); /* border-orange-500 */
   padding-left: 0.75rem;
-  font-size: 2rem;
+  font-size: 2rem !important;
   font-weight: 500;
   color: #1f2937; /* text-gray-800 */
 }

@@ -42,4 +42,11 @@ body {
 .menu.show {
   display: flex;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 /* END ROOT */

@@ -21,8 +21,8 @@
 
 .prestasi-section {
   padding: 3rem 0;
-  background-color: #0f172a; /* slate-900 */
-  color: #f1f5f9; /* slate-100 */
+  background-color: #0f172a;
+  color: #f1f5f9;
 }
 
 .container {
@@ -37,7 +37,7 @@
 }
 
 .text-center h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 0.5rem;

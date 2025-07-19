@@ -1,0 +1,138 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.info-box {
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+}
+
+.info-box h2 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--primary-800);
+  line-height: 1.4;
+}
+.info-box p {
+  margin-bottom: 1rem;
+}
+.info-box p,
+.info-box .ul-pendaftaran li {
+  line-height: 1.4;
+}
+
+.ul-pendaftaran,
+.ol-pendaftaran {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.ul-pendaftaran li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 15px;
+  line-height: 1.4;
+}
+
+.ul-pendaftaran li:before {
+  content: "—";
+  position: absolute;
+  left: -10px;
+  color: var(--primary-800);
+}
+
+.program-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.program-box {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.program-box:hover {
+  transform: translateY(-5px);
+  border: 1px solid #cdcfd1;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.program-header {
+  background: var(--primary-700);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.program-header h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.program-body {
+  padding: 25px;
+}
+
+.section-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin: 25px 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e6ed;
+}
+
+.ol-pendaftaran li {
+  list-style: decimal;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  color: black;
+  padding: 0.9rem 1.4rem;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+.highlight {
+  background-color: #fff8e1;
+  padding: 20px;
+  border-left: 4px solid #ffc107;
+  margin: 20px 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .program-container {
+    flex-direction: column;
+  }
+}

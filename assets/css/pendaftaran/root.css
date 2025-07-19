@@ -42,4 +42,45 @@ body {
 .menu.show {
   display: flex;
 }
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  line-height: 1.4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #e0e6ed;
+}
+
+th {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+}
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
 /* END ROOT */

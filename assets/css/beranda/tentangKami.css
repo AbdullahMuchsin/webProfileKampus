@@ -64,6 +64,7 @@
 
 .tabs-desktop {
   display: none;
+  margin: 0 1rem;
 }
 
 .tab-link {
@@ -107,6 +108,10 @@
   padding: 1rem;
 }
 
+.tab-content {
+  margin: 0 1rem;
+}
+
 .content-flex {
   display: flex;
   flex-direction: column;
@@ -131,7 +136,7 @@
 .content-text h3 {
   font-size: 2rem;
   margin-bottom: 1.2rem;
-  line-height: 1.3; 
+  line-height: 1.3;
 }
 
 .content-text p {

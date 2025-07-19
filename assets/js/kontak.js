@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // END MAIN NAVBAR
 
-// Toggle FAQ Answer
+// START TOGGLE FAQ ANSWARE
 function toggleFAQ(id) {
   const answer = document.getElementById(`faq-answer-${id}`);
   const icon = document
@@ -51,25 +51,23 @@ function toggleFAQ(id) {
     icon.classList.add("fa-chevron-down");
   }
 }
+// END TOGGLE FAQ ANSWARE
 
-// Form Submission
+// START FORM SUBMIT
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Get form values
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
 
-  // Show success message
   alert(
     `Terima kasih ${name}! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda di ${email} segera.`
   );
 
-  // Reset form
   this.reset();
 });
 
-// Auto-open first FAQ
 document.addEventListener("DOMContentLoaded", function () {
   toggleFAQ(1);
 });
+// END FORM SUBMIT

@@ -17,6 +17,14 @@
   --gray-700: #374151;
   --gray-800: #1f2937;
   --gray-900: #111827;
+  --primary: #0d47a1;
+  --primary-dark: #002171;
+  --secondary: #263238;
+  --light: #f5f7fa;
+  --gray: #e0e0e0;
+  --dark-gray: #757575;
+  --white: #ffffff;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* START ROOT */
@@ -41,5 +49,94 @@ body {
 
 .menu.show {
   display: flex;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+#faq {
+  padding-bottom: 100px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.three-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .three-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .three-columns {
+    grid-template-columns: 1fr;
+  }
 }
 /* END ROOT */

@@ -45,7 +45,7 @@ const projects = [
     programStudi: "Teknik Informatika",
     category: "web",
     technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
-    image: "../assets/img/kehidupanMahasiswa/p-3.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-3.jpg",
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ const projects = [
     programStudi: "Sistem Informasi",
     category: "mobile",
     technologies: ["Flutter", "Firebase", "Node.js", "TensorFlow"],
-    image: "../assets/img/kehidupanMahasiswa/p-7.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-7.jpg",
   },
   {
     id: 3,
@@ -67,7 +67,7 @@ const projects = [
     programStudi: "Teknik Informatika",
     category: "ai",
     technologies: ["Python", "TensorFlow", "Keras", "Pandas"],
-    image: "../assets/img/kehidupanMahasiswa/p-4.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-4.jpg",
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ const projects = [
     programStudi: "Teknik Informatika",
     category: "network",
     technologies: ["Python", "SNMP", "Grafana", "InfluxDB"],
-    image: "../assets/img/kehidupanMahasiswa/p-2.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-2.jpg",
   },
   {
     id: 5,
@@ -89,7 +89,7 @@ const projects = [
     programStudi: "Sistem Informasi",
     category: "data",
     technologies: ["Python", "NLTK", "Scikit-learn", "MongoDB"],
-    image: "../assets/img/kehidupanMahasiswa/p-5.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-5.jpg",
   },
   {
     id: 6,
@@ -100,7 +100,7 @@ const projects = [
     programStudi: "Teknik Informatika",
     category: "mobile",
     technologies: ["Unity", "C#", "Blender"],
-    image: "../assets/img/kehidupanMahasiswa/p-8.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-8.jpg",
   },
   {
     id: 7,
@@ -111,7 +111,7 @@ const projects = [
     programStudi: "Sistem Informasi",
     category: "ai",
     technologies: ["JavaScript", "Vue.js", "Node.js", "MongoDB"],
-    image: "../assets/img/kehidupanMahasiswa/p-1.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-1.jpg",
   },
   {
     id: 8,
@@ -122,7 +122,7 @@ const projects = [
     programStudi: "Teknik Informatika",
     category: "network",
     technologies: ["Arduino", "Raspberry Pi", "MQTT", "React Native"],
-    image: "../assets/img/kehidupanMahasiswa/p-6.jpg",
+    image: "./assets/img/kehidupanMahasiswa/p-6.jpg",
   },
 ];
 

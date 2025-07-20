@@ -165,11 +165,6 @@ function renderProjects(projectsToRender) {
 
     projectsGrid.innerHTML += projectCard;
   });
-
-  // Update results count
-  document.querySelector(
-    ".results-count"
-  ).textContent = `Menampilkan ${projectsToRender.length} proyek`;
 }
 
 // Helper function to get category name
@@ -230,19 +225,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("kategori")
     .addEventListener("change", filterProjects);
-});
-
-// Filter functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Remove active class from all buttons
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-
-      // Add active class to clicked button
-      this.classList.add("active");
-    });
-  });
 });

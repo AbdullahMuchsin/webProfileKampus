@@ -46,7 +46,7 @@ const projects = [
     category: "web",
     technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
     image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "../assets/img/kehidupanMahasiswa/p-3.jpg",
   },
   {
     id: 2,
@@ -58,7 +58,7 @@ const projects = [
     category: "mobile",
     technologies: ["Flutter", "Firebase", "Node.js", "TensorFlow"],
     image:
-      "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "../assets/img/kehidupanMahasiswa/p-7.jpg",
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ const projects = [
     category: "ai",
     technologies: ["Python", "TensorFlow", "Keras", "Pandas"],
     image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "../assets/img/kehidupanMahasiswa/p-4.jpg",
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ const projects = [
     category: "network",
     technologies: ["Python", "SNMP", "Grafana", "InfluxDB"],
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+      "../assets/img/kehidupanMahasiswa/p-2.jpg",
   },
   {
     id: 5,
@@ -94,7 +94,7 @@ const projects = [
     category: "data",
     technologies: ["Python", "NLTK", "Scikit-learn", "MongoDB"],
     image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+      "../assets/img/kehidupanMahasiswa/p-5.jpg",
   },
   {
     id: 6,
@@ -106,7 +106,7 @@ const projects = [
     category: "mobile",
     technologies: ["Unity", "C#", "Blender"],
     image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "../assets/img/kehidupanMahasiswa/p-8.jpg",
   },
   {
     id: 7,
@@ -118,7 +118,7 @@ const projects = [
     category: "ai",
     technologies: ["JavaScript", "Vue.js", "Node.js", "MongoDB"],
     image:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
+      "../assets/img/kehidupanMahasiswa/p-1.jpg",
   },
   {
     id: 8,
@@ -130,7 +130,7 @@ const projects = [
     category: "network",
     technologies: ["Arduino", "Raspberry Pi", "MQTT", "React Native"],
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "../assets/img/kehidupanMahasiswa/p-6.jpg",
   },
 ];
 
